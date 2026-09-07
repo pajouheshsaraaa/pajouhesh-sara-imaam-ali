@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پژوهش سرای دانش‌آموزی امام علی (ع) سنقر</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
+
+        :root {
+            --bg: #0a0a0f;
+            --card: #12121a;
+            --border: #2a2a3a;
+            --text: #e8e8f0;
+            --muted: #8888a0;
+            --gold: #d4a574;
+            --gold-light: #f0d5b0;
+            --blue: #3b82f6;
+            --light-blue: #60a5fa;
+            --yellow: #f59e0b;
+            --red: #ef4444;
+            --navy: #1e3a5f;
+            --brown-red: #b91c1c;
+            --gray-blue: #475569;
+            --green: #10b981;
+            --pink: #ec4899;
+            --cyan: #06b6d4;
+            --radius: 14px;
+            --shadow: 0 4px 15px rgba(0,0,0,0.3);
+            --shadow-hover: 0 8px 25px rgba(0,0,0,0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        .nastaliq { font-family: 'Noto Nastaliq Urdu', 'Vazirmatn', Tahoma, sans-serif; }
+
+        .ticker-bar {
+            background: linear-gradient(90deg, #3b82f6, #60a5fa, #f59e0b, #ef4444, #10b981);
+            padding: 0.35rem 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .ticker-bar span {
+            display: inline-block;
+            animation: tickerMove 15s linear infinite;
+            color: #fff;
+            font-weight: 800;
+            font-size: 0.6rem;
+        }
+
+        @keyframes tickerMove {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0a0a0f, #1a1a2e, #2a1a3e, #0a0a0f);
+            padding: 1.2rem 1rem;
+            text-align: center;
+            border-bottom: 3px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212,165,116,0.05) 1px, transparent 1px);
+            background-size: 25px 25px;
+            animation: bgFloat 30s linear infinite;
+        }
+
+        @keyframes bgFloat {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(25px, 25px); }
+        }
+
+        .header .badge {
+            display: inline-block;
+            font-size: 0.5rem;
+            color: var(--gold);
+            background: rgba(212,165,116,0.1);
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 0.4rem;
+            font-weight: 700;
+            border: 1px solid var(--gold);
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            color: var(--gold-light);
+            font-weight: 900;
+            text-shadow: 0 0 20px rgba(212,165,116,0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .search-box {
+            padding: 0.5rem;
+            background: var(--card);
+            border-bottom: 1px solid var(--gold);
+        }
+
+        .search-box form {
+            display: flex;
+            gap: 0.3rem;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            border: 2px solid var(--gold);
+            background: var(--bg);
+            color: var(--text);
+            font-size: 0.6rem;
+            outline: none;
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            transition: all 0.3s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--light-blue);
+            box-shadow: 0 0 15px rgba(96,165,250,0.3);
+        }
+
+        .search-box button {
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            border: 2px solid var(--gold);
+            background: var(--gold);
+            color: #0a0a0f;
+            font-weight: 800;
+            cursor: pointer;
+            font-size: 0.6rem;
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            transition: all 0.3s;
+        }
+
+        .search-box button:hover {
+            background: var(--gold-light);
+            box-shadow: 0 5px 15px rgba(212,165,116,0.3);
+        }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 0.5rem; }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin: 0.8rem 0;
+            color: var(--gold);
+            font-size: 0.4rem;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 0.6rem 0 0.4rem;
+            font-size: 0.8rem;
+            font-weight: 900;
+            position: relative;
+        }
+
+        #poles .section-title { color: var(--blue); }
+        #festival summary { color: var(--yellow); }
+        #classes .section-title { color: var(--red); }
+        #library summary { color: var(--navy); }
+        #science summary { color: var(--gold); }
+        #research-sites .section-title { color: var(--gray-blue); }
+        #experiments .section-title { color: var(--yellow); }
+        #apps .section-title { color: var(--blue); }
+        #channels .section-title { color: var(--brown-red); }
+        #education .section-title { color: var(--navy); }
+        #honors .section-title { color: var(--green); }
+        #manager .section-title { color: var(--gold); }
+        #contact .section-title { color: var(--gold); }
+        #latest-news .section-title { color: var(--red); }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 0.3rem;
+            margin: 0.2rem 0;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 0.6rem 0.15rem;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text);
+            display: block;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s;
+        }
+
+        .card:hover::before { transform: scaleX(1); }
+        .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+
+        .card-icon {
+            font-size: 1.8rem;
+            display: block;
+            margin-bottom: 0.15rem;
+            transition: transform 0.3s;
+        }
+
+        .card:hover .card-icon { transform: scale(1.2) rotate(5deg); }
+        .card h3 { font-size: 0.4rem; font-weight: 700; }
+
+        details {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin: 0.4rem 0;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        details:hover { border-color: var(--gold); box-shadow: var(--shadow); }
+
+        details summary {
+            padding: 0.6rem 0.8rem;
+            cursor: pointer;
+            font-weight: 800;
+            font-size: 0.65rem;
+            text-align: center;
+            list-style: none;
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            transition: all 0.3s;
+        }
+
+        details summary:hover { background: rgba(212,165,116,0.08); }
+        details summary::-webkit-details-marker { display: none; }
+        details summary::after { content: ' ▾'; font-size: 0.5rem; transition: transform 0.3s; display: inline-block; }
+        details[open] summary::after { transform: rotate(180deg); }
+
+        details[open] summary { background: rgba(212,165,116,0.1); }
+
+        details .details-content {
+            padding: 0.4rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .pole-links { display: flex; gap: 0.3rem; flex-wrap: wrap; justify-content: center; }
+
+        .pole-link {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: var(--card);
+            border: 1px solid var(--blue);
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--light-blue);
+            font-size: 0.45rem;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .pole-link:hover { background: var(--blue); color: #fff; box-shadow: 0 5px 15px rgba(59,130,246,0.3); }
+
+        .book-link {
+            display: block;
+            padding: 0.4rem 0.8rem;
+            background: #1a1a2e;
+            border: 1px solid var(--blue);
+            border-radius: 8px;
+            margin: 0.15rem 0;
+            text-decoration: none;
+            color: var(--light-blue);
+            font-size: 0.5rem;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .book-link::before { content: '📖 '; }
+        .book-link:hover { background: rgba(59,130,246,0.15); border-color: var(--light-blue); transform: translateX(-5px); }
+
+        .fact-item {
+            background: var(--card);
+            border: 1px solid var(--gold);
+            border-radius: 8px;
+            padding: 0.5rem 0.8rem;
+            margin: 0.15rem 0;
+            font-size: 0.5rem;
+            color: var(--gold-light);
+            line-height: 1.8;
+            transition: all 0.3s;
+        }
+
+        .fact-item:hover { border-color: var(--gold-light); background: rgba(212,165,116,0.05); }
+        .fact-item::before { content: '💡 '; }
+
+        .featured {
+            background: var(--card);
+            border: 2px solid var(--yellow);
+            border-radius: 10px;
+            padding: 0.5rem;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text);
+            display: block;
+            max-width: 150px;
+            margin: 0.15rem auto;
+            transition: all 0.3s;
+        }
+
+        .featured:hover { box-shadow: 0 8px 25px rgba(245,158,11,0.3); }
+
+        .featured-icon { font-size: 1.3rem; display: block; margin-bottom: 0.1rem; }
+        .featured h3 { font-size: 0.5rem; font-weight: 800; color: var(--yellow); }
+
+        .scroll-row { display: flex; overflow-x: auto; gap: 0.2rem; padding: 0.2rem 0; }
+        .scroll-row::-webkit-scrollbar { height: 3px; }
+        .scroll-row::-webkit-scrollbar-thumb { background: var(--red); border-radius: 2px; }
+
+        .scroll-item {
+            min-width: 65px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.4rem 0.1rem;
+            text-align: center;
+            flex-shrink: 0;
+            text-decoration: none;
+            color: var(--text);
+            display: block;
+            transition: all 0.3s;
+        }
+
+        .scroll-item:hover { border-color: var(--red); transform: translateY(-2px); }
+
+        .scroll-icon { font-size: 1rem; display: block; }
+        .scroll-item h3 { font-size: 0.35rem; }
+
+        .honor-card {
+            background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(16,185,129,0.05));
+            border: 2px solid var(--green);
+            border-radius: 10px;
+            padding: 0.4rem;
+            text-align: center;
+            margin: 0.15rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            transition: all 0.3s;
+        }
+
+        .honor-card:hover { box-shadow: 0 5px 15px rgba(16,185,129,0.2); }
+        .honor-card span { font-size: 1.2rem; }
+        .honor-card h3 { font-size: 0.45rem; color: var(--green); font-weight: 800; }
+
+        .contact-box {
+            background: var(--card);
+            border: 1px solid var(--gold);
+            border-radius: 8px;
+            padding: 0.4rem;
+            text-align: center;
+            margin: 0.15rem 0;
+        }
+        .contact-box h4 { font-size: 0.45rem; font-weight: 800; color: var(--gold); }
+        .contact-box p { font-size: 0.4rem; color: var(--muted); }
+
+        .warning-text { font-size: 0.3rem; color: #ef4444; font-weight: 700; }
+
+        /* بخش آخرین اخبار */
+        #news-accordion {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin: 0.4rem 0;
+            overflow: hidden;
+        }
+
+        #news-accordion summary {
+            padding: 0.6rem 0.8rem;
+            cursor: pointer;
+            font-weight: 800;
+            font-size: 0.65rem;
+            text-align: center;
+            list-style: none;
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            color: var(--red);
+            transition: all 0.3s;
+        }
+
+        #news-accordion summary:hover { background: rgba(239,68,68,0.08); }
+        #news-accordion summary::-webkit-details-marker { display: none; }
+        #news-accordion summary::after { content: ' ▾'; font-size: 0.5rem; transition: transform 0.3s; display: inline-block; }
+        #news-accordion[open] summary::after { transform: rotate(180deg); }
+        #news-accordion[open] summary { background: rgba(239,68,68,0.1); }
+
+        #news-accordion .details-content {
+            padding: 0.4rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .news-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin: 0.2rem 0;
+        }
+
+        .news-card {
+            display: flex;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s;
+            align-items: stretch;
+        }
+
+        .news-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 4px 20px rgba(212,165,116,0.15);
+            transform: translateY(-2px);
+        }
+
+        .news-img {
+            width: 80px;
+            min-height: 80px;
+            background-size: cover;
+            background-position: center;
+            flex-shrink: 0;
+            border-radius: 12px 0 0 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+
+        .news-content {
+            padding: 0.4rem 0.6rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .news-badge {
+            display: inline-block;
+            font-size: 0.35rem;
+            font-weight: 700;
+            color: var(--gold);
+            background: rgba(212,165,116,0.1);
+            padding: 0.05rem 0.5rem;
+            border-radius: 50px;
+            border: 1px solid var(--gold);
+            align-self: flex-start;
+            margin-bottom: 0.15rem;
+        }
+
+        .news-content h3 {
+            font-size: 0.5rem;
+            font-weight: 800;
+            margin: 0.1rem 0;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .news-content p {
+            font-size: 0.35rem;
+            color: var(--muted);
+            margin: 0.1rem 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .news-more {
+            font-size: 0.3rem;
+            color: var(--blue);
+            font-weight: 700;
+            align-self: flex-end;
+            margin-top: 0.1rem;
+            transition: all 0.3s;
+        }
+
+        .news-card:hover .news-more {
+            color: var(--gold-light);
+            transform: translateX(-3px);
+        }
+
+        .news-more-card .news-badge {
+            color: var(--light-blue);
+            border-color: var(--light-blue);
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #0a0a0f;
+            border-top: 2px solid var(--gold);
+            display: flex;
+            justify-content: space-around;
+            padding: 0.3rem 0.05rem;
+            z-index: 1000;
+        }
+
+        .bottom-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #888;
+            font-size: 0.3rem;
+            font-weight: 600;
+            min-width: 45px;
+            gap: 0.05rem;
+            transition: all 0.3s;
+        }
+
+        .bottom-nav a span { font-size: 0.9rem; }
+        .bottom-nav a:hover { color: var(--gold); transform: translateY(-3px); }
+
+        .footer {
+            background: #050508;
+            text-align: center;
+            padding: 0.6rem;
+            margin-top: 0.6rem;
+            border-top: 2px solid var(--gold);
+            margin-bottom: 45px;
+        }
+        .footer .nastaliq { font-size: 0.7rem; color: var(--gold); }
+        .footer p { font-size: 0.3rem; color: #666; }
+    </style>
+</head>
+<body>
+
+    <div class="ticker-bar">
+        <span>📢 ثبت نام کلاس‌ها آغاز شد | 📚 انواع مجلات علمی | 🔬 قطب‌های کشوری | 🏆 جشنواره علمی پژوهشی | ⚡ انرژی‌های نوین</span>
+    </div>
+
+    <header class="header">
+        <span class="badge">⚡ قطب استانی انرژی‌های نوین</span>
+        <h1 class="nastaliq">پژوهش سرای امام علی (ع) سنقر</h1>
+    </header>
+
+    <div class="search-box">
+        <form action="https://www.google.com/search" method="get" target="_blank">
+            <input type="text" name="q" placeholder="🔍 جستجو در گوگل..." required>
+            <input type="hidden" name="hl" value="fa">
+            <button type="submit">جستجو</button>
+        </form>
+    </div>
+
+    <div class="container">
+
+        <!-- ===== بخش آخرین اخبار با عکس (کشویی) ===== -->
+        <section id="latest-news">
+            <details id="news-accordion" open>
+                <summary>📰 آخرین اخبار</summary>
+                <div class="details-content">
+                    <div class="news-grid">
+
+                        <!-- خبر ۱ -->
+                        <a href="https://eitaa.com/songhor_p/561" class="news-card" target="_blank">
+                            <div class="news-img" style="background: linear-gradient(135deg, #1a56db, #3b82f6); color:#fff;">📢</div>
+                            <div class="news-content">
+                                <span class="news-badge">اطلاعیه</span>
+                                <h3>مرحله کشوری _ اطلاعیه شماره ۹</h3>
+                                <p>هفتمین دوره جشنواره علمی پژوهشی ...</p>
+                                <span class="news-more">ادامه مطلب →</span>
+                            </div>
+                        </a>
+
+                        <!-- خبر ۲ -->
+                        <a href="https://eitaa.com/songhor_p/560" class="news-card" target="_blank">
+                            <div class="news-img" style="background: linear-gradient(135deg, #059669, #10b981); color:#fff;">💻</div>
+                            <div class="news-content">
+                                <span class="news-badge">کدنویسی</span>
+                                <h3>نتایج برگزیدگان مرحله اول هشتمین ...</h3>
+                                <p>مرحله دوم کشوری گرایش کدنویسی</p>
+                                <span class="news-more">ادامه مطلب →</span>
+                            </div>
+                        </a>
+
+                        <!-- خبر ۳ -->
+                        <a href="https://eitaa.com/songhor_p/557" class="news-card" target="_blank">
+                            <div class="news-img" style="background: linear-gradient(135deg, #d97706, #f59e0b); color:#fff;">🔭</div>
+                            <div class="news-content">
+                                <span class="news-badge">نجوم</span>
+                                <h3>داوری آنلاین مرحله .....</h3>
+                                <p>هفتمین جشنواره علمی پژوهشی</p>
+                                <span class="news-more">ادامه مطلب →</span>
+                            </div>
+                        </a>
+
+                        <!-- خبر ۴ -->
+                        <a href="https://eitaa.com/songhor_p/551" class="news-card" target="_blank">
+                            <div class="news-img" style="background: linear-gradient(135deg, #db2777, #ec4899); color:#fff;">🏆</div>
+                            <div class="news-content">
+                                <span class="news-badge">همایش</span>
+                                <h3>همایش تقدیر از برگزیدگان.....</h3>
+                                <p>تقدیر از پژوهشگران برتر کشوری</p>
+                                <span class="news-more">ادامه مطلب →</span>
+                            </div>
+                        </a>
+
+                        <!-- خبر ۵ - جدید: داوری هفتمین -->
+                        <a href="https://eitaa.com/songhor_p/574" class="news-card" target="_blank">
+                            <div class="news-img" style="background: linear-gradient(135deg, #7c3aed, #a78bfa); color:#fff;">📋</div>
+                            <div class="news-content">
+                                <span class="news-badge">داوری</span>
+                                <h3>داوری هفتمین...</h3>
+                                <p>فراخوان داوری هفتمین جشنواره علمی پژوهشی</p>
+                                <span class="news-more">ادامه مطلب →</span>
+                            </div>
+                        </a>
+
+                        <!-- خبر ۶ - جدید: داوری آنلاین مرحله کشوری -->
+                        <a href="https://eitaa.com/songhor_p/573" class="news-card" target="_blank">
+                            <div class="news-img" style="background: linear-gradient(135deg, #0891b2, #06b6d4); color:#fff;">🔵</div>
+                            <div class="news-content">
+                                <span class="news-badge">مسابقه</span>
+                                <h3>داوری آنلاین مرحله کشوری</h3>
+                                <p>هفتمین جشنواره علمی پژوهشی وزارت آموزش و پرورش - مسابقه انرژی های نوین</p>
+                                <span class="news-more">ادامه مطلب →</span>
+                            </div>
+                        </a>
+
+                        <!-- خبر ۷ - بیشتر -->
+                        <a href="https://eitaa.com/songhor_p/541" class="news-card news-more-card" target="_blank">
+                            <div class="news-img" style="background: linear-gradient(135deg, #475569, #64748b); color:#fff;">➕</div>
+                            <div class="news-content">
+                                <span class="news-badge">کانال شاد</span>
+                                <h3>داوری آنلاین مرحله کشوری ...</h3>
+                                <p>مشاهده تمام اخبار و اطلاعیه‌ها</p>
+                                <span class="news-more">مشاهده همه →</span>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </details>
+        </section>
+
+        <div class="divider">✦ ✦ ✦</div>
+
+        <section id="poles">
+            <h2 class="section-title">قطب‌های کشوری</h2>
+            <details><summary>📚 ادبیات و علوم انسانی</summary><div class="details-content"><div class="pole-links">
+                <a href="https://shad.ir/ensani_src" class="pole-link">🎓 شاد</a>
+                <a href="https://eitaa.com/adabiyatensani" class="pole-link">💬 ایتا</a>
+            </div></div></details>
+            <details><summary>💻 کدنویسی</summary><div class="details-content"><div class="pole-links">
+                <a href="https://shad.ir/codenevisi" class="pole-link">🎓 شاد</a>
+                <a href="https://www.aparat.com/codenevisi.src" class="pole-link">🎬 آپارات</a>
+            </div></div></details>
+            <details><summary>🧬 زیست فناوری</summary><div class="details-content"><div class="pole-links">
+                <a href="https://shad.ir/bio_src" class="pole-link">🎓 شاد</a>
+                <a href="https://www.aparat.com/zistfannavari" class="pole-link">🎬 آپارات</a>
+            </div></div></details>
+            <details><summary>🔬 نانو فناوری</summary><div class="details-content"><div class="pole-links">
+                <a href="https://shad.ir/nano_src" class="pole-link">🎓 شاد</a>
+                <a href="https://eitaa.com/ebnesina_nano_group" class="pole-link">💬 ایتا</a>
+            </div></div></details>
+            <details><summary>🧫 سلول‌های بنیادی</summary><div class="details-content"><div class="pole-links">
+                <a href="https://shad.ir/stemcellstudent" class="pole-link">🎓 شاد</a>
+                <a href="https://eitaa.com/stemcellstudent" class="pole-link">💬 ایتا</a>
+            </div></div></details>
+            <details><summary>🔭 نجوم</summary><div class="details-content"><div class="pole-links">
+                <a href="https://shad.ir/nojum_src" class="pole-link">🎓 شاد</a>
+                <a href="https://www.aparat.com/astropole" class="pole-link">🎬 آپارات</a>
+            </div></div></details>
+            <details><summary>🌿 گیاهان دارویی</summary><div class="details-content"><div class="pole-links">
+                <a href="https://eitaa.com/Giahan_darui" class="pole-link">💬 ایتا</a>
+                <a href="https://shad.ir/giahan_src" class="pole-link">🎓 شاد</a>
+            </div></div></details>
+            <details><summary>🧪 آزمایشگاه علوم تجربی</summary><div class="details-content"><div class="pole-links">
+                <a href="https://web.shad.ir/#im?um=pjilam97" class="pole-link">🎓 شاد</a>
+                <a href="https://eitaa.com/pjilam97" class="pole-link">💬 ایتا</a>
+            </div></div></details>
+            <details><summary>🤖 رباتیک</summary><div class="details-content"><div class="pole-links">
+                <a href="https://shad.ir/robotic_src" class="pole-link">🎓 شاد</a>
+                <a href="https://eitaa.com/robotic_src" class="pole-link">💬 ایتا</a>
+            </div></div></details>
+            <details><summary>🚀 حمل و نقل و فناوری فضایی</summary><div class="details-content"><div class="pole-links">
+                <a href="https://shad.ir/havafazadarya_src" class="pole-link">🎓 شاد</a>
+            </div></div></details>
+            <details><summary>⚡ انرژی‌های نوین</summary><div class="details-content"><div class="pole-links">
+                <a href="https://shad.ir/EnergyNovin_src" class="pole-link">🎓 شاد</a>
+                <a href="https://eitaa.com/EnergyNovin_Src" class="pole-link">💬 ایتا</a>
+            </div></div></details>
+            <details><summary>⚛️ علوم و فنون هسته‌ای</summary><div class="details-content"><div class="pole-links">
+                <a href="https://eitaa.com/src_nuclear_s_t" class="pole-link">💬 ایتا</a>
+                <a href="https://shad.ir/src_nuclear_s_t" class="pole-link">🎓 شاد</a>
+            </div></div></details>
+        </section>
+
+        <div class="divider">✦ ✦ ✦</div>
+
+        <details id="festival">
+            <summary>🏆 جشنواره علمی پژوهشی</summary>
+            <div class="details-content">
+                <a href="https://eitaa.com/songhor_p/543" class="featured"><span class="featured-icon">🏆</span><h3>ششمین جشنواره</h3></a>
+                <a href="https://eitaa.com/songhor_p/502" class="featured"><span class="featured-icon">🏆</span><h3>هفتمین جشنواره</h3></a>
+                <div class="featured"><span class="featured-icon">📋</span><h3>هشتمین جشنواره</h3><p style="font-size:0.35rem;color:var(--yellow);">به زودی</p></div>
+            </div>
+        </details>
+
+        <div class="divider">✦ ✦ ✦</div>
+
+        <section id="classes">
+            <h2 class="section-title">کلاس‌ها</h2>
+            <a href="https://shad.ir/songhor336" class="featured"><span class="featured-icon">📝</span><h3>ثبت نام کلاس‌ها</h3></a>
+            <div class="scroll-row">
+                <div class="scroll-item"><span class="scroll-icon">💻</span><h3>کامپیوتر</h3></div>
+                <div class="scroll-item"><span class="scroll-icon">🤖</span><h3>رباتیک</h3></div>
+                <div class="scroll-item"><span class="scroll-icon">🇬🇧</span><h3>زبان</h3></div>
+                <div class="scroll-item"><span class="scroll-icon">🎨</span><h3>نقاشی</h3></div>
+                <div class="scroll-item"><span class="scroll-icon">🔭</span><h3>نجوم</h3></div>
+                <div class="scroll-item"><span class="scroll-icon">🧪</span><h3>آزمایشگاه</h3></div>
+                <div class="scroll-item"><span class="scroll-icon">📐</span><h3>ریاضی</h3></div>
+                <div class="scroll-item"><span class="scroll-icon">⚛️</span><h3>فیزیک</h3></div>
+                <div class="scroll-item"><span class="scroll-icon">🌍</span><h3>زمین</h3></div>
+                <div class="scroll-item"><span class="scroll-icon">📚</span><h3>کتابخانه</h3></div>
+            </div>
+        </section>
+
+        <div class="divider">✦ ✦ ✦</div>
+
+        <details id="library">
+            <summary>📖 کتابخانه مجازی</summary>
+            <div class="details-content">
+                <details><summary>📜 تاریخ</summary><div class="details-content">
+                    <a href="https://taaghche.com/book/201257" class="book-link">تاریخ ایران</a>
+                    <a href="https://taaghche.com/book/247" class="book-link">منم کوروش</a>
+                    <a href="https://taaghche.com/book/16758" class="book-link">تاریخ ۱۸ ساله آذربایجان</a>
+                    <a href="https://taaghche.com/book/14406" class="book-link">تاریخ مذکر</a>
+                    <a href="https://taaghche.com/book/3458" class="book-link">جامع التواریخ</a>
+                    <a href="https://taaghche.com/book/8063" class="book-link">تاریخ هرات</a>
+                    <a href="https://taaghche.com/book/219269" class="book-link">عصر صفوی</a>
+                    <a href="https://taaghche.com/book/156463" class="book-link">هخامنشیان</a>
+                    <a href="https://ketab.cafe/" class="book-link">تاریخ طبری</a>
+                    <a href="https://dlketab.ir/" class="book-link">اسکندر مقدونی</a>
+                    <a href="https://ketabrah.com/book/20559" class="book-link">تاریخ کامل ایران</a>
+                    <a href="https://www.sarzamindownload.com/22733/" class="book-link">تاریخ اروپا</a>
+                    <a href="https://scione.ir/product/history-of-africa-2/" class="book-link">تاریخ آفریقا</a>
+                    <a href="https://ketabha.org/history-america-book/" class="book-link">تاریخ آمریکا</a>
+                </div></details>
+                <details><summary>🔊 کتاب‌های صوتی 🎧</summary><div class="details-content">
+                    <a href="https://ketabrah.com/audiobooks" class="book-link">کتاب‌های صوتی</a>
+                </div></details>
+                <details><summary>📚 ادبیات</summary><div class="details-content">
+                    <a href="https://www.takbook.com/35-poetry-ebook/" class="book-link">دیوان حافظ</a>
+                    <a href="https://www.yasdl.com/45200/" class="book-link">شاهنامه فردوسی</a>
+                    <a href="https://www.takbook.com/42-poetry-ebook/" class="book-link">گلستان سعدی</a>
+                    <a href="https://persianpdf.com/book/" class="book-link">مثنوی معنوی</a>
+                    <a href="https://ketabesabz.com/book/11474/" class="book-link">بوستان سعدی</a>
+                    <a href="https://persianpdf.com/book/" class="book-link">هشت کتاب سهراب</a>
+                    <a href="https://asmaneketab.ir/product/" class="book-link">منطق الطیر عطار</a>
+                    <a href="https://www.takbook.com/1019-poetry-ebook/" class="book-link">رباعیات خیام</a>
+                </div></details>
+                <details><summary>⚛️ فیزیک</summary><div class="details-content">
+                    <a href="https://taaghche.com/book/199724" class="book-link">فیزیک</a>
+                    <a href="https://taaghche.com/book/65942" class="book-link">جهان‌های موازی</a>
+                    <a href="https://taaghche.com/book/54858" class="book-link">پاسخ‌های کوتاه</a>
+                    <a href="https://taaghche.com/book/242916" class="book-link">مبانی فیزیک</a>
+                    <a href="https://taaghche.com/book/8112" class="book-link">هدیه سال نو</a>
+                    <a href="https://taaghche.com/book/64103" class="book-link">نظم زمان</a>
+                    <a href="https://taaghche.com/book/120360" class="book-link">فیزیک جهان نما</a>
+                    <a href="https://taaghche.com/book/13696" class="book-link">نظریه نسبت</a>
+                    <a href="https://taaghche.com/book/6354" class="book-link">به خاطر فیزیک</a>
+                    <a href="https://taaghche.com/book/82703" class="book-link">۷ درس کوتاه</a>
+                    <a href="https://taaghche.com/book/34518" class="book-link">فیزیک ذرات</a>
+                    <a href="https://taaghche.com/book/136672" class="book-link">کوانتوم</a>
+                </div></details>
+                <details><summary>🧪 شیمی</summary><div class="details-content">
+                    <a href="https://taaghche.com/book/133313" class="book-link">شیمی</a>
+                    <a href="https://taaghche.com/book/56661" class="book-link">دوپامین</a>
+                    <a href="https://taaghche.com/book/57114" class="book-link">بیوشیمی</a>
+                    <a href="https://taaghche.com/book/42354" class="book-link">شیمی چیست</a>
+                    <a href="https://taaghche.com/book/87297" class="book-link">شیمی عمومی</a>
+                    <a href="https://taaghche.com/book/86969" class="book-link">اصول شیمی</a>
+                    <a href="https://taaghche.com/book/82622" class="book-link">مولکول‌ها</a>
+                    <a href="https://taaghche.com/book/37811" class="book-link">آب ناب</a>
+                    <a href="https://taaghche.com/book/79728" class="book-link">جدول تناوبی</a>
+                    <a href="https://taaghche.com/book/329871" class="book-link">ژئوشیمی</a>
+                    <a href="https://taaghche.com/book/302419" class="book-link">شیمی سبز</a>
+                    <a href="https://taaghche.com/book/86475" class="book-link">مهندسی شیمی</a>
+                    <a href="https://taaghche.com/book/65376" class="book-link">شیمی آلی</a>
+                </div></details>
+                <details><summary>🧬 زیست</summary><div class="details-content">
+                    <a href="https://taaghche.com/book/208639" class="book-link">زیست‌شناسی</a>
+                    <a href="https://taaghche.com/book/92164" class="book-link">مغز پویا</a>
+                    <a href="https://taaghche.com/book/121263" class="book-link">ژن خودخواه</a>
+                    <a href="https://taaghche.com/book/69202" class="book-link">بدن</a>
+                    <a href="https://taaghche.com/book/7475" class="book-link">داروین و تکامل</a>
+                    <a href="https://taaghche.com/book/84528" class="book-link">دگرگونی‌های بزرگ</a>
+                    <a href="https://taaghche.com/book/94024" class="book-link">ژنتیک پایه</a>
+                    <a href="https://taaghche.com/book/107771" class="book-link">سرطان</a>
+                    <a href="https://taaghche.com/book/79016" class="book-link">دستگاه اسکلتی</a>
+                    <a href="https://taaghche.com/book/120390" class="book-link">ایمنی شناسی</a>
+                    <a href="https://taaghche.com/book/125676" class="book-link">کد شکن</a>
+                    <a href="https://taaghche.com/book/88852" class="book-link">میکروب شناسی</a>
+                    <a href="https://taaghche.com/book/69196" class="book-link">ماشین ژن</a>
+                    <a href="https://taaghche.com/book/197491" class="book-link">بیوانفورماتیک</a>
+                    <a href="https://taaghche.com/book/107157" class="book-link">زیست سلولی</a>
+                    <a href="https://taaghche.com/book/101264" class="book-link">فرمانده بدن</a>
+                </div></details>
+                <details><summary>📐 ریاضی</summary><div class="details-content">
+                    <a href="https://taaghche.com/book/18925" class="book-link">ریاضی مقدماتی</a>
+                    <a href="https://taaghche.com/book/66079" class="book-link">آچار ریاضی</a>
+                    <a href="https://taaghche.com/book/86064" class="book-link">ریاضی عمومی</a>
+                    <a href="https://taaghche.com/book/5329" class="book-link">ریاضی مهندسی</a>
+                    <a href="https://taaghche.com/book/51888" class="book-link">کتاب طلایی</a>
+                    <a href="https://taaghche.com/book/137517" class="book-link">ریاضی و آمار</a>
+                    <a href="https://taaghche.com/book/83174" class="book-link">ریاضی در چند دقیقه</a>
+                    <a href="https://taaghche.com/book/37817" class="book-link">هنر محاسبه</a>
+                    <a href="https://taaghche.com/book/18957" class="book-link">فلسفه ریاضی</a>
+                    <a href="https://taaghche.com/book/96297" class="book-link">ریاضی عالی</a>
+                    <a href="https://taaghche.com/book/58963" class="book-link">مبانی ریاضی</a>
+                    <a href="https://taaghche.com/book/58960" class="book-link">آنالیز ریاضی</a>
+                    <a href="https://taaghche.com/book/110132" class="book-link">چیستی ریاضی</a>
+                    <a href="https://taaghche.com/book/301451" class="book-link">ریاضی نابلدی</a>
+                    <a href="https://taaghche.com/book/173131" class="book-link">تاریخچه ریاضی</a>
+                </div></details>
+                <details><summary>🔭 نجوم</summary><div class="details-content">
+                    <a href="https://taaghche.com/book/6909" class="book-link">جایگاه ما در جهان</a>
+                    <a href="https://taaghche.com/book/24095" class="book-link">آسمان شگفت انگیز</a>
+                    <a href="https://taaghche.com/book/102805" class="book-link">معادله خدا</a>
+                    <a href="https://taaghche.com/book/28327" class="book-link">ستاره شناسی</a>
+                    <a href="https://taaghche.com/book/5982" class="book-link">کیهان بر اساس اتر</a>
+                    <a href="https://taaghche.com/book/10047" class="book-link">کهکشان سرگیجه آور</a>
+                    <a href="https://taaghche.com/book/3932" class="book-link">شگفتی‌های کیهان</a>
+                    <a href="https://taaghche.com/book/7112" class="book-link">زندگی من</a>
+                    <a href="https://taaghche.com/book/106734" class="book-link">اخترفیزیک</a>
+                    <a href="https://taaghche.com/book/42358" class="book-link">گیتی از هیچ</a>
+                    <a href="https://taaghche.com/book/42361" class="book-link">پیدایش جهان</a>
+                    <a href="https://taaghche.com/book/81421" class="book-link">چیزی عمیقاً پنهان</a>
+                    <a href="https://taaghche.com/book/13854" class="book-link">هیچ</a>
+                    <a href="https://taaghche.com/book/106742" class="book-link">راز آفرینش</a>
+                    <a href="https://taaghche.com/book/42349" class="book-link">تاریخچه جهان</a>
+                    <a href="https://taaghche.com/book/44494" class="book-link">کیهان شناسی</a>
+                    <a href="https://taaghche.com/book/87854" class="book-link">طرح بزرگ</a>
+                    <a href="https://taaghche.com/book/34516" class="book-link">سه دقیقه اول</a>
+                    <a href="https://taaghche.com/book/191076" class="book-link">نجوم به زبان ساده</a>
+                </div></details>
+                <details><summary>🧑‍🤝‍🧑 جامعه‌شناسی</summary><div class="details-content">
+                    <a href="https://taaghche.com/book/157840" class="book-link">جامعه‌شناسی</a>
+                    <a href="https://taaghche.com/book/191343" class="book-link">جامعه‌شناسی ۲</a>
+                    <a href="https://taaghche.com/book/8213" class="book-link">بیشعوری</a>
+                    <a href="https://taaghche.com/book/29704" class="book-link">مانیفست یه فمنیست</a>
+                    <a href="https://taaghche.com/book/14522" class="book-link">ما چگونه ما شدیم</a>
+                    <a href="https://taaghche.com/book/72030" class="book-link">سَرکار عِلّیه</a>
+                    <a href="https://taaghche.com/book/63772" class="book-link">همه دروغ می‌گویند</a>
+                    <a href="https://taaghche.com/book/38130" class="book-link">فارنهایت ۴۵۱</a>
+                    <a href="https://taaghche.com/book/207656" class="book-link">توهمات جمعی</a>
+                    <a href="https://taaghche.com/book/38591" class="book-link">واقع نگری</a>
+                    <a href="https://taaghche.com/book/40723" class="book-link">پنج حلقه</a>
+                    <a href="https://taaghche.com/book/54738" class="book-link">امید در تاریکی</a>
+                    <a href="https://taaghche.com/book/7728" class="book-link">تغییر مسیر</a>
+                    <a href="https://taaghche.com/book/66391" class="book-link">فتنه تغلب</a>
+                    <a href="https://taaghche.com/book/67382" class="book-link">توهم آگاهی</a>
+                    <a href="https://taaghche.com/book/80703" class="book-link">مردِمرد</a>
+                </div></details>
+                <details><summary>🏅 ورزشی</summary><div class="details-content">
+                    <a href="https://taaghche.com/book/90719" class="book-link">تغذیه ورزشی</a>
+                    <a href="https://taaghche.com/book/160958" class="book-link">مکمل‌های ورزشی</a>
+                    <a href="https://taaghche.com/book/9667" class="book-link">آسیب‌های ورزشی</a>
+                    <a href="https://taaghche.com/book/31012" class="book-link">بازاریابی ورزشی</a>
+                    <a href="https://taaghche.com/book/139878" class="book-link">آسیب‌شناسی ورزشی</a>
+                    <a href="https://taaghche.com/book/31014" class="book-link">روزنامه نگاری ورزشی</a>
+                    <a href="https://taaghche.com/book/141734" class="book-link">مدیریت اماکن</a>
+                    <a href="https://taaghche.com/book/161057" class="book-link">اصول مربیگری</a>
+                    <a href="https://taaghche.com/book/160388" class="book-link">حرکت شناسی ورزشی</a>
+                    <a href="https://taaghche.com/book/139267" class="book-link">فیزیولوژی ورزشی</a>
+                    <a href="https://taaghche.com/book/72585" class="book-link">کسب و کار ورزشی</a>
+                </div></details>
+                <details><summary>📚 دایره‌المعارف</summary><div class="details-content">
+                    <a href="https://www.iranketab.ir/book/191320-bloomsbury-marx-dictionary" class="book-link">فرهنگ نامه بلومزبری</a>
+                    <a href="https://www.iranketab.ir/book/190986-encyclopedia-of-gods" class="book-link">دانشنامه خدایان</a>
+                    <a href="https://www.iranketab.ir/book/184550-my-encyclopedia-of-very-important-dinosaurs" class="book-link">دانشنامه دایناسورها</a>
+                    <a href="https://www.iranketab.ir/book/144209-our-world-in-pictures-an-encyclopedia-of-everything" class="book-link">دانشنامه فضا</a>
+                    <a href="https://www.iranketab.ir/book/161448-encyclopedia-of-persian-language-and-literature" class="book-link">دانشنامه زبان و ادب فارسی</a>
+                    <a href="https://www.iranketab.ir/book/160963-our-world-in-pictures-an-encyclopedia-of-everything" class="book-link">دانشنامه طبیعت</a>
+                    <a href="https://www.iranketab.ir/book/158829-guinness-world-records" class="book-link">گینس ۲۰۲۵</a>
+                    <a href="https://www.iranketab.ir/book/101149-encyclopedia-enneagram" class="book-link">دایره المعارف ایناگرام</a>
+                    <a href="https://www.iranketab.ir/book/111871-dictionnaire-heidegger" class="book-link">واژه نامه هایدگر</a>
+                    <a href="https://fashionbooksiran.ir/product/3457/" class="book-link">دایره المعارف مصور مسیحیت</a>
+                </div></details>
+            </div>
+        </details>
+
+        <div class="divider">✦ ✦ ✦</div>
+
+        <details id="science">
+            <summary>📚 دانستنی‌ها</summary>
+            <div class="details-content">
+                <div class="fact-item">💡 در هر ۵ ثانیه یک کامپیوتر در سطح جهان به ویروس آلوده می‌گردد.</div>
+                <div class="fact-item">💡 ظروف پلاستیکی ۵۰ هزار سال طول می‌کشد تا در طبیعت شروع به تجزیه شدن کنند.</div>
+                <div class="fact-item">💡 اغلب مارها دارای ۶ ردیف دندان می‌باشند.</div>
+                <div class="fact-item">💡 ۹۰% سم مارها از پروتئین تشکیل یافته است.</div>
+                <div class="fact-item">💡 ۱۰ درصد وزن بدن انسان (بدون آب) را باکتری‌ها تشکیل می‌دهند.</div>
+                <div class="fact-item">💡 ۱۱ درصد جمعیت جهان را چپ دستان تشکیل می‌دهند.</div>
+                <div class="fact-item">💡 از هر ۱۰ نفر، یک نفر در سراسر جهان در جزیره زندگی می‌کند.</div>
+                <div class="fact-item">💡 ۹۸ درصد وزن آب از اکسیژن تشکیل یافته است.</div>
+                <div class="fact-item">💡 یک اسب در طول یک سال ۷ برابر وزن بدن خود غذا مصرف می‌کند.</div>
+                <div class="fact-item">💡 سوسک‌ها سریع‌ترین جانوران ۶ پا می‌باشند. با سرعت یک متر در ثانیه.</div>
+                <div class="fact-item">💡 خرگوش‌ها و طوطی‌ها بدون نیاز به چرخاندن سر خود قادرند پشت سر خود را ببینند.</div>
+                <div class="fact-item">💡 کرگدن‌ها قادرند سریع‌تر از انسان‌ها بدوند.</div>
+                <div class="fact-item">💡 هیچ پنگوئنی در قطب شمال وجود ندارد.</div>
+                <div class="fact-item">💡 مادر و همسر گراهام بل مخترع تلفن هر دو ناشنوا بوده‌اند.</div>
+                <div class="fact-item">💡 کانادا یک واژه هندی به معنی «روستای بزرگ» می‌باشد.</div>
+                <div class="fact-item">💡 رشد دندان‌های سگ آبی هیچ‌گاه متوقف نمی‌گردد.</div>
+                <div class="fact-item">💡 قلب وال‌ها تنها ۹ بار در دقیقه می‌تپد.</div>
+                <div class="fact-item">💡 چیتا قادر است در حداکثر سرعت خود گام‌هایی به طول ۸ متر بر دارد.</div>
+                <div class="fact-item">💡 شمپانزه‌ها قادرند مقابل آینه چهره خود را تشخیص دهند اما میمون‌ها نمی‌توانند.</div>
+                <div class="fact-item">💡 عمر سنجاقک‌ها تنها ۲۴ ساعت می‌باشد.</div>
+                <div class="fact-item">💡 مدت زمان گردش سیاره عطارد بدور خود دو برابر مدت زمان گردش آن بدور خورشید می‌باشد.</div>
+                <div class="fact-item">💡 روشنایی قرص کامل ماه ۹ برابر هلال ماه می‌باشد.</div>
+                <div class="fact-item">💡 ماهی قرمز با قرار گرفتن در تاریکی تغییر رنگ می‌دهد و سفید می‌شود.</div>
+                <div class="fact-item">💡 لایه پوستی آرنج دست هر ۱۰ روز یک بار عوض می‌گردد.</div>
+                <div class="fact-item">💡 نقره می‌تواند ۶۵۰ نوع میکروب را از بین ببرد و مواد ضد عفونی قوی است.</div>
+                <div class="fact-item">💡 فیل‌ها تنها حیواناتی هستند که قادر به پریدن نمی‌باشند.</div>
+                <div class="fact-item">💡 عمر کهکشان راه شیری ۱۰ میلیارد سال است.</div>
+                <div class="fact-item">💡 حلزون قادر است سه سال بخوابد.</div>
+                <div class="fact-item">💡 کهکشان راه شیری ۱۰۰ میلیون ستاره یا بیشتر دارد.</div>
+                <div class="fact-item">💡 قدیمی‌ترین بنا در شمال توکیو ۵۰ هزار سال قدمت دارد.</div>
+                <div class="fact-item">💡 همه سیاره‌های منظومه شمسی از غرب به شرق دور محور خود می‌چرخند اما سیاره ناهید از شرق به غرب می‌چرخد.</div>
+                <div class="fact-item">💡 زمان کوتاه‌ترین جنگ ۳۸ دقیقه بود و بین نازی‌ها و انگلستان رخ داد.</div>
+                <div class="fact-item">💡 اولین تمبر جهان در سال ۱۸۴۰ در انگلستان به چاپ رسید.</div>
+                <div class="fact-item">💡 فیل بالغ در روز ۲۲۰ کیلوگرم غذا و ۲۰۰ لیتر آب مصرف می‌کند.</div>
+                <div class="fact-item">💡 تعداد حشرات موجود در ۲.۵ کیلومتر مربع زمین کشاورزی از انسان‌های موجود در کل دنیا بیشتر است.</div>
+                <div class="fact-item">💡 هر فرد عادی در سر خود ۹۰ تا ۱۲۰ هزار رشته مو دارد.</div>
+                <div class="fact-item">💡 ریش انسان بالغ بر ۵ تا ۱۵ هزار و یک ابرو ۴۵۰ تا ۶۰۰ تار مو دارد.</div>
+                <div class="fact-item">💡 گربه و سگ هر کدام ۵ گروه خونی دارند و انسان ۴ گروه.</div>
+                <div class="fact-item">💡 زنبور عسل دو معده دارد: یکی برای انبار کردن عسل و یکی برای غذا.</div>
+                <div class="fact-item">💡 سریع‌ترین عضله بدن انسان زبان است.</div>
+                <div class="fact-item">💡 در سال ۱۹۸۰ بوتان تنها کشور جهان بود که تلفن نداشت.</div>
+            </div>
+        </details>
+
+        <div class="divider">✦ ✦ ✦</div>
+
+        <section id="research-sites">
+            <h2 class="section-title">🔍 سایت‌های تحقیقاتی</h2>
+            <div class="grid">
+                <a href="https://iranpaper.ir/" class="card"><span class="card-icon">📄</span><h3>ایران پیپر</h3></a>
+                <a href="https://www.sid.ir/" class="card"><span class="card-icon">📚</span><h3>SID</h3></a>
+                <a href="https://irandoc.ac.ir/page/2685" class="card"><span class="card-icon">🔍</span><h3>گنج</h3></a>
+                <a href="https://www.noormags.ir/view/fa/default" class="card"><span class="card-icon">📖</span><h3>نورمگز</h3></a>
+                <a href="https://civilica.com/" class="card"><span class="card-icon">📝</span><h3>سیویلیکا</h3></a>
+                <a href="https://elmnet.ir/" class="card"><span class="card-icon">🔬</span><h3>علم نت</h3></a>
+                <a href="https://www.sciencedirect.com/" class="card"><span class="card-icon">📖</span><h3>ScienceDirect</h3></a>
+                <a href="https://corp.oup.com/" class="card"><span class="card-icon">📚</span><h3>Oxford</h3></a>
+            </div>
+        </section>
+
+        <div class="divider">✦ ✦ ✦</div>
+
+        <section id="experiments">
+            <h2 class="section-title">🎬 فیلم‌های آزمایشگاهی</h2>
+            <div class="grid">
+                <a href="https://www.aparat.com/v/x25b923" class="card"><span class="card-icon">🎬</span><h3>فیلم ۱</h3></a>
+                <a href="https://www.aparat.com/v/VU360" class="card"><span class="card-icon">🎬</span><h3>فیلم ۲</h3></a>
+                <a href="https://www.aparat.com/v/lkrb4nx" class="card"><span class="card-icon">🎬</span><h3>فیلم ۳</h3></a>
+                <a href="https://www.aparat.com/v/s062564" class="card"><span class="card-icon">🎬</span><h3>فیلم ۴</h3></a>
+                <a href="https://www.aparat.com/v/u198665" class="card"><span class="card-icon">🎬</span><h3>فیلم ۵</h3></a>
+                <a href="https://www.aparat.com/v/e785885" class="card"><span class="card-icon">🎬</span><h3>فیلم ۶</h3></a>
+                <a href="https://www.aparat.com/v/y23c33w" class="card"><span class="card-icon">🏠</span><h3>آزمایش خانگی</h3></a>
+            </div>
+        </section>
+
+        <div class="divider">✦ ✦ ✦</div>
+
+        <section id="apps">
+            <h2 class="section-title">برنامه‌ها</h2>
+            <div class="grid">
+                <a href="https://myket.ir/app/com.noctuasoftware.stellarium_free" class="card"><span class="card-icon">🔭</span><h3>استلاریوم</h3></a>
+                <a href="https://myket.ir/app/com.PYOPYO.StarTracker" class="card"><span class="card-icon">🌌</span><h3>آسمان شب</h3></a>
+                <a href="https://myket.ir/app/com.ciberdroix.microscope" class="card"><span class="card-icon">🔬</span><h3>میکروسکوپ</h3></a>
+                <a href="https://myket.ir/app/io.ocedu.biology" class="card"><span class="card-icon">🧬</span><h3>زیست</h3></a>
+            </div>
+        </section>
+
+        <div class="divider">✦ ✦ ✦</div>
+
+        <section id="channels">
+            <h2 class="section-title">کانال‌ها</h2>
+            <div class="grid">
+                <a href="https://shad.ir/songhor_p" class="card"><span class="card-icon">🎓</span><h3>شاد</h3></a>
+                <a href="https://eitaa.com/songhor_p" class="card"><span class="card-icon">💬</span><h3>ایتا</h3></a>
+                <a href="https://t.me/songhor_p" class="card"><span class="card-icon">✈️</span><h3>تلگرام</h3><p class="warning-text">فیلترشکن</p></a>
+                <a href="https://www.aparat.com/songhor_p" class="card"><span class="card-icon">🎬</span><h3>آپارات</h3></a>
+                <a href="https://eitaa.com/pajoheshsara_kedu" class="card"><span class="card-icon">📢</span><h3>اطلاع رسانی فعالیت‌های پژوهش سراهای استان کرمانشاه</h3></a>
+                <a href="https://eitaa.com/energynovin_p_k" class="card"><span class="card-icon">⚡</span><h3>قطب استانی انرژی‌های نوین</h3></a>
+            </div>
+        </section>
+
+        <div class="divider">✦ ✦ ✦</div>
+
+        <section id="education">
+            <h2 class="section-title">سامانه‌ها</h2>
+            <div class="grid">
+                <a href="https://my.medu.ir" class="card"><span class="card-icon">🏫</span><h3>سایت آموزش و پرورش</h3></a>
+                <a href="https://eitaa.com/ap_sonqor" class="card"><span class="card-icon">📢</span><h3>کانال آموزش و پرورش سنقر</h3></a>
+            </div>
+        </section>
+
+        <div class="divider">✦ ✦ ✦</div>
+
+        <section id="honors">
+            <h2 class="section-title">🏅 افتخارات</h2>
+            <div class="honor-card"><span>🏆</span><h3>+۳۵۰ اثر برتر در مرحله منطقه‌ای</h3></div>
+            <div class="honor-card"><span>🏆</span><h3>+۱۴۵ اثر برتر در مرحله استانی</h3></div>
+            <div class="honor-card"><span>🏆</span><h3>+۱۰ اثر برتر در مرحله کشوری</h3></div>
+            <div class="honor-card"><span>🏆</span><h3>برترین پژوهش سرا استان کرمانشاه</h3></div>
+        </section>
+
+        <div class="divider">✦ ✦ ✦</div>
+
+        <section id="manager">
+            <h2 class="section-title">مدیر</h2>
+            <a href="https://shad.ir/songhor336" class="featured"><span class="featured-icon">👨‍💼</span><h3>مدیر پژوهش سرا</h3></a>
+        </section>
+
+        <div class="divider">✦ ✦ ✦</div>
+
+        <section id="contact">
+            <h2 class="section-title">تماس</h2>
+            <div class="contact-box"><h4>📍 نشانی</h4><p>سنقر، خیابان آیت الله غفاری، روبروی اداره پست</p></div>
+            <div class="contact-box"><h4>📞 تلفن</h4><p>۴۸۴۳۵۵۰۴</p></div>
+            <div class="contact-box"><h4>🕐 روزهای کاری</h4><p>شنبه تا چهارشنبه | ۸ تا ۱۳</p></div>
+        </section>
+
+    </div>
+
+    <div class="bottom-nav">
+        <a href="#poles"><span>🏠</span>قطب‌ها</a>
+        <a href="#festival"><span>🏆</span>جشنواره</a>
+        <a href="#classes"><span>📝</span>کلاس‌ها</a>
+        <a href="#library"><span>📖</span>کتابخانه</a>
+        <a href="#honors"><span>🏅</span>افتخارات</a>
+        <a href="#contact"><span>📞</span>تماس</a>
+    </div>
+
+    <footer class="footer">
+        <p class="nastaliq">پژوهش سرای امام علی (ع) سنقر</p>
+        <p>© 1405 | کلیه حقوق محفوظ است</p>
+        <p>Designed by Amiralihajian</p>
+    </footer>
+
+</body>
+</html>
