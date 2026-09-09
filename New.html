@@ -1,0 +1,2215 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پژوهش سرای دانش‌آموزی امام علی (ع) سنقر</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0a2463;
+            --primary-light: #1e3a8a;
+            --primary-dark: #051a3e;
+            --gold: #d4a574;
+            --gold-light: #f0d5b0;
+            --white: #ffffff;
+            --gray-light: #f1f5f9;
+            --gray: #e2e8f0;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --shadow: 0 10px 40px rgba(10, 36, 99, 0.08);
+            --shadow-hover: 0 20px 60px rgba(10, 36, 99, 0.15);
+            --radius: 24px;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --bg-body: #f1f5f9;
+            --bg-card: rgba(255, 255, 255, 0.7);
+            --border-card: rgba(255, 255, 255, 0.4);
+            --text-color: #0f172a;
+            --text-muted-color: #64748b;
+            --hero-gradient: linear-gradient(135deg, #051a3e 0%, #0a2463 50%, #1e3a8a 100%);
+            --news-bg: linear-gradient(135deg, #051a3e, #0a2463);
+            --news-card-bg: rgba(255, 255, 255, 0.12);
+            --news-card-border: rgba(255, 255, 255, 0.15);
+            --news-card-text: #ffffff;
+            --news-card-text-muted: rgba(255, 255, 255, 0.7);
+            --footer-bg: #051a3e;
+        }
+
+        [data-theme="dark"] {
+            --primary: #8b5cf6;
+            --primary-light: #a78bfa;
+            --primary-dark: #4c1d95;
+            --gold: #fbbf24;
+            --gold-light: #fcd34d;
+            --white: #1e1e2e;
+            --gray-light: #181825;
+            --gray: #2d2d44;
+            --text-dark: #e8e8f0;
+            --text-muted: #a0a0b8;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.6);
+            --bg-body: #181825;
+            --bg-card: rgba(30, 30, 46, 0.8);
+            --border-card: rgba(255, 255, 255, 0.1);
+            --text-color: #e8e8f0;
+            --text-muted-color: #a0a0b8;
+            --hero-gradient: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 50%, #4c1d95 100%);
+            --news-bg: linear-gradient(135deg, #1a1a2e, #2d2d44);
+            --news-card-bg: rgba(255, 255, 255, 0.06);
+            --news-card-border: rgba(255, 255, 255, 0.08);
+            --news-card-text: #e8e8f0;
+            --news-card-text-muted: rgba(255, 255, 255, 0.5);
+            --footer-bg: #0f0f1a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: var(--bg-body);
+            color: var(--text-color);
+            line-height: 1.8;
+            direction: rtl;
+            transition: background 0.4s, color 0.4s;
+        }
+
+        [data-lang="en"] body {
+            direction: ltr;
+        }
+
+        [data-lang="en"] .rtl-text {
+            direction: ltr;
+            text-align: left;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ===== نوار بالایی ===== */
+        .top-bar {
+            background: var(--footer-bg);
+            color: var(--white);
+            padding: 0.3rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.6rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            transition: background 0.4s;
+        }
+
+        .top-bar .contact-info {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .top-bar .contact-info span {
+            opacity: 0.85;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .top-bar .social-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-right: 0.8rem;
+            opacity: 0.7;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .top-bar .social-links a:hover {
+            opacity: 1;
+            color: var(--gold);
+        }
+
+        /* ===== هدر ===== */
+        .header {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-card);
+            padding: 0.6rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            transition: background 0.4s, border-color 0.4s;
+        }
+
+        .header .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .header .logo .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.5rem;
+            font-weight: 900;
+            font-family: 'Noto Nastaliq Urdu', 'Vazirmatn', Tahoma, sans-serif;
+            box-shadow: 0 4px 15px rgba(10, 36, 99, 0.25);
+            flex-shrink: 0;
+            transition: background 0.4s;
+        }
+
+        .header .logo h1 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            transition: color 0.4s;
+        }
+
+        .header .logo h1 small {
+            display: block;
+            font-size: 0.5rem;
+            font-weight: 400;
+            color: var(--text-muted-color);
+            letter-spacing: 0.3px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 0.2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 0.4rem 0.9rem;
+            border-radius: 50px;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .nav-menu a.cta-btn {
+            background: linear-gradient(135deg, var(--gold), #c9956b);
+            color: var(--primary-dark);
+            padding: 0.4rem 1.4rem;
+            border-radius: 50px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(212, 165, 116, 0.35);
+        }
+
+        .nav-menu a.cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 165, 116, 0.5);
+            background: var(--gold-light);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.6rem;
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+            padding: 0.2rem 0.5rem;
+            transition: color 0.4s;
+        }
+
+        /* ===== دکمه‌های تنظیمات ===== */
+        .settings-group {
+            display: flex;
+            gap: 0.3rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .settings-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            color: var(--text-color);
+            padding: 0.25rem 0.6rem;
+            border-radius: 50px;
+            font-size: 0.6rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+        }
+
+        .settings-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .settings-btn.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        /* ===== بنر ===== */
+        .hero {
+            background: var(--hero-gradient);
+            padding: 3.5rem 1.5rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.4s;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -10%;
+            width: 70%;
+            height: 90%;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.10) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background: rgba(212, 165, 116, 0.15);
+            border: 1px solid rgba(212, 165, 116, 0.3);
+            color: var(--gold-light);
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 0.25rem 1.5rem;
+            border-radius: 50px;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.8rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero h1 {
+            font-family: 'Noto Nastaliq Urdu', 'Vazirmatn', Tahoma, sans-serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.4rem;
+            line-height: 1.3;
+        }
+
+        .hero h1 span {
+            color: var(--gold-light);
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.85rem;
+            max-width: 600px;
+            margin: 0 auto 1.2rem;
+            line-height: 2;
+        }
+
+        .hero .hero-btns {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero .hero-btns .btn-primary {
+            background: var(--gold);
+            color: var(--primary-dark);
+            padding: 0.5rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.75rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 25px rgba(212, 165, 116, 0.35);
+        }
+
+        .hero .hero-btns .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 40px rgba(212, 165, 116, 0.5);
+        }
+
+        .hero .hero-btns .btn-outline {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: var(--white);
+            padding: 0.5rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.75rem;
+            transition: var(--transition);
+        }
+
+        .hero .hero-btns .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
+        }
+
+        /* ===== بخش‌ها ===== */
+        .section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid var(--border-card);
+            transition: border-color 0.4s;
+        }
+
+        .section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: color 0.4s;
+        }
+
+        .section-header h2 span {
+            color: var(--gold);
+        }
+
+        .section-header p {
+            color: var(--text-muted-color);
+            font-size: 0.7rem;
+            margin-top: 0.2rem;
+        }
+
+        /* ===== دکمه باز و بسته شدن ===== */
+        .toggle-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 1.8rem;
+            border-radius: 50px;
+            border: none;
+            font-size: 0.75rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            margin: 0 auto 1.2rem;
+            box-shadow: 0 4px 20px rgba(10, 36, 99, 0.3);
+        }
+
+        .toggle-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(10, 36, 99, 0.4);
+        }
+
+        .toggle-btn i {
+            transition: transform 0.4s;
+        }
+
+        .toggle-btn.active i {
+            transform: rotate(180deg);
+        }
+
+        .toggle-content {
+            display: none;
+            animation: slideDown 0.4s ease;
+        }
+
+        .toggle-content.open {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== کارت‌های شیشه‌ای ===== */
+        .glass-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius);
+            padding: 1.2rem 0.6rem;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--gold));
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s;
+        }
+
+        .glass-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary);
+        }
+
+        .glass-card .card-icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .glass-card h3 {
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.3px;
+            transition: color 0.4s;
+        }
+
+        .glass-card p {
+            font-size: 0.45rem;
+            color: var(--text-muted-color);
+            margin-top: 0.1rem;
+        }
+
+        /* ===== قطب‌های کشوری ===== */
+        .pole-item {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius);
+            padding: 1rem;
+            margin-bottom: 0.8rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .pole-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .pole-item .pole-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            padding: 0.2rem 0.3rem;
+        }
+
+        .pole-item .pole-header .pole-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.4s;
+        }
+
+        .pole-item .pole-header .pole-icon {
+            font-size: 1.2rem;
+        }
+
+        .pole-item .pole-header .toggle-icon {
+            font-size: 0.8rem;
+            color: var(--text-muted-color);
+            transition: transform 0.4s;
+        }
+
+        .pole-item.open .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .pole-item .pole-links {
+            display: none;
+            padding-top: 0.8rem;
+            border-top: 1px solid var(--border-card);
+            margin-top: 0.6rem;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .pole-item.open .pole-links {
+            display: flex;
+        }
+
+        .pole-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.3rem 1rem;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.5rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .pole-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(10, 36, 99, 0.3);
+        }
+
+        .pole-link.blue {
+            background: #1e3a8a;
+        }
+
+        .pole-link.green {
+            background: #10b981;
+        }
+
+        .pole-link.purple {
+            background: #7c3aed;
+        }
+
+        .pole-link.gold {
+            background: var(--gold);
+            color: var(--primary-dark);
+        }
+
+        /* ===== اخبار برجسته ===== */
+        .news-highlight {
+            background: var(--news-bg);
+            border-radius: var(--radius);
+            padding: 2rem 1.5rem;
+            box-shadow: 0 10px 40px rgba(10, 36, 99, 0.2);
+            margin-bottom: 1.5rem;
+            transition: background 0.4s;
+        }
+
+        .news-highlight .section-header h2 {
+            color: var(--white);
+        }
+
+        .news-highlight .section-header h2 span {
+            color: var(--gold-light);
+        }
+
+        .news-highlight .section-header p {
+            color: var(--news-card-text-muted);
+        }
+
+        .news-slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 1.2rem;
+            padding: 0.8rem 0.2rem 1.2rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .news-slider::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .news-slider::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 4px;
+        }
+
+        .news-slider .news-card {
+            min-width: 260px;
+            max-width: 320px;
+            flex-shrink: 0;
+            scroll-snap-align: start;
+            background: var(--news-card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--news-card-border);
+            border-radius: var(--radius);
+            padding: 1.4rem 1.2rem;
+            transition: var(--transition);
+            cursor: pointer;
+            color: var(--news-card-text);
+        }
+
+        .news-slider .news-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--gold);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .news-slider .news-card .news-badge {
+            display: inline-block;
+            font-size: 0.4rem;
+            font-weight: 700;
+            color: var(--gold-light);
+            background: rgba(212, 165, 116, 0.2);
+            padding: 0.1rem 0.8rem;
+            border-radius: 50px;
+            margin-bottom: 0.5rem;
+            border: 1px solid rgba(212, 165, 116, 0.2);
+        }
+
+        .news-slider .news-card h3 {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 0.3rem;
+            line-height: 1.5;
+        }
+
+        .news-slider .news-card p {
+            font-size: 0.55rem;
+            color: var(--news-card-text-muted);
+            line-height: 1.8;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .news-slider .news-card .news-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.6rem;
+            padding-top: 0.6rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .news-slider .news-card .news-meta .date {
+            font-size: 0.4rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .news-slider .news-card .news-meta .more {
+            font-size: 0.45rem;
+            color: var(--gold-light);
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .news-slider .news-card .news-meta .more:hover {
+            color: var(--white);
+        }
+
+        /* ===== کتابخانه ===== */
+        .library-category {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius);
+            padding: 1rem;
+            margin-bottom: 0.8rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .library-category:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .library-category .cat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .library-category .cat-header h3 {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.4s;
+        }
+
+        .library-category .cat-header .toggle-icon {
+            font-size: 0.8rem;
+            color: var(--text-muted-color);
+            transition: transform 0.4s;
+        }
+
+        .library-category.open .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .library-category .book-grid {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 0.6rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid var(--border-card);
+            margin-top: 0.6rem;
+        }
+
+        .library-category.open .book-grid {
+            display: grid;
+        }
+
+        .book-link {
+            display: block;
+            background: var(--white);
+            border: 1px solid var(--gray);
+            border-radius: 12px;
+            padding: 0.4rem 0.6rem;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.55rem;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .book-link:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .book-link .book-icon {
+            display: block;
+            font-size: 1.4rem;
+            margin-bottom: 0.1rem;
+        }
+
+        /* ===== دانستنی‌ها ===== */
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .fact-item {
+            background: var(--bg-card);
+            border-radius: 14px;
+            padding: 0.8rem 1rem;
+            box-shadow: var(--shadow);
+            border-right: 3px solid var(--gold);
+            font-size: 0.6rem;
+            color: var(--text-color);
+            line-height: 1.8;
+            transition: var(--transition);
+        }
+
+        .fact-item:hover {
+            transform: translateX(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .fact-item::before {
+            content: '💡 ';
+            font-size: 0.8rem;
+        }
+
+        /* ===== آمار پایین صفحه ===== */
+        .stats-bottom {
+            background: var(--bg-card);
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-card);
+            border-bottom: 1px solid var(--border-card);
+            transition: background 0.4s, border-color 0.4s;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .stats-grid .stat-item h3 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1.2;
+            transition: color 0.4s;
+        }
+
+        .stats-grid .stat-item h3 span {
+            color: var(--gold);
+        }
+
+        .stats-grid .stat-item p {
+            font-size: 0.6rem;
+            color: var(--text-muted-color);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== فوتر ===== */
+        .footer {
+            background: var(--footer-bg);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 3rem 1.5rem 1.5rem;
+            margin-top: 2rem;
+            transition: background 0.4s;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid h4 {
+            color: var(--white);
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-grid p,
+        .footer-grid a {
+            font-size: 0.6rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin: 0.2rem 0;
+            transition: var(--transition);
+        }
+
+        .footer-grid a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 2rem;
+            padding-top: 1.2rem;
+            text-align: center;
+            font-size: 0.5rem;
+            color: rgba(255, 255, 255, 0.4);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-bottom .nastaliq {
+            font-family: 'Noto Nastaliq Urdu', 'Vazirmatn', Tahoma, sans-serif;
+            font-size: 0.9rem;
+            color: var(--gold-light);
+        }
+
+        /* ===== واکنشگرایی ===== */
+        @media (max-width: 768px) {
+            .top-bar {
+                padding: 0.2rem 0.8rem;
+                font-size: 0.5rem;
+                justify-content: center;
+            }
+            .top-bar .contact-info {
+                gap: 0.5rem;
+                justify-content: center;
+            }
+            .header {
+                padding: 0.5rem 0.8rem;
+            }
+            .header .logo h1 {
+                font-size: 0.85rem;
+            }
+            .header .logo .logo-icon {
+                width: 38px;
+                height: 38px;
+                font-size: 1.1rem;
+            }
+            .nav-menu {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.2rem;
+                padding: 0.5rem 0;
+                border-top: 1px solid var(--border-card);
+                margin-top: 0.4rem;
+            }
+            .nav-menu.open {
+                display: flex;
+            }
+            .nav-menu a {
+                width: 100%;
+                text-align: center;
+                padding: 0.4rem;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .settings-group {
+                order: 10;
+                width: 100%;
+                justify-content: center;
+                margin-top: 0.3rem;
+            }
+            .hero {
+                padding: 2rem 1rem 2.5rem;
+            }
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            .hero p {
+                font-size: 0.7rem;
+            }
+            .news-highlight {
+                padding: 1.2rem 0.8rem;
+            }
+            .news-slider .news-card {
+                min-width: 200px;
+                padding: 1rem;
+            }
+            .glass-grid {
+                grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+                gap: 0.6rem;
+            }
+            .library-category .book-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+            .fact-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.2rem;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.2rem;
+            }
+            .glass-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .news-slider .news-card {
+                min-width: 160px;
+                padding: 0.8rem;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== نوار بالایی ===== -->
+    <div class="top-bar">
+        <div class="contact-info" data-i18n="contact-info">
+            <span><i class="fas fa-map-marker-alt"></i> <span data-i18n="address">سنقر، خیابان آیت الله غفاری، روبروی اداره پست</span></span>
+            <span><i class="fas fa-phone"></i> ۴۸۴۳۵۵۰۴</span>
+            <span><i class="fas fa-clock"></i> <span data-i18n="hours">شنبه تا چهارشنبه ۸ تا ۱۳</span></span>
+        </div>
+        <div class="social-links">
+            <a href="https://shad.ir/songhor_p" target="_blank" title="شاد"><i class="fas fa-graduation-cap"></i></a>
+            <a href="https://eitaa.com/songhor_p" target="_blank" title="ایتا"><i class="fas fa-comment"></i></a>
+            <a href="https://www.aparat.com/songhor_p" target="_blank" title="آپارات"><i class="fas fa-video"></i></a>
+        </div>
+    </div>
+
+    <!-- ===== هدر ===== -->
+    <header class="header">
+        <a href="#" class="logo">
+            <div class="logo-icon">ام</div>
+            <h1><span data-i18n="site-title">پژوهش سرای امام علی (ع)</span> <small data-i18n="site-subtitle">سنقر</small></h1>
+        </a>
+
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="منو">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav class="nav-menu" id="navMenu">
+            <a href="#news" data-i18n="nav-news">اخبار</a>
+            <a href="#poles" data-i18n="nav-poles">قطب‌ها</a>
+            <a href="#festival" data-i18n="nav-festival">جشنواره</a>
+            <a href="#classes" data-i18n="nav-classes">کلاس‌ها</a>
+            <a href="#library" data-i18n="nav-library">کتابخانه</a>
+            <a href="#science" data-i18n="nav-science">دانستنی‌ها</a>
+            <a href="#research-sites" data-i18n="nav-sites">سایت‌ها</a>
+            <a href="#experiments" data-i18n="nav-experiments">فیلم‌ها</a>
+            <a href="#honors" data-i18n="nav-honors">افتخارات</a>
+            <a href="#contact" data-i18n="nav-contact">تماس</a>
+            <a href="https://shad.ir/songhor336" target="_blank" class="cta-btn" data-i18n="nav-register">ثبت‌نام</a>
+        </nav>
+
+        <!-- ===== دکمه‌های تنظیمات ===== -->
+        <div class="settings-group">
+            <button class="settings-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="settings-btn" id="langToggle" onclick="toggleLang()" title="تغییر زبان">
+                <i class="fas fa-globe"></i> <span id="langLabel">فا</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== بنر ===== -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge"><i class="fas fa-bolt"></i> <span data-i18n="hero-badge">قطب استانی انرژی‌های نوین</span></span>
+            <h1><span data-i18n="hero-title1">پژوهش سرای</span> <span data-i18n="hero-title2">امام علی (ع)</span> <span data-i18n="hero-title3">سنقر</span></h1>
+            <p data-i18n="hero-desc">مرکز علمی پژوهشی پیشرو در استان کرمانشاه با بیش از ۵۰۰ اثر برگزیده منطقه‌ای و استانی</p>
+            <div class="hero-btns">
+                <a href="#news" class="btn-primary" data-i18n="hero-btn-news"><i class="fas fa-newspaper"></i> مشاهده اخبار</a>
+                <a href="#contact" class="btn-outline" data-i18n="hero-btn-contact"><i class="fas fa-phone"></i> تماس با ما</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== اخبار برجسته (بالا) ===== -->
+    <div class="container">
+        <section class="section" id="news" style="padding-top:1.5rem;">
+            <div class="news-highlight">
+                <div class="section-header">
+                    <h2>📰 <span data-i18n="news-title">آخرین</span> <span data-i18n="news-title2">اخبار</span></h2>
+                    <p data-i18n="news-sub">رویدادها و اطلاعیه‌های پژوهش سرا</p>
+                </div>
+                <div class="news-slider">
+                    <div class="news-card" onclick="showNews('news1')">
+                        <span class="news-badge" data-i18n="news1-badge">مسابقه کدنویسی</span>
+                        <h3 data-i18n="news1-title">داوری آنلاین مرحله کشوری</h3>
+                        <p data-i18n="news1-desc">هفتمین جشنواره علمی پژوهشی - گرایش کدنویسی</p>
+                        <div class="news-meta">
+                            <span class="date"><i class="far fa-calendar-alt"></i> ۹ شهریور ۱۴۰۵</span>
+                            <span class="more" data-i18n="news-more">مشاهده کامل <i class="fas fa-arrow-left"></i></span>
+                        </div>
+                    </div>
+                    <div class="news-card" onclick="showNews('news2')">
+                        <span class="news-badge" data-i18n="news2-badge">فراخوان</span>
+                        <h3 data-i18n="news2-title">فراخوان جایزه البرز دانش‌آموزی ۱۴۰۵</h3>
+                        <p data-i18n="news2-desc">بنیاد فرهنگی البرز در شصت و چهارمین سال فعالیت خود</p>
+                        <div class="news-meta">
+                            <span class="date"><i class="far fa-calendar-alt"></i> شهریور ۱۴۰۵</span>
+                            <span class="more" data-i18n="news-more">مشاهده کامل <i class="fas fa-arrow-left"></i></span>
+                        </div>
+                    </div>
+                    <div class="news-card" onclick="showNews('news3')">
+                        <span class="news-badge" data-i18n="news3-badge">انرژی نوین</span>
+                        <h3 data-i18n="news3-title">داوری آنلاین - تولید محتوا پویانمایی</h3>
+                        <p data-i18n="news3-desc">هفتمین جشنواره علمی پژوهشی - گرایش انرژی‌های نوین</p>
+                        <div class="news-meta">
+                            <span class="date"><i class="far fa-calendar-alt"></i> ۹ شهریور ۱۴۰۵</span>
+                            <span class="more" data-i18n="news-more">مشاهده کامل <i class="fas fa-arrow-left"></i></span>
+                        </div>
+                    </div>
+                    <div class="news-card" onclick="showNews('news4')">
+                        <span class="news-badge" data-i18n="news4-badge">همایش</span>
+                        <h3 data-i18n="news4-title">همایش تقدیر از برگزیدگان استانی</h3>
+                        <p data-i18n="news4-desc">ششمین جشنواره علمی پژوهشی - تقدیر از ۸۲ دانش‌آموز پژوهشگر</p>
+                        <div class="news-meta">
+                            <span class="date"><i class="far fa-calendar-alt"></i> ۴ شهریور ۱۴۰۵</span>
+                            <span class="more" data-i18n="news-more">مشاهده کامل <i class="fas fa-arrow-left"></i></span>
+                        </div>
+                    </div>
+                    <div class="news-card" onclick="showNews('news5')">
+                        <span class="news-badge" data-i18n="news5-badge">انرژی نوین</span>
+                        <h3 data-i18n="news5-title">داوری آنلاین - ماشین خورشیدی تک سرنشین</h3>
+                        <p data-i18n="news5-desc">هفتمین جشنواره علمی پژوهشی - گرایش ماشین خورشیدی</p>
+                        <div class="news-meta">
+                            <span class="date"><i class="far fa-calendar-alt"></i> ۳ شهریور ۱۴۰۵</span>
+                            <span class="more" data-i18n="news-more">مشاهده کامل <i class="fas fa-arrow-left"></i></span>
+                        </div>
+                    </div>
+                    <div class="news-card" onclick="showNews('news6')">
+                        <span class="news-badge" data-i18n="news6-badge">انرژی نوین</span>
+                        <h3 data-i18n="news6-title">داوری آنلاین - ماشین خورشیدی آبی خاکی</h3>
+                        <p data-i18n="news6-desc">هفتمین جشنواره علمی پژوهشی - گرایش ماشین خورشیدی آبی خاکی</p>
+                        <div class="news-meta">
+                            <span class="date"><i class="far fa-calendar-alt"></i> ۲ شهریور ۱۴۰۵</span>
+                            <span class="more" data-i18n="news-more">مشاهده کامل <i class="fas fa-arrow-left"></i></span>
+                        </div>
+                    </div>
+                    <div class="news-card" onclick="showNews('news7')">
+                        <span class="news-badge" data-i18n="news7-badge">علوم هسته‌ای</span>
+                        <h3 data-i18n="news7-title">داوری آنلاین - شبیه ساز هسته‌ای</h3>
+                        <p data-i18n="news7-desc">ماکت نیروگاه هسته‌ای - علوم و فنون هسته‌ای</p>
+                        <div class="news-meta">
+                            <span class="date"><i class="far fa-calendar-alt"></i> ۱ شهریور ۱۴۰۵</span>
+                            <span class="more" data-i18n="news-more">مشاهده کامل <i class="fas fa-arrow-left"></i></span>
+                        </div>
+                    </div>
+                    <div class="news-card" onclick="showNews('news8')">
+                        <span class="news-badge" data-i18n="news8-badge">حمل و نقل پیشرفته</span>
+                        <h3 data-i18n="news8-title">داوری آنلاین - ساخت شناور دریایی</h3>
+                        <p data-i18n="news8-desc">حوزه فضایی و حمل و نقل پیشرفته</p>
+                        <div class="news-meta">
+                            <span class="date"><i class="far fa-calendar-alt"></i> ۱ شهریور ۱۴۰۵</span>
+                            <span class="more" data-i18n="news-more">مشاهده کامل <i class="fas fa-arrow-left"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== قطب‌های کشوری (قابل باز و بسته) ===== -->
+        <section class="section" id="poles">
+            <div class="section-header">
+                <h2>🔬 <span data-i18n="poles-title">قطب‌های</span> <span data-i18n="poles-title2">کشوری</span></h2>
+                <p data-i18n="poles-sub">حوزه‌های تخصصی پژوهش سرا</p>
+            </div>
+            <div style="text-align:center;">
+                <button class="toggle-btn" onclick="toggleSection('polesContent')">
+                    <i class="fas fa-chevron-down"></i> <span data-i18n="poles-toggle">نمایش/مخفی کردن قطب‌ها</span>
+                </button>
+            </div>
+            <div class="toggle-content" id="polesContent">
+                <div class="pole-item">
+                    <div class="pole-header" onclick="togglePole(this)">
+                        <span class="pole-title"><span class="pole-icon">📚</span> <span data-i18n="pole1">ادبیات و علوم انسانی</span></span>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="pole-links">
+                        <a href="https://shad.ir/ensani_src" target="_blank" class="pole-link blue"><i class="fas fa-graduation-cap"></i> شاد</a>
+                        <a href="https://eitaa.com/adabiyatensani" target="_blank" class="pole-link green"><i class="fas fa-comment"></i> ایتا</a>
+                    </div>
+                </div>
+                <div class="pole-item">
+                    <div class="pole-header" onclick="togglePole(this)">
+                        <span class="pole-title"><span class="pole-icon">💻</span> <span data-i18n="pole2">کدنویسی</span></span>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="pole-links">
+                        <a href="https://shad.ir/codenevisi" target="_blank" class="pole-link blue"><i class="fas fa-graduation-cap"></i> شاد</a>
+                        <a href="https://www.aparat.com/codenevisi.src" target="_blank" class="pole-link purple"><i class="fas fa-video"></i> آپارات</a>
+                    </div>
+                </div>
+                <div class="pole-item">
+                    <div class="pole-header" onclick="togglePole(this)">
+                        <span class="pole-title"><span class="pole-icon">🧬</span> <span data-i18n="pole3">زیست فناوری</span></span>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="pole-links">
+                        <a href="https://shad.ir/bio_src" target="_blank" class="pole-link blue"><i class="fas fa-graduation-cap"></i> شاد</a>
+                        <a href="https://www.aparat.com/zistfannavari" target="_blank" class="pole-link purple"><i class="fas fa-video"></i> آپارات</a>
+                    </div>
+                </div>
+                <div class="pole-item">
+                    <div class="pole-header" onclick="togglePole(this)">
+                        <span class="pole-title"><span class="pole-icon">🔬</span> <span data-i18n="pole4">نانو فناوری</span></span>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="pole-links">
+                        <a href="https://shad.ir/nano_src" target="_blank" class="pole-link blue"><i class="fas fa-graduation-cap"></i> شاد</a>
+                        <a href="https://eitaa.com/ebnesina_nano_group" target="_blank" class="pole-link green"><i class="fas fa-comment"></i> ایتا</a>
+                    </div>
+                </div>
+                <div class="pole-item">
+                    <div class="pole-header" onclick="togglePole(this)">
+                        <span class="pole-title"><span class="pole-icon">🧫</span> <span data-i18n="pole5">سلول‌های بنیادی</span></span>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="pole-links">
+                        <a href="https://shad.ir/stemcellstudent" target="_blank" class="pole-link blue"><i class="fas fa-graduation-cap"></i> شاد</a>
+                        <a href="https://eitaa.com/stemcellstudent" target="_blank" class="pole-link green"><i class="fas fa-comment"></i> ایتا</a>
+                    </div>
+                </div>
+                <div class="pole-item">
+                    <div class="pole-header" onclick="togglePole(this)">
+                        <span class="pole-title"><span class="pole-icon">🔭</span> <span data-i18n="pole6">نجوم</span></span>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="pole-links">
+                        <a href="https://shad.ir/nojum_src" target="_blank" class="pole-link blue"><i class="fas fa-graduation-cap"></i> شاد</a>
+                        <a href="https://www.aparat.com/astropole" target="_blank" class="pole-link purple"><i class="fas fa-video"></i> آپارات</a>
+                    </div>
+                </div>
+                <div class="pole-item">
+                    <div class="pole-header" onclick="togglePole(this)">
+                        <span class="pole-title"><span class="pole-icon">🌿</span> <span data-i18n="pole7">گیاهان دارویی</span></span>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="pole-links">
+                        <a href="https://eitaa.com/Giahan_darui" target="_blank" class="pole-link green"><i class="fas fa-comment"></i> ایتا</a>
+                        <a href="https://shad.ir/giahan_src" target="_blank" class="pole-link blue"><i class="fas fa-graduation-cap"></i> شاد</a>
+                    </div>
+                </div>
+                <div class="pole-item">
+                    <div class="pole-header" onclick="togglePole(this)">
+                        <span class="pole-title"><span class="pole-icon">🧪</span> <span data-i18n="pole8">آزمایشگاه علوم تجربی</span></span>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="pole-links">
+                        <a href="https://web.shad.ir/#im?um=pjilam97" target="_blank" class="pole-link blue"><i class="fas fa-graduation-cap"></i> شاد</a>
+                        <a href="https://eitaa.com/pjilam97" target="_blank" class="pole-link green"><i class="fas fa-comment"></i> ایتا</a>
+                    </div>
+                </div>
+                <div class="pole-item">
+                    <div class="pole-header" onclick="togglePole(this)">
+                        <span class="pole-title"><span class="pole-icon">🤖</span> <span data-i18n="pole9">رباتیک</span></span>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="pole-links">
+                        <a href="https://shad.ir/robotic_src" target="_blank" class="pole-link blue"><i class="fas fa-graduation-cap"></i> شاد</a>
+                        <a href="https://eitaa.com/robotic_src" target="_blank" class="pole-link green"><i class="fas fa-comment"></i> ایتا</a>
+                    </div>
+                </div>
+                <div class="pole-item">
+                    <div class="pole-header" onclick="togglePole(this)">
+                        <span class="pole-title"><span class="pole-icon">🚀</span> <span data-i18n="pole10">حمل و نقل و فناوری فضایی</span></span>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="pole-links">
+                        <a href="https://shad.ir/havafazadarya_src" target="_blank" class="pole-link blue"><i class="fas fa-graduation-cap"></i> شاد</a>
+                    </div>
+                </div>
+                <div class="pole-item">
+                    <div class="pole-header" onclick="togglePole(this)">
+                        <span class="pole-title"><span class="pole-icon">⚡</span> <span data-i18n="pole11">انرژی‌های نوین</span></span>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="pole-links">
+                        <a href="https://shad.ir/EnergyNovin_src" target="_blank" class="pole-link blue"><i class="fas fa-graduation-cap"></i> شاد</a>
+                        <a href="https://eitaa.com/EnergyNovin_Src" target="_blank" class="pole-link green"><i class="fas fa-comment"></i> ایتا</a>
+                    </div>
+                </div>
+                <div class="pole-item">
+                    <div class="pole-header" onclick="togglePole(this)">
+                        <span class="pole-title"><span class="pole-icon">⚛️</span> <span data-i18n="pole12">علوم و فنون هسته‌ای</span></span>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="pole-links">
+                        <a href="https://eitaa.com/src_nuclear_s_t" target="_blank" class="pole-link green"><i class="fas fa-comment"></i> ایتا</a>
+                        <a href="https://shad.ir/src_nuclear_s_t" target="_blank" class="pole-link blue"><i class="fas fa-graduation-cap"></i> شاد</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== جشنواره ===== -->
+        <section class="section" id="festival">
+            <div class="section-header">
+                <h2>🏆 <span data-i18n="festival-title">جشنواره</span> <span data-i18n="festival-title2">علمی پژوهشی</span></h2>
+                <p data-i18n="festival-sub">دوره‌های برگزار شده و پیش‌رو</p>
+            </div>
+            <div class="glass-grid" style="grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));">
+                <a href="https://eitaa.com/songhor_p/543" target="_blank" class="glass-card"><span class="card-icon">🏆</span><h3 data-i18n="festival1">ششمین جشنواره</h3></a>
+                <a href="https://eitaa.com/songhor_p/502" target="_blank" class="glass-card"><span class="card-icon">🏆</span><h3 data-i18n="festival2">هفتمین جشنواره</h3></a>
+                <div class="glass-card"><span class="card-icon">📋</span><h3 data-i18n="festival3">هشتمین جشنواره</h3><p data-i18n="festival-soon">به زودی</p></div>
+            </div>
+        </section>
+
+        <!-- ===== کلاس‌ها ===== -->
+        <section class="section" id="classes">
+            <div class="section-header">
+                <h2>📝 <span data-i18n="classes-title">کلاس‌های</span> <span data-i18n="classes-title2">آموزشی</span></h2>
+                <p data-i18n="classes-sub">ثبت‌نام دوره‌های تخصصی</p>
+            </div>
+            <div class="glass-grid">
+                <div class="glass-card"><span class="card-icon">💻</span><h3 data-i18n="class1">کامپیوتر</h3></div>
+                <div class="glass-card"><span class="card-icon">🤖</span><h3 data-i18n="class2">رباتیک</h3></div>
+                <div class="glass-card"><span class="card-icon">🇬🇧</span><h3 data-i18n="class3">زبان</h3></div>
+                <div class="glass-card"><span class="card-icon">🎨</span><h3 data-i18n="class4">نقاشی</h3></div>
+                <div class="glass-card"><span class="card-icon">🔭</span><h3 data-i18n="class5">نجوم</h3></div>
+                <div class="glass-card"><span class="card-icon">🧪</span><h3 data-i18n="class6">آزمایشگاه</h3></div>
+                <div class="glass-card"><span class="card-icon">📐</span><h3 data-i18n="class7">ریاضی</h3></div>
+                <div class="glass-card"><span class="card-icon">⚛️</span><h3 data-i18n="class8">فیزیک</h3></div>
+                <div class="glass-card"><span class="card-icon">🌍</span><h3 data-i18n="class9">زمین</h3></div>
+                <div class="glass-card"><span class="card-icon">📚</span><h3 data-i18n="class10">کتابخانه</h3></div>
+            </div>
+            <div style="text-align:center;margin-top:1.5rem;">
+                <a href="https://shad.ir/songhor336" target="_blank" style="display:inline-block;background:var(--primary);color:var(--white);padding:0.5rem 2.5rem;border-radius:50px;text-decoration:none;font-weight:700;font-size:0.75rem;transition:var(--transition);box-shadow:0 4px 20px rgba(10,36,99,0.3);">
+                    <i class="fas fa-pen"></i> <span data-i18n="classes-register">ثبت‌نام کلاس‌ها</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ===== کتابخانه (قابل باز و بسته) ===== -->
+        <section class="section" id="library">
+            <div class="section-header">
+                <h2>📖 <span data-i18n="library-title">کتابخانه</span> <span data-i18n="library-title2">مجازی</span></h2>
+                <p data-i18n="library-sub">دسترسی به هزاران جلد کتاب علمی و ادبی</p>
+            </div>
+            <div style="text-align:center;">
+                <button class="toggle-btn" onclick="toggleSection('libraryContent')">
+                    <i class="fas fa-chevron-down"></i> <span data-i18n="library-toggle">نمایش/مخفی کردن کتابخانه</span>
+                </button>
+            </div>
+            <div class="toggle-content" id="libraryContent">
+                <div class="library-category">
+                    <div class="cat-header" onclick="toggleCategory(this)">
+                        <h3><span>📜</span> <span data-i18n="lib-cat1">تاریخ</span></h3>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="book-grid">
+                        <a href="https://taaghche.com/book/201257" target="_blank" class="book-link"><span class="book-icon">📜</span>تاریخ ایران</a>
+                        <a href="https://taaghche.com/book/247" target="_blank" class="book-link"><span class="book-icon">📖</span>منم کوروش</a>
+                        <a href="https://taaghche.com/book/16758" target="_blank" class="book-link"><span class="book-icon">📖</span>تاریخ ۱۸ ساله آذربایجان</a>
+                        <a href="https://taaghche.com/book/14406" target="_blank" class="book-link"><span class="book-icon">📖</span>تاریخ مذکر</a>
+                        <a href="https://taaghche.com/book/3458" target="_blank" class="book-link"><span class="book-icon">📖</span>جامع التواریخ</a>
+                        <a href="https://taaghche.com/book/8063" target="_blank" class="book-link"><span class="book-icon">📖</span>تاریخ هرات</a>
+                        <a href="https://taaghche.com/book/219269" target="_blank" class="book-link"><span class="book-icon">📖</span>عصر صفوی</a>
+                        <a href="https://taaghche.com/book/156463" target="_blank" class="book-link"><span class="book-icon">📖</span>هخامنشیان</a>
+                        <a href="https://ketab.cafe/" target="_blank" class="book-link"><span class="book-icon">📖</span>تاریخ طبری</a>
+                        <a href="https://dlketab.ir/" target="_blank" class="book-link"><span class="book-icon">📖</span>اسکندر مقدونی</a>
+                    </div>
+                </div>
+                <div class="library-category">
+                    <div class="cat-header" onclick="toggleCategory(this)">
+                        <h3><span>📚</span> <span data-i18n="lib-cat2">ادبیات</span></h3>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="book-grid">
+                        <a href="https://www.takbook.com/35-poetry-ebook/" target="_blank" class="book-link"><span class="book-icon">🖋️</span>دیوان حافظ</a>
+                        <a href="https://www.yasdl.com/45200/" target="_blank" class="book-link"><span class="book-icon">📖</span>شاهنامه فردوسی</a>
+                        <a href="https://www.takbook.com/42-poetry-ebook/" target="_blank" class="book-link"><span class="book-icon">📖</span>گلستان سعدی</a>
+                        <a href="https://persianpdf.com/book/" target="_blank" class="book-link"><span class="book-icon">📖</span>مثنوی معنوی</a>
+                        <a href="https://ketabesabz.com/book/11474/" target="_blank" class="book-link"><span class="book-icon">📖</span>بوستان سعدی</a>
+                        <a href="https://persianpdf.com/book/" target="_blank" class="book-link"><span class="book-icon">📖</span>هشت کتاب سهراب</a>
+                        <a href="https://asmaneketab.ir/product/" target="_blank" class="book-link"><span class="book-icon">📖</span>منطق الطیر عطار</a>
+                        <a href="https://www.takbook.com/1019-poetry-ebook/" target="_blank" class="book-link"><span class="book-icon">📖</span>رباعیات خیام</a>
+                    </div>
+                </div>
+                <div class="library-category">
+                    <div class="cat-header" onclick="toggleCategory(this)">
+                        <h3><span>⚛️</span> <span data-i18n="lib-cat3">فیزیک</span></h3>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="book-grid">
+                        <a href="https://taaghche.com/book/199724" target="_blank" class="book-link"><span class="book-icon">⚛️</span>فیزیک</a>
+                        <a href="https://taaghche.com/book/65942" target="_blank" class="book-link"><span class="book-icon">🌌</span>جهان‌های موازی</a>
+                        <a href="https://taaghche.com/book/54858" target="_blank" class="book-link"><span class="book-icon">📖</span>پاسخ‌های کوتاه</a>
+                        <a href="https://taaghche.com/book/242916" target="_blank" class="book-link"><span class="book-icon">📖</span>مبانی فیزیک</a>
+                        <a href="https://taaghche.com/book/8112" target="_blank" class="book-link"><span class="book-icon">📖</span>هدیه سال نو</a>
+                        <a href="https://taaghche.com/book/64103" target="_blank" class="book-link"><span class="book-icon">⏳</span>نظم زمان</a>
+                        <a href="https://taaghche.com/book/120360" target="_blank" class="book-link"><span class="book-icon">🌠</span>فیزیک جهان نما</a>
+                        <a href="https://taaghche.com/book/13696" target="_blank" class="book-link"><span class="book-icon">📐</span>نظریه نسبت</a>
+                        <a href="https://taaghche.com/book/6354" target="_blank" class="book-link"><span class="book-icon">❤️</span>به خاطر فیزیک</a>
+                        <a href="https://taaghche.com/book/82703" target="_blank" class="book-link"><span class="book-icon">📖</span>۷ درس کوتاه</a>
+                        <a href="https://taaghche.com/book/34518" target="_blank" class="book-link"><span class="book-icon">⚛️</span>فیزیک ذرات</a>
+                        <a href="https://taaghche.com/book/136672" target="_blank" class="book-link"><span class="book-icon">🌀</span>کوانتوم</a>
+                    </div>
+                </div>
+                <div class="library-category">
+                    <div class="cat-header" onclick="toggleCategory(this)">
+                        <h3><span>🧪</span> <span data-i18n="lib-cat4">شیمی</span></h3>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="book-grid">
+                        <a href="https://taaghche.com/book/133313" target="_blank" class="book-link"><span class="book-icon">🧪</span>شیمی</a>
+                        <a href="https://taaghche.com/book/56661" target="_blank" class="book-link"><span class="book-icon">🧠</span>دوپامین</a>
+                        <a href="https://taaghche.com/book/57114" target="_blank" class="book-link"><span class="book-icon">🧬</span>بیوشیمی</a>
+                        <a href="https://taaghche.com/book/42354" target="_blank" class="book-link"><span class="book-icon">❓</span>شیمی چیست</a>
+                        <a href="https://taaghche.com/book/87297" target="_blank" class="book-link"><span class="book-icon">📖</span>شیمی عمومی</a>
+                        <a href="https://taaghche.com/book/86969" target="_blank" class="book-link"><span class="book-icon">📖</span>اصول شیمی</a>
+                        <a href="https://taaghche.com/book/82622" target="_blank" class="book-link"><span class="book-icon">🧪</span>مولکول‌ها</a>
+                        <a href="https://taaghche.com/book/37811" target="_blank" class="book-link"><span class="book-icon">💧</span>آب ناب</a>
+                        <a href="https://taaghche.com/book/79728" target="_blank" class="book-link"><span class="book-icon">📊</span>جدول تناوبی</a>
+                        <a href="https://taaghche.com/book/329871" target="_blank" class="book-link"><span class="book-icon">🌍</span>ژئوشیمی</a>
+                        <a href="https://taaghche.com/book/302419" target="_blank" class="book-link"><span class="book-icon">🌿</span>شیمی سبز</a>
+                        <a href="https://taaghche.com/book/86475" target="_blank" class="book-link"><span class="book-icon">⚙️</span>مهندسی شیمی</a>
+                        <a href="https://taaghche.com/book/65376" target="_blank" class="book-link"><span class="book-icon">🧪</span>شیمی آلی</a>
+                    </div>
+                </div>
+                <div class="library-category">
+                    <div class="cat-header" onclick="toggleCategory(this)">
+                        <h3><span>🧬</span> <span data-i18n="lib-cat5">زیست</span></h3>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="book-grid">
+                        <a href="https://taaghche.com/book/208639" target="_blank" class="book-link"><span class="book-icon">🧬</span>زیست‌شناسی</a>
+                        <a href="https://taaghche.com/book/92164" target="_blank" class="book-link"><span class="book-icon">🧠</span>مغز پویا</a>
+                        <a href="https://taaghche.com/book/121263" target="_blank" class="book-link"><span class="book-icon">🧬</span>ژن خودخواه</a>
+                        <a href="https://taaghche.com/book/69202" target="_blank" class="book-link"><span class="book-icon">🦴</span>بدن</a>
+                        <a href="https://taaghche.com/book/7475" target="_blank" class="book-link"><span class="book-icon">🐒</span>داروین و تکامل</a>
+                        <a href="https://taaghche.com/book/84528" target="_blank" class="book-link"><span class="book-icon">🔄</span>دگرگونی‌های بزرگ</a>
+                        <a href="https://taaghche.com/book/94024" target="_blank" class="book-link"><span class="book-icon">🧬</span>ژنتیک پایه</a>
+                        <a href="https://taaghche.com/book/107771" target="_blank" class="book-link"><span class="book-icon">🎗️</span>سرطان</a>
+                        <a href="https://taaghche.com/book/79016" target="_blank" class="book-link"><span class="book-icon">🦴</span>دستگاه اسکلتی</a>
+                        <a href="https://taaghche.com/book/120390" target="_blank" class="book-link"><span class="book-icon">🛡️</span>ایمنی شناسی</a>
+                        <a href="https://taaghche.com/book/125676" target="_blank" class="book-link"><span class="book-icon">🔑</span>کد شکن</a>
+                        <a href="https://taaghche.com/book/88852" target="_blank" class="book-link"><span class="book-icon">🔬</span>میکروب شناسی</a>
+                        <a href="https://taaghche.com/book/69196" target="_blank" class="book-link"><span class="book-icon">⚙️</span>ماشین ژن</a>
+                        <a href="https://taaghche.com/book/197491" target="_blank" class="book-link"><span class="book-icon">💻</span>بیوانفورماتیک</a>
+                        <a href="https://taaghche.com/book/107157" target="_blank" class="book-link"><span class="book-icon">🔬</span>زیست سلولی</a>
+                        <a href="https://taaghche.com/book/101264" target="_blank" class="book-link"><span class="book-icon">🧠</span>فرمانده بدن</a>
+                    </div>
+                </div>
+                <div class="library-category">
+                    <div class="cat-header" onclick="toggleCategory(this)">
+                        <h3><span>📐</span> <span data-i18n="lib-cat6">ریاضی</span></h3>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="book-grid">
+                        <a href="https://taaghche.com/book/18925" target="_blank" class="book-link"><span class="book-icon">📐</span>ریاضی مقدماتی</a>
+                        <a href="https://taaghche.com/book/66079" target="_blank" class="book-link"><span class="book-icon">🔧</span>آچار ریاضی</a>
+                        <a href="https://taaghche.com/book/86064" target="_blank" class="book-link"><span class="book-icon">📖</span>ریاضی عمومی</a>
+                        <a href="https://taaghche.com/book/5329" target="_blank" class="book-link"><span class="book-icon">⚙️</span>ریاضی مهندسی</a>
+                        <a href="https://taaghche.com/book/51888" target="_blank" class="book-link"><span class="book-icon">📖</span>کتاب طلایی</a>
+                        <a href="https://taaghche.com/book/137517" target="_blank" class="book-link"><span class="book-icon">📊</span>ریاضی و آمار</a>
+                        <a href="https://taaghche.com/book/83174" target="_blank" class="book-link"><span class="book-icon">⏱️</span>ریاضی در چند دقیقه</a>
+                        <a href="https://taaghche.com/book/37817" target="_blank" class="book-link"><span class="book-icon">🎨</span>هنر محاسبه</a>
+                        <a href="https://taaghche.com/book/18957" target="_blank" class="book-link"><span class="book-icon">🤔</span>فلسفه ریاضی</a>
+                        <a href="https://taaghche.com/book/96297" target="_blank" class="book-link"><span class="book-icon">📖</span>ریاضی عالی</a>
+                        <a href="https://taaghche.com/book/58963" target="_blank" class="book-link"><span class="book-icon">📐</span>مبانی ریاضی</a>
+                        <a href="https://taaghche.com/book/58960" target="_blank" class="book-link"><span class="book-icon">📊</span>آنالیز ریاضی</a>
+                        <a href="https://taaghche.com/book/110132" target="_blank" class="book-link"><span class="book-icon">❓</span>چیستی ریاضی</a>
+                        <a href="https://taaghche.com/book/301451" target="_blank" class="book-link"><span class="book-icon">📖</span>ریاضی نابلدی</a>
+                        <a href="https://taaghche.com/book/173131" target="_blank" class="book-link"><span class="book-icon">📜</span>تاریخچه ریاضی</a>
+                    </div>
+                </div>
+                <div class="library-category">
+                    <div class="cat-header" onclick="toggleCategory(this)">
+                        <h3><span>🔭</span> <span data-i18n="lib-cat7">نجوم</span></h3>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="book-grid">
+                        <a href="https://taaghche.com/book/6909" target="_blank" class="book-link"><span class="book-icon">🌌</span>جایگاه ما در جهان</a>
+                        <a href="https://taaghche.com/book/24095" target="_blank" class="book-link"><span class="book-icon">✨</span>آسمان شگفت انگیز</a>
+                        <a href="https://taaghche.com/book/102805" target="_blank" class="book-link"><span class="book-icon">📐</span>معادله خدا</a>
+                        <a href="https://taaghche.com/book/28327" target="_blank" class="book-link"><span class="book-icon">⭐</span>ستاره شناسی</a>
+                        <a href="https://taaghche.com/book/5982" target="_blank" class="book-link"><span class="book-icon">🌌</span>کیهان بر اساس اتر</a>
+                        <a href="https://taaghche.com/book/10047" target="_blank" class="book-link"><span class="book-icon">🌀</span>کهکشان سرگیجه آور</a>
+                        <a href="https://taaghche.com/book/3932" target="_blank" class="book-link"><span class="book-icon">✨</span>شگفتی‌های کیهان</a>
+                        <a href="https://taaghche.com/book/7112" target="_blank" class="book-link"><span class="book-icon">🌍</span>زندگی من</a>
+                        <a href="https://taaghche.com/book/106734" target="_blank" class="book-link"><span class="book-icon">🔭</span>اخترفیزیک</a>
+                        <a href="https://taaghche.com/book/42358" target="_blank" class="book-link"><span class="book-icon">🌌</span>گیتی از هیچ</a>
+                        <a href="https://taaghche.com/book/42361" target="_blank" class="book-link"><span class="book-icon">🌍</span>پیدایش جهان</a>
+                        <a href="https://taaghche.com/book/81421" target="_blank" class="book-link"><span class="book-icon">🔍</span>چیزی عمیقاً پنهان</a>
+                        <a href="https://taaghche.com/book/13854" target="_blank" class="book-link"><span class="book-icon">0️⃣</span>هیچ</a>
+                        <a href="https://taaghche.com/book/106742" target="_blank" class="book-link"><span class="book-icon">🌌</span>راز آفرینش</a>
+                        <a href="https://taaghche.com/book/42349" target="_blank" class="book-link"><span class="book-icon">📜</span>تاریخچه جهان</a>
+                        <a href="https://taaghche.com/book/44494" target="_blank" class="book-link"><span class="book-icon">🔭</span>کیهان شناسی</a>
+                        <a href="https://taaghche.com/book/87854" target="_blank" class="book-link"><span class="book-icon">📐</span>طرح بزرگ</a>
+                        <a href="https://taaghche.com/book/34516" target="_blank" class="book-link"><span class="book-icon">⏳</span>سه دقیقه اول</a>
+                        <a href="https://taaghche.com/book/191076" target="_blank" class="book-link"><span class="book-icon">🔭</span>نجوم به زبان ساده</a>
+                    </div>
+                </div>
+                <div class="library-category">
+                    <div class="cat-header" onclick="toggleCategory(this)">
+                        <h3><span>🧑‍🤝‍🧑</span> <span data-i18n="lib-cat8">جامعه‌شناسی</span></h3>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="book-grid">
+                        <a href="https://taaghche.com/book/157840" target="_blank" class="book-link"><span class="book-icon">📖</span>جامعه‌شناسی</a>
+                        <a href="https://taaghche.com/book/191343" target="_blank" class="book-link"><span class="book-icon">📖</span>جامعه‌شناسی ۲</a>
+                        <a href="https://taaghche.com/book/8213" target="_blank" class="book-link"><span class="book-icon">🤔</span>بیشعوری</a>
+                        <a href="https://taaghche.com/book/29704" target="_blank" class="book-link"><span class="book-icon">♀️</span>مانیفست یه فمنیست</a>
+                        <a href="https://taaghche.com/book/14522" target="_blank" class="book-link"><span class="book-icon">🌍</span>ما چگونه ما شدیم</a>
+                        <a href="https://taaghche.com/book/72030" target="_blank" class="book-link"><span class="book-icon">👑</span>سَرکار عِلّیه</a>
+                        <a href="https://taaghche.com/book/63772" target="_blank" class="book-link"><span class="book-icon">🤥</span>همه دروغ می‌گویند</a>
+                        <a href="https://taaghche.com/book/38130" target="_blank" class="book-link"><span class="book-icon">🔥</span>فارنهایت ۴۵۱</a>
+                        <a href="https://taaghche.com/book/207656" target="_blank" class="book-link"><span class="book-icon">👥</span>توهمات جمعی</a>
+                        <a href="https://taaghche.com/book/38591" target="_blank" class="book-link"><span class="book-icon">👁️</span>واقع نگری</a>
+                        <a href="https://taaghche.com/book/40723" target="_blank" class="book-link"><span class="book-icon">⭕</span>پنج حلقه</a>
+                        <a href="https://taaghche.com/book/54738" target="_blank" class="book-link"><span class="book-icon">💡</span>امید در تاریکی</a>
+                        <a href="https://taaghche.com/book/7728" target="_blank" class="book-link"><span class="book-icon">🔄</span>تغییر مسیر</a>
+                        <a href="https://taaghche.com/book/66391" target="_blank" class="book-link"><span class="book-icon">⚔️</span>فتنه تغلب</a>
+                        <a href="https://taaghche.com/book/67382" target="_blank" class="book-link"><span class="book-icon">🧠</span>توهم آگاهی</a>
+                        <a href="https://taaghche.com/book/80703" target="_blank" class="book-link"><span class="book-icon">👤</span>مردِمرد</a>
+                    </div>
+                </div>
+                <div class="library-category">
+                    <div class="cat-header" onclick="toggleCategory(this)">
+                        <h3><span>🏅</span> <span data-i18n="lib-cat9">ورزشی</span></h3>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="book-grid">
+                        <a href="https://taaghche.com/book/90719" target="_blank" class="book-link"><span class="book-icon">🥗</span>تغذیه ورزشی</a>
+                        <a href="https://taaghche.com/book/160958" target="_blank" class="book-link"><span class="book-icon">💊</span>مکمل‌های ورزشی</a>
+                        <a href="https://taaghche.com/book/9667" target="_blank" class="book-link"><span class="book-icon">🩹</span>آسیب‌های ورزشی</a>
+                        <a href="https://taaghche.com/book/31012" target="_blank" class="book-link"><span class="book-icon">📊</span>بازاریابی ورزشی</a>
+                        <a href="https://taaghche.com/book/139878" target="_blank" class="book-link"><span class="book-icon">🩺</span>آسیب‌شناسی ورزشی</a>
+                        <a href="https://taaghche.com/book/31014" target="_blank" class="book-link"><span class="book-icon">📰</span>روزنامه نگاری ورزشی</a>
+                        <a href="https://taaghche.com/book/141734" target="_blank" class="book-link"><span class="book-icon">🏟️</span>مدیریت اماکن</a>
+                        <a href="https://taaghche.com/book/161057" target="_blank" class="book-link"><span class="book-icon">📋</span>اصول مربیگری</a>
+                        <a href="https://taaghche.com/book/160388" target="_blank" class="book-link"><span class="book-icon">🏃</span>حرکت شناسی ورزشی</a>
+                        <a href="https://taaghche.com/book/139267" target="_blank" class="book-link"><span class="book-icon">❤️</span>فیزیولوژی ورزشی</a>
+                        <a href="https://taaghche.com/book/72585" target="_blank" class="book-link"><span class="book-icon">💼</span>کسب و کار ورزشی</a>
+                    </div>
+                </div>
+                <div class="library-category">
+                    <div class="cat-header" onclick="toggleCategory(this)">
+                        <h3><span>📚</span> <span data-i18n="lib-cat10">دایره‌المعارف</span></h3>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="book-grid">
+                        <a href="https://www.iranketab.ir/book/191320-bloomsbury-marx-dictionary" target="_blank" class="book-link"><span class="book-icon">📚</span>فرهنگ نامه بلومزبری</a>
+                        <a href="https://www.iranketab.ir/book/190986-encyclopedia-of-gods" target="_blank" class="book-link"><span class="book-icon">📚</span>دانشنامه خدایان</a>
+                        <a href="https://www.iranketab.ir/book/184550-my-encyclopedia-of-very-important-dinosaurs" target="_blank" class="book-link"><span class="book-icon">🦕</span>دانشنامه دایناسورها</a>
+                        <a href="https://www.iranketab.ir/book/144209-our-world-in-pictures-an-encyclopedia-of-everything" target="_blank" class="book-link"><span class="book-icon">🚀</span>دانشنامه فضا</a>
+                        <a href="https://www.iranketab.ir/book/161448-encyclopedia-of-persian-language-and-literature" target="_blank" class="book-link"><span class="book-icon">📚</span>دانشنامه زبان و ادب فارسی</a>
+                        <a href="https://www.iranketab.ir/book/160963-our-world-in-pictures-an-encyclopedia-of-everything" target="_blank" class="book-link"><span class="book-icon">🌿</span>دانشنامه طبیعت</a>
+                        <a href="https://www.iranketab.ir/book/158829-guinness-world-records" target="_blank" class="book-link"><span class="book-icon">🏆</span>گینس ۲۰۲۵</a>
+                        <a href="https://www.iranketab.ir/book/101149-encyclopedia-enneagram" target="_blank" class="book-link"><span class="book-icon">🔢</span>دایره المعارف ایناگرام</a>
+                        <a href="https://www.iranketab.ir/book/111871-dictionnaire-heidegger" target="_blank" class="book-link"><span class="book-icon">📖</span>واژه نامه هایدگر</a>
+                        <a href="https://fashionbooksiran.ir/product/3457/" target="_blank" class="book-link"><span class="book-icon">✝️</span>دایره المعارف مصور مسیحیت</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== دانستنی‌ها (قابل باز و بسته) ===== -->
+        <section class="section" id="science">
+            <div class="section-header">
+                <h2>📚 <span data-i18n="science-title">دانستنی‌ها</span></h2>
+                <p data-i18n="science-sub">حقایق علمی جالب و شگفت‌انگیز</p>
+            </div>
+            <div style="text-align:center;">
+                <button class="toggle-btn" onclick="toggleSection('scienceContent')">
+                    <i class="fas fa-chevron-down"></i> <span data-i18n="science-toggle">نمایش/مخفی کردن دانستنی‌ها</span>
+                </button>
+            </div>
+            <div class="toggle-content" id="scienceContent">
+                <div class="fact-grid">
+                    <div class="fact-item">در هر ۵ ثانیه یک کامپیوتر در سطح جهان به ویروس آلوده می‌گردد.</div>
+                    <div class="fact-item">ظروف پلاستیکی ۵۰ هزار سال طول می‌کشد تا در طبیعت شروع به تجزیه شدن کنند.</div>
+                    <div class="fact-item">اغلب مارها دارای ۶ ردیف دندان می‌باشند.</div>
+                    <div class="fact-item">۹۰% سم مارها از پروتئین تشکیل یافته است.</div>
+                    <div class="fact-item">۱۰ درصد وزن بدن انسان (بدون آب) را باکتری‌ها تشکیل می‌دهند.</div>
+                    <div class="fact-item">۱۱ درصد جمعیت جهان را چپ دستان تشکیل می‌دهند.</div>
+                    <div class="fact-item">از هر ۱۰ نفر، یک نفر در سراسر جهان در جزیره زندگی می‌کند.</div>
+                    <div class="fact-item">۹۸ درصد وزن آب از اکسیژن تشکیل یافته است.</div>
+                    <div class="fact-item">یک اسب در طول یک سال ۷ برابر وزن بدن خود غذا مصرف می‌کند.</div>
+                    <div class="fact-item">سوسک‌ها سریع‌ترین جانوران ۶ پا می‌باشند. با سرعت یک متر در ثانیه.</div>
+                    <div class="fact-item">خرگوش‌ها و طوطی‌ها بدون نیاز به چرخاندن سر خود قادرند پشت سر خود را ببینند.</div>
+                    <div class="fact-item">کرگدن‌ها قادرند سریع‌تر از انسان‌ها بدوند.</div>
+                    <div class="fact-item">هیچ پنگوئنی در قطب شمال وجود ندارد.</div>
+                    <div class="fact-item">مادر و همسر گراهام بل مخترع تلفن هر دو ناشنوا بوده‌اند.</div>
+                    <div class="fact-item">کانادا یک واژه هندی به معنی «روستای بزرگ» می‌باشد.</div>
+                    <div class="fact-item">رشد دندان‌های سگ آبی هیچ‌گاه متوقف نمی‌گردد.</div>
+                    <div class="fact-item">قلب وال‌ها تنها ۹ بار در دقیقه می‌تپد.</div>
+                    <div class="fact-item">چیتا قادر است در حداکثر سرعت خود گام‌هایی به طول ۸ متر بر دارد.</div>
+                    <div class="fact-item">شمپانزه‌ها قادرند مقابل آینه چهره خود را تشخیص دهند اما میمون‌ها نمی‌توانند.</div>
+                    <div class="fact-item">عمر سنجاقک‌ها تنها ۲۴ ساعت می‌باشد.</div>
+                    <div class="fact-item">مدت زمان گردش سیاره عطارد بدور خود دو برابر مدت زمان گردش آن بدور خورشید می‌باشد.</div>
+                    <div class="fact-item">روشنایی قرص کامل ماه ۹ برابر هلال ماه می‌باشد.</div>
+                    <div class="fact-item">ماهی قرمز با قرار گرفتن در تاریکی تغییر رنگ می‌دهد و سفید می‌شود.</div>
+                    <div class="fact-item">لایه پوستی آرنج دست هر ۱۰ روز یک بار عوض می‌گردد.</div>
+                    <div class="fact-item">نقره می‌تواند ۶۵۰ نوع میکروب را از بین ببرد و مواد ضد عفونی قوی است.</div>
+                    <div class="fact-item">فیل‌ها تنها حیواناتی هستند که قادر به پریدن نمی‌باشند.</div>
+                    <div class="fact-item">عمر کهکشان راه شیری ۱۰ میلیارد سال است.</div>
+                    <div class="fact-item">حلزون قادر است سه سال بخوابد.</div>
+                    <div class="fact-item">کهکشان راه شیری ۱۰۰ میلیون ستاره یا بیشتر دارد.</div>
+                    <div class="fact-item">قدیمی‌ترین بنا در شمال توکیو ۵۰ هزار سال قدمت دارد.</div>
+                    <div class="fact-item">همه سیاره‌های منظومه شمسی از غرب به شرق دور محور خود می‌چرخند اما سیاره ناهید از شرق به غرب می‌چرخد.</div>
+                    <div class="fact-item">زمان کوتاه‌ترین جنگ ۳۸ دقیقه بود و بین نازی‌ها و انگلستان رخ داد.</div>
+                    <div class="fact-item">اولین تمبر جهان در سال ۱۸۴۰ در انگلستان به چاپ رسید.</div>
+                    <div class="fact-item">فیل بالغ در روز ۲۲۰ کیلوگرم غذا و ۲۰۰ لیتر آب مصرف می‌کند.</div>
+                    <div class="fact-item">تعداد حشرات موجود در ۲.۵ کیلومتر مربع زمین کشاورزی از انسان‌های موجود در کل دنیا بیشتر است.</div>
+                    <div class="fact-item">هر فرد عادی در سر خود ۹۰ تا ۱۲۰ هزار رشته مو دارد.</div>
+                    <div class="fact-item">ریش انسان بالغ بر ۵ تا ۱۵ هزار و یک ابرو ۴۵۰ تا ۶۰۰ تار مو دارد.</div>
+                    <div class="fact-item">گربه و سگ هر کدام ۵ گروه خونی دارند و انسان ۴ گروه.</div>
+                    <div class="fact-item">زنبور عسل دو معده دارد: یکی برای انبار کردن عسل و یکی برای غذا.</div>
+                    <div class="fact-item">سریع‌ترین عضله بدن انسان زبان است.</div>
+                    <div class="fact-item">در سال ۱۹۸۰ بوتان تنها کشور جهان بود که تلفن نداشت.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== سایر بخش‌ها ===== -->
+        <section class="section" id="research-sites">
+            <div class="section-header">
+                <h2>🔍 <span data-i18n="sites-title">سایت‌های</span> <span data-i18n="sites-title2">تحقیقاتی</span></h2>
+                <p data-i18n="sites-sub">پایگاه‌های علمی معتبر</p>
+            </div>
+            <div class="glass-grid">
+                <a href="https://iranpaper.ir/" target="_blank" class="glass-card"><span class="card-icon">📄</span><h3>ایران پیپر</h3></a>
+                <a href="https://www.sid.ir/" target="_blank" class="glass-card"><span class="card-icon">📚</span><h3>SID</h3></a>
+                <a href="https://irandoc.ac.ir/page/2685" target="_blank" class="glass-card"><span class="card-icon">🔍</span><h3>گنج</h3></a>
+                <a href="https://www.noormags.ir/view/fa/default" target="_blank" class="glass-card"><span class="card-icon">📖</span><h3>نورمگز</h3></a>
+                <a href="https://civilica.com/" target="_blank" class="glass-card"><span class="card-icon">📝</span><h3>سیویلیکا</h3></a>
+                <a href="https://elmnet.ir/" target="_blank" class="glass-card"><span class="card-icon">🔬</span><h3>علم نت</h3></a>
+                <a href="https://www.sciencedirect.com/" target="_blank" class="glass-card"><span class="card-icon">📖</span><h3>ScienceDirect</h3></a>
+                <a href="https://corp.oup.com/" target="_blank" class="glass-card"><span class="card-icon">📚</span><h3>Oxford</h3></a>
+            </div>
+        </section>
+
+        <section class="section" id="experiments">
+            <div class="section-header">
+                <h2>🎬 <span data-i18n="experiments-title">فیلم‌های</span> <span data-i18n="experiments-title2">آزمایشگاهی</span></h2>
+                <p data-i18n="experiments-sub">آموزش‌های تصویری علمی</p>
+            </div>
+            <div class="glass-grid">
+                <a href="https://www.aparat.com/v/x25b923" target="_blank" class="glass-card"><span class="card-icon">🎬</span><h3>فیلم ۱</h3></a>
+                <a href="https://www.aparat.com/v/VU360" target="_blank" class="glass-card"><span class="card-icon">🎬</span><h3>فیلم ۲</h3></a>
+                <a href="https://www.aparat.com/v/lkrb4nx" target="_blank" class="glass-card"><span class="card-icon">🎬</span><h3>فیلم ۳</h3></a>
+                <a href="https://www.aparat.com/v/s062564" target="_blank" class="glass-card"><span class="card-icon">🎬</span><h3>فیلم ۴</h3></a>
+                <a href="https://www.aparat.com/v/u198665" target="_blank" class="glass-card"><span class="card-icon">🎬</span><h3>فیلم ۵</h3></a>
+                <a href="https://www.aparat.com/v/e785885" target="_blank" class="glass-card"><span class="card-icon">🎬</span><h3>فیلم ۶</h3></a>
+                <a href="https://www.aparat.com/v/y23c33w" target="_blank" class="glass-card"><span class="card-icon">🏠</span><h3>آزمایش خانگی</h3></a>
+            </div>
+        </section>
+
+        <section class="section" id="apps">
+            <div class="section-header">
+                <h2>📱 <span data-i18n="apps-title">برنامه‌ها</span></h2>
+                <p data-i18n="apps-sub">نرم‌افزارهای کاربردی علمی</p>
+            </div>
+            <div class="glass-grid">
+                <a href="https://myket.ir/app/com.noctuasoftware.stellarium_free" target="_blank" class="glass-card"><span class="card-icon">🔭</span><h3>استلاریوم</h3></a>
+                <a href="https://myket.ir/app/com.PYOPYO.StarTracker" target="_blank" class="glass-card"><span class="card-icon">🌌</span><h3>آسمان شب</h3></a>
+                <a href="https://myket.ir/app/com.ciberdroix.microscope" target="_blank" class="glass-card"><span class="card-icon">🔬</span><h3>میکروسکوپ</h3></a>
+                <a href="https://myket.ir/app/io.ocedu.biology" target="_blank" class="glass-card"><span class="card-icon">🧬</span><h3>زیست</h3></a>
+            </div>
+        </section>
+
+        <section class="section" id="channels">
+            <div class="section-header">
+                <h2>📢 <span data-i18n="channels-title">کانال‌ها</span></h2>
+                <p data-i18n="channels-sub">شبکه‌های اجتماعی پژوهش سرا</p>
+            </div>
+            <div class="glass-grid">
+                <a href="https://shad.ir/songhor_p" target="_blank" class="glass-card"><span class="card-icon">🎓</span><h3>شاد</h3></a>
+                <a href="https://eitaa.com/songhor_p" target="_blank" class="glass-card"><span class="card-icon">💬</span><h3>ایتا</h3></a>
+                <a href="https://www.aparat.com/songhor_p" target="_blank" class="glass-card"><span class="card-icon">🎬</span><h3>آپارات</h3></a>
+                <a href="https://eitaa.com/pajoheshsara_kedu" target="_blank" class="glass-card"><span class="card-icon">📢</span><h3>اطلاع رسانی پژوهش سراهای استان</h3></a>
+                <a href="https://eitaa.com/energynovin_p_k" target="_blank" class="glass-card"><span class="card-icon">⚡</span><h3>قطب استانی انرژی‌های نوین</h3></a>
+            </div>
+        </section>
+
+        <section class="section" id="education">
+            <div class="section-header">
+                <h2>🏫 <span data-i18n="education-title">سامانه‌ها</span></h2>
+                <p data-i18n="education-sub">سایت‌های آموزشی و پژوهشی</p>
+            </div>
+            <div class="glass-grid">
+                <a href="https://my.medu.ir" target="_blank" class="glass-card"><span class="card-icon">🏫</span><h3>سایت آموزش و پرورش</h3></a>
+                <a href="https://eitaa.com/ap_sonqor" target="_blank" class="glass-card"><span class="card-icon">📢</span><h3>کانال آموزش و پرورش سنقر</h3></a>
+            </div>
+        </section>
+
+        <!-- ===== افتخارات (آمار پایین) ===== -->
+        <section class="stats-bottom" id="honors">
+            <div class="container">
+                <div class="section-header">
+                    <h2>🏅 <span data-i18n="honors-title">افتخارات</span> <span data-i18n="honors-title2">پژوهش سرا</span></h2>
+                    <p data-i18n="honors-sub">دستاوردهای علمی و پژوهشی</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>+۳۵۰</h3>
+                        <p data-i18n="honor1">اثر برگزیده منطقه‌ای</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>+۱۴۵</h3>
+                        <p data-i18n="honor2">اثر برگزیده استانی</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>+۱۰</h3>
+                        <p data-i18n="honor3">اثر برگزیده کشوری</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>🏆</h3>
+                        <p data-i18n="honor4">برترین پژوهش سرای استان</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="manager">
+            <div class="section-header">
+                <h2>👨‍💼 <span data-i18n="manager-title">مدیر</span> <span data-i18n="manager-title2">پژوهش سرا</span></h2>
+                <p data-i18n="manager-sub">ارتباط با مدیریت</p>
+            </div>
+            <div style="display:flex;justify-content:center;">
+                <a href="https://shad.ir/songhor336" target="_blank" style="display:inline-block;background:var(--primary);color:var(--white);padding:0.5rem 2.5rem;border-radius:50px;text-decoration:none;font-weight:700;font-size:0.75rem;transition:var(--transition);box-shadow:0 4px 20px rgba(10,36,99,0.3);">
+                    <i class="fas fa-user-tie"></i> <span data-i18n="manager-btn">ارتباط با مدیر پژوهش سرا</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="section-header">
+                <h2>📞 <span data-i18n="contact-title">تماس</span> <span data-i18n="contact-title2">با ما</span></h2>
+                <p data-i18n="contact-sub">راه‌های ارتباطی پژوهش سرا</p>
+            </div>
+            <div class="glass-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));">
+                <div class="glass-card"><span class="card-icon">📍</span><h3 data-i18n="contact-address">نشانی</h3><p data-i18n="contact-address-text">سنقر، خیابان آیت الله غفاری، روبروی اداره پست</p></div>
+                <div class="glass-card"><span class="card-icon">📞</span><h3 data-i18n="contact-phone">تلفن</h3><p>۴۸۴۳۵۵۰۴</p></div>
+                <div class="glass-card"><span class="card-icon">🕐</span><h3 data-i18n="contact-hours">روزهای کاری</h3><p data-i18n="contact-hours-text">شنبه تا چهارشنبه | ۸ تا ۱۳</p></div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ===== فوتر ===== -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h4><i class="fas fa-flask"></i> <span data-i18n="footer-title">پژوهش سرای امام علی (ع) سنقر</span></h4>
+                <p data-i18n="footer-sub">قطب استانی انرژی‌های نوین</p>
+                <p data-i18n="footer-desc">بیش از ۵۰۰ اثر برگزیده در جشنواره‌های علمی</p>
+            </div>
+            <div>
+                <h4 data-i18n="footer-quick">دسترسی سریع</h4>
+                <a href="#news" data-i18n="nav-news">اخبار</a>
+                <a href="#poles" data-i18n="nav-poles">قطب‌ها</a>
+                <a href="#classes" data-i18n="nav-classes">کلاس‌ها</a>
+                <a href="#library" data-i18n="nav-library">کتابخانه</a>
+                <a href="#science" data-i18n="nav-science">دانستنی‌ها</a>
+                <a href="#honors" data-i18n="nav-honors">افتخارات</a>
+            </div>
+            <div>
+                <h4 data-i18n="footer-contact">ارتباط با ما</h4>
+                <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="address">سنقر، خیابان آیت الله غفاری</span></p>
+                <p><i class="fas fa-phone"></i> ۴۸۴۳۵۵۰۴</p>
+                <p><i class="fas fa-clock"></i> <span data-i18n="hours">شنبه تا چهارشنبه ۸ تا ۱۳</span></p>
+            </div>
+            <div>
+                <h4 data-i18n="footer-social">شبکه‌های اجتماعی</h4>
+                <a href="https://shad.ir/songhor_p" target="_blank"><i class="fas fa-graduation-cap"></i> شاد</a>
+                <a href="https://eitaa.com/songhor_p" target="_blank"><i class="fas fa-comment"></i> ایتا</a>
+                <a href="https://www.aparat.com/songhor_p" target="_blank"><i class="fas fa-video"></i> آپارات</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="nastaliq">پژوهش سرای امام علی (ع) سنقر</p>
+            <p>© ۱۴۰۵ | کلیه حقوق محفوظ است | Designed by Amiralihajian</p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== منو =====
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('open');
+        }
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('open');
+            });
+        });
+
+        // ===== باز و بسته کردن بخش‌ها =====
+        function toggleSection(id) {
+            const content = document.getElementById(id);
+            const btn = content.previousElementSibling;
+            content.classList.toggle('open');
+            btn.classList.toggle('active');
+        }
+
+        // ===== باز و بسته کردن قطب‌ها =====
+        function togglePole(element) {
+            const parent = element.closest('.pole-item');
+            parent.classList.toggle('open');
+        }
+
+        // ===== باز و بسته کردن دسته‌های کتابخانه =====
+        function toggleCategory(element) {
+            const parent = element.closest('.library-category');
+            parent.classList.toggle('open');
+        }
+
+        // ===== تغییر حالت تیره/روشن =====
+        function toggleTheme() {
+            const html = document.documentElement;
+            const btn = document.getElementById('themeToggle');
+            const currentTheme = html.getAttribute('data-theme');
+
+            if (currentTheme === 'dark') {
+                html.removeAttribute('data-theme');
+                btn.innerHTML = '<i class="fas fa-moon"></i>';
+                btn.classList.remove('active');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                btn.innerHTML = '<i class="fas fa-sun"></i>';
+                btn.classList.add('active');
+            }
+        }
+
+        // ===== تغییر زبان =====
+        function toggleLang() {
+            const html = document.documentElement;
+            const currentLang = html.getAttribute('data-lang');
+            const label = document.getElementById('langLabel');
+
+            if (currentLang === 'en') {
+                html.removeAttribute('data-lang');
+                label.textContent = 'فا';
+                document.querySelector('[data-i18n="site-title"]').textContent = 'پژوهش سرای امام علی (ع)';
+                document.querySelector('[data-i18n="site-subtitle"]').textContent = 'سنقر';
+                applyLang('fa');
+            } else {
+                html.setAttribute('data-lang', 'en');
+                label.textContent = 'En';
+                document.querySelector('[data-i18n="site-title"]').textContent = 'Imam Ali (AS) Research Center';
+                document.querySelector('[data-i18n="site-subtitle"]').textContent = 'Sonqor';
+                applyLang('en');
+            }
+        }
+
+        function applyLang(lang) {
+            const translations = {
+                fa: {
+                    'nav-news': 'اخبار',
+                    'nav-poles': 'قطب‌ها',
+                    'nav-festival': 'جشنواره',
+                    'nav-classes': 'کلاس‌ها',
+                    'nav-library': 'کتابخانه',
+                    'nav-science': 'دانستنی‌ها',
+                    'nav-sites': 'سایت‌ها',
+                    'nav-experiments': 'فیلم‌ها',
+                    'nav-honors': 'افتخارات',
+                    'nav-contact': 'تماس',
+                    'nav-register': 'ثبت‌نام',
+                    'hero-badge': 'قطب استانی انرژی‌های نوین',
+                    'hero-title1': 'پژوهش سرای',
+                    'hero-title2': 'امام علی (ع)',
+                    'hero-title3': 'سنقر',
+                    'hero-desc': 'مرکز علمی پژوهشی پیشرو در استان کرمانشاه با بیش از ۵۰۰ اثر برگزیده منطقه‌ای و استانی',
+                    'hero-btn-news': 'مشاهده اخبار',
+                    'hero-btn-contact': 'تماس با ما',
+                    'news-title': 'آخرین',
+                    'news-title2': 'اخبار',
+                    'news-sub': 'رویدادها و اطلاعیه‌های پژوهش سرا',
+                    'news-more': 'مشاهده کامل →',
+                    'poles-title': 'قطب‌های',
+                    'poles-title2': 'کشوری',
+                    'poles-sub': 'حوزه‌های تخصصی پژوهش سرا',
+                    'poles-toggle': 'نمایش/مخفی کردن قطب‌ها',
+                    'festival-title': 'جشنواره',
+                    'festival-title2': 'علمی پژوهشی',
+                    'festival-sub': 'دوره‌های برگزار شده و پیش‌رو',
+                    'festival1': 'ششمین جشنواره',
+                    'festival2': 'هفتمین جشنواره',
+                    'festival3': 'هشتمین جشنواره',
+                    'festival-soon': 'به زودی',
+                    'classes-title': 'کلاس‌های',
+                    'classes-title2': 'آموزشی',
+                    'classes-sub': 'ثبت‌نام دوره‌های تخصصی',
+                    'classes-register': 'ثبت‌نام کلاس‌ها',
+                    'library-title': 'کتابخانه',
+                    'library-title2': 'مجازی',
+                    'library-sub': 'دسترسی به هزاران جلد کتاب علمی و ادبی',
+                    'library-toggle': 'نمایش/مخفی کردن کتابخانه',
+                    'science-title': 'دانستنی‌ها',
+                    'science-sub': 'حقایق علمی جالب و شگفت‌انگیز',
+                    'science-toggle': 'نمایش/مخفی کردن دانستنی‌ها',
+                    'sites-title': 'سایت‌های',
+                    'sites-title2': 'تحقیقاتی',
+                    'sites-sub': 'پایگاه‌های علمی معتبر',
+                    'experiments-title': 'فیلم‌های',
+                    'experiments-title2': 'آزمایشگاهی',
+                    'experiments-sub': 'آموزش‌های تصویری علمی',
+                    'apps-title': 'برنامه‌ها',
+                    'apps-sub': 'نرم‌افزارهای کاربردی علمی',
+                    'channels-title': 'کانال‌ها',
+                    'channels-sub': 'شبکه‌های اجتماعی پژوهش سرا',
+                    'education-title': 'سامانه‌ها',
+                    'education-sub': 'سایت‌های آموزشی و پژوهشی',
+                    'honors-title': 'افتخارات',
+                    'honors-title2': 'پژوهش سرا',
+                    'honors-sub': 'دستاوردهای علمی و پژوهشی',
+                    'honor1': 'اثر برگزیده منطقه‌ای',
+                    'honor2': 'اثر برگزیده استانی',
+                    'honor3': 'اثر برگزیده کشوری',
+                    'honor4': 'برترین پژوهش سرای استان',
+                    'manager-title': 'مدیر',
+                    'manager-title2': 'پژوهش سرا',
+                    'manager-sub': 'ارتباط با مدیریت',
+                    'manager-btn': 'ارتباط با مدیر پژوهش سرا',
+                    'contact-title': 'تماس',
+                    'contact-title2': 'با ما',
+                    'contact-sub': 'راه‌های ارتباطی پژوهش سرا',
+                    'contact-address': 'نشانی',
+                    'contact-address-text': 'سنقر، خیابان آیت الله غفاری، روبروی اداره پست',
+                    'contact-phone': 'تلفن',
+                    'contact-hours': 'روزهای کاری',
+                    'contact-hours-text': 'شنبه تا چهارشنبه | ۸ تا ۱۳',
+                    'footer-title': 'پژوهش سرای امام علی (ع) سنقر',
+                    'footer-sub': 'قطب استانی انرژی‌های نوین',
+                    'footer-desc': 'بیش از ۵۰۰ اثر برگزیده در جشنواره‌های علمی',
+                    'footer-quick': 'دسترسی سریع',
+                    'footer-contact': 'ارتباط با ما',
+                    'footer-social': 'شبکه‌های اجتماعی',
+                    'address': 'سنقر، خیابان آیت الله غفاری، روبروی اداره پست',
+                    'hours': 'شنبه تا چهارشنبه ۸ تا ۱۳',
+                },
+                en: {
+                    'nav-news': 'News',
+                    'nav-poles': 'Poles',
+                    'nav-festival': 'Festival',
+                    'nav-classes': 'Classes',
+                    'nav-library': 'Library',
+                    'nav-science': 'Facts',
+                    'nav-sites': 'Sites',
+                    'nav-experiments': 'Videos',
+                    'nav-honors': 'Honors',
+                    'nav-contact': 'Contact',
+                    'nav-register': 'Register',
+                    'hero-badge': 'Provincial Hub of New Energies',
+                    'hero-title1': 'Imam Ali (AS)',
+                    'hero-title2': 'Research Center',
+                    'hero-title3': 'Sonqor',
+                    'hero-desc': 'Leading scientific research center in Kermanshah province with over 500 selected works at regional and provincial levels',
+                    'hero-btn-news': 'View News',
+                    'hero-btn-contact': 'Contact Us',
+                    'news-title': 'Latest',
+                    'news-title2': 'News',
+                    'news-sub': 'Events and announcements of the research center',
+                    'news-more': 'View Full →',
+                    'poles-title': 'National',
+                    'poles-title2': 'Poles',
+                    'poles-sub': 'Specialized fields of the research center',
+                    'poles-toggle': 'Show/Hide Poles',
+                    'festival-title': 'Scientific',
+                    'festival-title2': 'Research Festival',
+                    'festival-sub': 'Past and upcoming events',
+                    'festival1': '6th Festival',
+                    'festival2': '7th Festival',
+                    'festival3': '8th Festival',
+                    'festival-soon': 'Coming Soon',
+                    'classes-title': 'Educational',
+                    'classes-title2': 'Classes',
+                    'classes-sub': 'Registration for specialized courses',
+                    'classes-register': 'Register for Classes',
+                    'library-title': 'Virtual',
+                    'library-title2': 'Library',
+                    'library-sub': 'Access to thousands of scientific and literary books',
+                    'library-toggle': 'Show/Hide Library',
+                    'science-title': 'Amazing Facts',
+                    'science-sub': 'Interesting and amazing scientific facts',
+                    'science-toggle': 'Show/Hide Facts',
+                    'sites-title': 'Research',
+                    'sites-title2': 'Sites',
+                    'sites-sub': 'Reputable scientific databases',
+                    'experiments-title': 'Lab',
+                    'experiments-title2': 'Videos',
+                    'experiments-sub': 'Visual scientific training',
+                    'apps-title': 'Apps',
+                    'apps-sub': 'Useful scientific applications',
+                    'channels-title': 'Channels',
+                    'channels-sub': 'Social media channels of the research center',
+                    'education-title': 'Systems',
+                    'education-sub': 'Educational and research sites',
+                    'honors-title': 'Achievements',
+                    'honors-title2': 'of the Research Center',
+                    'honors-sub': 'Scientific and research achievements',
+                    'honor1': 'Regional selected works',
+                    'honor2': 'Provincial selected works',
+                    'honor3': 'National selected works',
+                    'honor4': 'Top Research Center of the Province',
+                    'manager-title': 'Director',
+                    'manager-title2': 'of Research Center',
+                    'manager-sub': 'Contact management',
+                    'manager-btn': 'Contact the Research Director',
+                    'contact-title': 'Contact',
+                    'contact-title2': 'Us',
+                    'contact-sub': 'Research center communication channels',
+                    'contact-address': 'Address',
+                    'contact-address-text': 'Sonqor, Ayatollah Ghafari St., opposite the Post Office',
+                    'contact-phone': 'Phone',
+                    'contact-hours': 'Working Hours',
+                    'contact-hours-text': 'Saturday to Wednesday | 8 AM to 1 PM',
+                    'footer-title': 'Imam Ali (AS) Research Center, Sonqor',
+                    'footer-sub': 'Provincial Hub of New Energies',
+                    'footer-desc': 'Over 500 selected works in scientific festivals',
+                    'footer-quick': 'Quick Access',
+                    'footer-contact': 'Contact Us',
+                    'footer-social': 'Social Media',
+                    'address': 'Sonqor, Ayatollah Ghafari St., opposite the Post Office',
+                    'hours': 'Saturday to Wednesday 8 AM - 1 PM',
+                }
+            };
+
+            const dict = translations[lang] || translations.fa;
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key]) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = dict[key];
+                    } else {
+                        el.textContent = dict[key];
+                    }
+                }
+            });
+        }
+
+        // ===== نمایش خبر =====
+        function showNews(id) {
+            const newsData = {
+                news1: {
+                    badge: 'مسابقه کدنویسی',
+                    title: 'داوری آنلاین مرحله کشوری',
+                    content: '🔵هفتمین جشنواره علمی پژوهشی وزارت آموزش و پرورش\n🔴مسابقه کدنویسی\n🟣گرایش انجمن علمی پژوهشی\n🔶کیارش کاشی\n🔶محمد طاها قاسمی\n🔶محمد طاها مظفری\n🌑مرکز پژوهش سرای امام علی علیه السلام سنقر\n🟣قطب استانی انرژی های نوین کرمانشاه\n🌑نهم شهریور ۱۴۰۵',
+                    date: '۹ شهریور ۱۴۰۵'
+                },
+                news2: {
+                    badge: 'فراخوان جایزه البرز',
+                    title: '📢 فراخوان جایزه البرز دانش‌آموزی ۱۴۰۵',
+                    content: 'بنیاد فرهنگی البرز در شصت و چهارمین سال فعالیت خود، از دانش‌آموزان و آینده‌سازان نخبه کشور دعوت می‌کند.\n\n🎓 هدف: تقدیر از ۶۴ دانش‌آموز برتر سراسر کشور.\n\n✅ چه کسانی می‌توانند شرکت کنند؟\nدانش‌آموزان پایه نهم و دوازدهم سال تحصیلی ۱۴۰۴-۱۴۰۵ در شاخه‌های:\n🔹 نظری (ریاضی، تجربی، انسانی، معارف)\n🔹 فنی و حرفه‌ای و کاردانش\n\n📝 نحوه اقدام:\nثبت‌نام تنها از طریق سایت رسمی:\n🌐 www.alborzprize.ir\n\n⏳ زمان‌بندی:\n📅 شروع ثبت‌نام: ۱ شهریور ۱۴۰۵\n📅 پایان ثبت‌نام: ۳۱ شهریور ۱۴۰۵\n\n🎁 جوایز ویژه:\n💰 پایه نهم: ۶۵ میلیون تومان + گواهی جایزه البرز\n💰 پایه دوازدهم: ۸۵ میلیون تومان + گواهی جایزه البرز\n\n✨ نهادهای همکار:\nوزارت آموزش و پرورش | سازمان اوقاف و امور خیریه | بنیاد ملی نخبگان | رسانه ملی\n\n🏆 بنیاد فرهنگی البرز؛ پرچمدار وقف علمی کشور',
+                    date: 'شهریور ۱۴۰۵'
+                },
+                news3: {
+                    badge: 'انرژی‌های نوین - پویانمایی',
+                    title: 'داوری آنلاین مرحله کشوری',
+                    content: '🟣داوری آنلاین مرحله کشوری\n🔵هفتمین جشنواره علمی پژوهشی وزارت آموزش و پرورش\nمسابقه انرژی های نوین\n🌑گرایش تولید محتوا پویانمایی\n☀️امیر حسین امجدیان\n🟦مرکز پژوهش سرای امام علی علیه السلام سنقر\n🔷قطب استانی انرژی های نوین کرمانشاه\n🔶نهم شهریور ۱۴۰۵',
+                    date: '۹ شهریور ۱۴۰۵'
+                },
+                news4: {
+                    badge: 'همایش تقدیر',
+                    title: 'همایش تقدیر از برگزیدگان استانی',
+                    content: 'همایش تقدیر از برگزیدگان استانی ششمین جشنواره علمی پژوهشی وزارت آموزش و پرورش، با حضور جمعی از پژوهشگران، نویسندگان، شاعران، هنرمندان، اعضای هیئت امنای مرکز پژوهش‌سرای امام علی(ع) سنقر، والدین گرامی و دانش‌آموزان پژوهشگر و خلاق، روز چهارشنبه ۴ شهریور ۱۴۰۵ در محل کانون امام خمینی(ره) سنقر برگزار شد.\n\nاین آیین با هدف پاسداشت تلاش‌ها و دستاوردهای علمی و پژوهشی دانش‌آموزان برگزار شد.\n\nدر ادامه، از ۸۲ دانش‌آموز خلاق و پژوهشگر که با ارائه ۱۴۴ اثر برگزیده استانی در گرایش‌های مختلف ششمین جشنواره علمی پژوهشی موفق به کسب رتبه و افتخار شده بودند، تقدیر به عمل آمد.',
+                    date: '۴ شهریور ۱۴۰۵'
+                },
+                news5: {
+                    badge: 'انرژی نوین - ماشین خورشیدی تک سرنشین',
+                    title: 'داوری آنلاین مرحله کشوری',
+                    content: '✅داوری آنلاین مرحله کشوری\n🟢هفتمین جشنواره علمی پژوهشی وزارت آموزش\n🔴مسابقه انرژی های نوین \nگرایش ماشین خورشیدی تک سرنشین \n🔶پیمان خزایی \nمرکز پژوهش سرای امام علی علیه السلام سنقر استان کرمانشاه\n📅 سوم شهریور ۱۴۰۵',
+                    date: '۳ شهریور ۱۴۰۵'
+                },
+                news6: {
+                    badge: 'انرژی نوین - ماشین خورشیدی آبی خاکی',
+                    title: 'داوری آنلاین مرحله کشوری',
+                    content: '✅داوری آنلاین مرحله کشوری\n🟢هفتمین جشنواره علمی پژوهشی وزارت آموزش\n🔴مسابقه انرژی های نوین \nگرایش ماشین خورشیدی آبی خاکی \n🔶شایلین آفتابی \nمرکز پژوهش سرای امام علی علیه السلام سنقر استان کرمانشاه\n📅 دوم شهریور ۱۴۰۵',
+                    date: '۲ شهریور ۱۴۰۵'
+                },
+                news7: {
+                    badge: 'علوم و فنون هسته ای',
+                    title: 'داوری آنلاین مرحله کشوری - شبیه ساز هسته ای',
+                    content: '✅داوری آنلاین مرحله کشوری\nهفتمین جشنواره علمی پژوهشی وزارت آموزش\n🔴مسابقه علوم و فنون هسته ای \nگرایش شبیه ساز هسته ای\n(ماکت نیروگاه هسته ای)\n🔶آرنیکا رضایی \n🔶آروشا غنی زاده \nپایه پنجم دبستان سما \nمرکز پژوهش سرای امام علی علیه السلام سنقر استان کرمانشاه\n📅 یکم شهریور ۱۴۰۵',
+                    date: '۱ شهریور ۱۴۰۵'
+                },
+                news8: {
+                    badge: 'حمل و نقل پیشرفته',
+                    title: 'داوری آنلاین مرحله کشوری - ساخت شناور دریایی',
+                    content: '✅داوری آنلاین مرحله کشوری\n🟢هفتمین جشنواره علمی پژوهشی وزارت آموزش\n🔴مسابقه حوزه فضایی، حمل و نقل پیشرفته \nگرایش ساخت شناور دریایی\n🔶محمد رهام جهانگیری \nمرکز پژوهش سرای امام علی علیه السلام سنقر استان کرمانشاه\n📅 یکم شهریور ۱۴۰۵',
+                    date: '۱ شهریور ۱۴۰۵'
+                }
+            };
+
+            const data = newsData[id];
+            if (!data) return;
+
+            const overlay = document.createElement('div');
+            overlay.style.cssText = `
+                    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+                    background: rgba(0,0,0,0.7); backdrop-filter: blur(12px);
+                    z-index: 9999; display: flex; align-items: center; justify-content: center;
+                    padding: 1.5rem; animation: fadeIn 0.3s ease;
+                `;
+
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                    max-width: 600px; width: 100%; background: var(--bg-card);
+                    border-radius: 28px; padding: 2rem; position: relative;
+                    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+                    animation: slideUp 0.4s ease;
+                    border: 1px solid var(--border-card);
+                    color: var(--text-color);
+                `;
+
+            modal.innerHTML = `
+                    <button onclick="this.closest('div[style]').remove()" style="
+                        position: absolute; top: 12px; left: 16px; background: #f1f5f9;
+                        border: none; width: 36px; height: 36px; border-radius: 50%;
+                        font-size: 1.2rem; cursor: pointer; transition: all 0.3s;
+                        display: flex; align-items: center; justify-content: center;
+                        color: #0f172a;
+                    " onmouseover="this.style.background='#e2e8f0'" onmouseout="this.style.background='#f1f5f9'">✕</button>
+                    <span style="display:inline-block;font-size:0.6rem;font-weight:700;color:var(--primary);background:rgba(10,36,99,0.08);padding:0.1rem 0.8rem;border-radius:50px;margin-bottom:0.5rem;">${data.badge}</span>
+                    <h2 style="font-size:1.2rem;font-weight:800;color:var(--primary);margin:0.3rem 0 0.6rem;line-height:1.5;">${data.title}</h2>
+                    <div style="font-size:0.75rem;line-height:2;color:var(--text-color);white-space:pre-wrap;word-wrap:break-word;max-height:50vh;overflow-y:auto;">${data.content}</div>
+                    <div style="font-size:0.5rem;color:var(--text-muted-color);margin-top:0.8rem;padding-top:0.8rem;border-top:1px solid var(--border-card);">📅 ${data.date}</div>
+                    <a href="https://shad.ir/songhor_p" target="_blank" style="display:inline-block;margin-top:0.8rem;padding:0.3rem 1.5rem;background:var(--primary);color:var(--white);border-radius:50px;text-decoration:none;font-size:0.6rem;font-weight:700;transition:all 0.3s;" onmouseover="this.style.background='var(--primary-light)'" onmouseout="this.style.background='var(--primary)'">📢 کانال پژوهش‌سرا</a>
+                `;
+
+            overlay.appendChild(modal);
+            document.body.appendChild(overlay);
+
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) this.remove();
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const ov = document.querySelector('div[style*="position: fixed"]');
+                    if (ov) ov.remove();
+                }
+            });
+        }
+
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = `
+                @keyframes fadeIn {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
+                }
+                @keyframes slideUp {
+                    from { opacity: 0; transform: translateY(30px) scale(0.96); }
+                    to { opacity: 1; transform: translateY(0) scale(1); }
+                }
+            `;
+        document.head.appendChild(styleSheet);
+    </script>
+
+</body>
+</html>
