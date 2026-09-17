@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: pajouheshsaraaa/pajouhesh-sara-imaam-ali
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "news"
+    label: "📰 اخبار"
+    folder: "content/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "عنوان خبر", name: "title", widget: "string" }
+      - { label: "دسته‌بندی", name: "badge", widget: "string" }
+      - { label: "تاریخ", name: "date", widget: "string" }
+      - { label: "توضیح کوتاه", name: "excerpt", widget: "text" }
+      - { label: "متن کامل", name: "body", widget: "markdown" }
