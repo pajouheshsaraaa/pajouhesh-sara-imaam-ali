@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>پژوهش سرای دانش‌آموزی امام علی (ع) سنقر</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+--primary:#0a2463;--primary-light:#1e3a8a;--primary-dark:#051a3e;
+--gold:#d4a574;--gold-light:#f0d5b0;
+--white:#fff;--gray-light:#f1f5f9;--gray:#e2e8f0;
+--text-dark:#0f172a;--text-muted:#64748b;
+--shadow:0 10px 40px rgba(10,36,99,.08);
+--shadow-hover:0 20px 60px rgba(10,36,99,.15);
+--radius:24px;
+--transition:all .4s cubic-bezier(.4,0,.2,1);
+--bg-card:rgba(255,255,255,.7);
+--border-card:rgba(255,255,255,.4);
+--text-color:#0f172a;
+--text-muted-color:#64748b;
+--footer-bg:#051a3e;
+}
+
+[data-theme=dark]{
+--primary:#8b5cf6;--primary-light:#a78bfa;--primary-dark:#4c1d95;
+--gold:#fbbf24;--gold-light:#fcd34d;
+--gray-light:#181825;--gray:#2d2d44;
+--text-dark:#e8e8f0;--text-muted:#a0a0b8;
+--bg-card:rgba(30,30,46,.8);
+--border-card:rgba(255,255,255,.1);
+--text-color:#e8e8f0;
+--text-muted-color:#a0a0b8;
+--footer-bg:#0f0f1a;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+font-family:'Vazirmatn',Tahoma,sans-serif;
+background:var(--gray-light);
+color:var(--text-color);
+line-height:1.8;
+direction:rtl;
+transition:background .4s,color .4s;
+}
+
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+
+/* ===== نوار بالایی ===== */
+.top-bar{
+background:var(--footer-bg);color:#fff;
+padding:.3rem 1.5rem;
+display:flex;justify-content:space-between;align-items:center;
+font-size:.6rem;flex-wrap:wrap;gap:.5rem;
+}
+.top-bar .contact-info{display:flex;gap:1.2rem;flex-wrap:wrap}
+.top-bar .contact-info span{opacity:.85;display:flex;align-items:center;gap:.3rem}
+.top-bar .social-links a{
+color:#fff;text-decoration:none;margin-right:.8rem;
+opacity:.7;transition:var(--transition);font-size:.9rem;
+}
+.top-bar .social-links a:hover{opacity:1;color:var(--gold)}
+
+/* ===== هدر ===== */
+.header{
+background:var(--bg-card);
+backdrop-filter:blur(20px);
+border-bottom:1px solid var(--border-card);
+padding:.6rem 1.5rem;
+position:sticky;top:0;z-index:1000;
+display:flex;justify-content:space-between;align-items:center;
+flex-wrap:wrap;gap:.8rem;
+}
+.header .logo{display:flex;align-items:center;gap:.8rem;text-decoration:none}
+.header .logo .logo-icon{
+width:48px;height:48px;
+background:linear-gradient(135deg,var(--primary),var(--primary-light));
+border-radius:14px;
+display:flex;align-items:center;justify-content:center;
+color:var(--gold);font-size:1.5rem;font-weight:900;
+box-shadow:0 4px 15px rgba(10,36,99,.25);flex-shrink:0;
+}
+.header .logo h1{font-size:1.1rem;font-weight:800;color:var(--primary);line-height:1.2}
+.header .logo h1 small{display:block;font-size:.5rem;font-weight:400;color:var(--text-muted-color)}
+
+.nav-menu{display:flex;gap:.2rem;flex-wrap:wrap;align-items:center}
+.nav-menu a{
+text-decoration:none;color:var(--text-color);
+font-size:.65rem;font-weight:600;
+padding:.4rem .9rem;border-radius:50px;
+transition:var(--transition);white-space:nowrap;
+}
+.nav-menu a:hover,.nav-menu a.active{background:var(--primary);color:#fff}
+.nav-menu a.cta-btn{
+background:linear-gradient(135deg,var(--gold),#c9956b);
+color:var(--primary-dark);padding:.4rem 1.4rem;font-weight:700;
+box-shadow:0 4px 15px rgba(212,165,116,.35);
+}
+
+.menu-toggle{
+display:none;font-size:1.6rem;background:0 0;border:none;
+color:var(--primary);cursor:pointer;padding:.2rem .5rem;
+}
+
+.settings-group{display:flex;gap:.3rem;align-items:center;flex-wrap:wrap}
+.settings-btn{
+background:var(--bg-card);border:1px solid var(--border-card);
+color:var(--text-color);padding:.25rem .6rem;border-radius:50px;
+font-size:.6rem;cursor:pointer;transition:var(--transition);
+font-family:'Vazirmatn',Tahoma,sans-serif;
+display:flex;align-items:center;gap:.2rem;
+}
+.settings-btn:hover,.settings-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+
+/* ===== بنر ===== */
+.hero{
+background:linear-gradient(135deg,var(--primary-dark)0%,var(--primary)50%,var(--primary-light)100%);
+padding:3rem 1.5rem;text-align:center;
+position:relative;overflow:hidden;
+}
+.hero .hero-content{position:relative;z-index:2;max-width:800px;margin:0 auto}
+.hero .badge{
+display:inline-block;
+background:rgba(212,165,116,.15);
+border:1px solid rgba(212,165,116,.3);
+color:var(--gold-light);font-size:.6rem;font-weight:700;
+padding:.25rem 1.5rem;border-radius:50px;margin-bottom:.8rem;
+backdrop-filter:blur(10px);
+}
+.hero h1{font-size:2.2rem;font-weight:700;color:#fff;margin-bottom:.4rem;line-height:1.3}
+.hero h1 span{color:var(--gold-light)}
+.hero p{color:rgba(255,255,255,.85);font-size:.85rem;max-width:600px;margin:0 auto 1.2rem;line-height:2}
+.hero .hero-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.hero .hero-btns .btn-primary{
+background:var(--gold);color:var(--primary-dark);
+padding:.5rem 2rem;border-radius:50px;text-decoration:none;
+font-weight:700;font-size:.75rem;transition:var(--transition);
+box-shadow:0 4px 25px rgba(212,165,116,.35);
+}
+.hero .hero-btns .btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(212,165,116,.5)}
+.hero .hero-btns .btn-outline{
+background:transparent;border:2px solid rgba(255,255,255,.3);
+color:#fff;padding:.5rem 2rem;border-radius:50px;
+text-decoration:none;font-weight:600;font-size:.75rem;transition:var(--transition);
+}
+.hero .hero-btns .btn-outline:hover{background:rgba(255,255,255,.1);border-color:#fff}
+
+/* ===== بخش‌ها ===== */
+.section{padding:3rem 0;position:relative;border-bottom:1px solid var(--border-card)}
+.section:last-of-type{border-bottom:none}
+.section-header{text-align:center;margin-bottom:2rem}
+.section-header h2{
+font-size:1.5rem;font-weight:800;color:var(--primary);
+display:flex;align-items:center;justify-content:center;gap:.5rem;
+}
+.section-header h2 span{color:var(--gold)}
+.section-header p{color:var(--text-muted-color);font-size:.7rem;margin-top:.2rem}
+
+/* ===== دکمه باز/بسته ===== */
+.toggle-btn{
+display:inline-flex;align-items:center;gap:.5rem;
+background:var(--primary);color:#fff;
+padding:.5rem 1.8rem;border-radius:50px;border:none;
+font-size:.75rem;font-weight:700;cursor:pointer;
+transition:var(--transition);
+font-family:'Vazirmatn',Tahoma,sans-serif;
+margin:0 auto 1rem;box-shadow:0 4px 20px rgba(10,36,99,.3);
+}
+.toggle-btn:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(10,36,99,.4)}
+.toggle-btn i{transition:transform .4s}
+.toggle-btn.active i{transform:rotate(180deg)}
+.toggle-content{display:none;animation:slideDown .4s ease}
+.toggle-content.open{display:block}
+@keyframes slideDown{from{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== کارت‌ها ===== */
+.glass-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1.2rem}
+.glass-card{
+background:var(--bg-card);backdrop-filter:blur(20px);
+border:1px solid var(--border-card);border-radius:var(--radius);
+padding:1.2rem .6rem;text-align:center;text-decoration:none;
+color:var(--text-color);transition:var(--transition);
+box-shadow:var(--shadow);position:relative;overflow:hidden;
+}
+.glass-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:var(--shadow-hover);border-color:var(--primary)}
+.glass-card .card-icon{font-size:2rem;display:block;margin-bottom:.3rem}
+.glass-card h3{font-size:.6rem;font-weight:700;color:var(--primary)}
+
+/* ===== قطب‌ها ===== */
+.pole-item{
+background:var(--bg-card);backdrop-filter:blur(20px);
+border:1px solid var(--border-card);border-radius:var(--radius);
+padding:1rem;margin-bottom:.8rem;transition:var(--transition);
+box-shadow:var(--shadow);
+}
+.pole-item .pole-header{display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:.2rem .3rem}
+.pole-item .pole-header .pole-title{font-size:.75rem;font-weight:700;color:var(--primary);display:flex;align-items:center;gap:.5rem}
+.pole-item .pole-header .toggle-icon{font-size:.8rem;color:var(--text-muted-color);transition:transform .4s}
+.pole-item.open .toggle-icon{transform:rotate(180deg)}
+.pole-item .pole-links{display:none;padding-top:.8rem;border-top:1px solid var(--border-card);margin-top:.6rem;gap:.5rem;flex-wrap:wrap}
+.pole-item.open .pole-links{display:flex}
+.pole-link{
+display:inline-flex;align-items:center;gap:.3rem;
+padding:.3rem 1rem;background:var(--primary);color:#fff;
+border-radius:50px;text-decoration:none;font-size:.5rem;font-weight:600;
+transition:var(--transition);
+}
+.pole-link:hover{transform:translateY(-2px);box-shadow:0 4px 15px rgba(10,36,99,.3)}
+.pole-link.blue{background:#1e3a8a}
+.pole-link.green{background:#10b981}
+.pole-link.purple{background:#7c3aed}
+
+/* ===== اخبار ===== */
+.news-highlight{
+background:linear-gradient(135deg,var(--primary-dark),var(--primary));
+border-radius:var(--radius);padding:1.5rem;
+box-shadow:0 10px 40px rgba(10,36,99,.2);margin-bottom:1.5rem;
+}
+.news-highlight .section-header h2{color:#fff}
+.news-highlight .section-header h2 span{color:var(--gold-light)}
+.news-highlight .section-header p{color:rgba(255,255,255,.7)}
+.news-slider{display:flex;overflow-x:auto;gap:1.2rem;padding:.8rem .2rem 1.2rem;scroll-snap-type:x mandatory}
+.news-slider::-webkit-scrollbar{height:4px}
+.news-slider::-webkit-scrollbar-thumb{background:var(--gold);border-radius:4px}
+.news-card{
+min-width:240px;max-width:300px;flex-shrink:0;scroll-snap-align:start;
+background:rgba(255,255,255,.12);backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.15);border-radius:var(--radius);
+padding:1.2rem;transition:var(--transition);cursor:pointer;color:#fff;
+}
+.news-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.2);border-color:var(--gold);box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.news-card .news-img{width:100%;height:100px;border-radius:12px;object-fit:cover;margin-bottom:.6rem}
+.news-card .news-badge{
+display:inline-block;font-size:.4rem;font-weight:700;
+color:var(--gold-light);background:rgba(212,165,116,.2);
+padding:.1rem .8rem;border-radius:50px;margin-bottom:.4rem;
+border:1px solid rgba(212,165,116,.2);
+}
+.news-card h3{font-size:.8rem;font-weight:800;color:#fff;margin-bottom:.3rem;line-height:1.5}
+.news-card p{font-size:.55rem;color:rgba(255,255,255,.7);line-height:1.7;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.news-card .news-meta{display:flex;justify-content:space-between;align-items:center;margin-top:.5rem;padding-top:.5rem;border-top:1px solid rgba(255,255,255,.08)}
+.news-card .news-meta .date{font-size:.4rem;color:rgba(255,255,255,.5)}
+.news-card .news-meta .more{font-size:.45rem;color:var(--gold-light);font-weight:700}
+
+/* ===== کتاب امروز ===== */
+.book-day-section{
+padding:2.5rem 0;
+background:linear-gradient(135deg,rgba(10,36,99,.03),rgba(212,165,116,.05));
+border-radius:var(--radius);margin:1.5rem 0;
+position:relative;overflow:hidden;
+}
+.book-day-section::before{
+content:'';position:absolute;top:-50%;right:-20%;
+width:400px;height:400px;
+background:radial-gradient(circle,rgba(212,165,116,.15),transparent 70%);
+border-radius:50%;animation:floatBook 20s ease-in-out infinite;
+pointer-events:none;
+}
+.book-day-section::after{
+content:'';position:absolute;bottom:-50%;left:-20%;
+width:300px;height:300px;
+background:radial-gradient(circle,rgba(10,36,99,.1),transparent 70%);
+border-radius:50%;animation:floatBook 25s ease-in-out infinite reverse;
+pointer-events:none;
+}
+@keyframes floatBook{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.1)}}
+
+.book-icon-3d{
+width:120px;height:120px;margin:0 auto 1rem;
+position:relative;perspective:800px;
+display:flex;align-items:center;justify-content:center;
+}
+.book-icon-3d .book{
+width:80px;height:100px;position:relative;
+transform-style:preserve-3d;animation:bookFloat 4s ease-in-out infinite;
+}
+@keyframes bookFloat{0%,100%{transform:translateY(0) rotateY(-15deg)}50%{transform:translateY(-12px) rotateY(-25deg)}}
+.book-icon-3d .book .cover{
+position:absolute;width:100%;height:100%;
+background:linear-gradient(135deg,#0a2463,#1e3a8a,#d4a574);
+border-radius:6px 14px 14px 6px;
+box-shadow:0 20px 40px rgba(10,36,99,.4),inset 0 0 30px rgba(212,165,116,.3);
+display:flex;flex-direction:column;align-items:center;justify-content:center;
+color:#f0d5b0;font-size:2rem;overflow:hidden;
+border:1px solid rgba(212,165,116,.4);
+}
+.book-icon-3d .book .cover::before{
+content:'';position:absolute;top:0;left:0;
+width:8px;height:100%;
+background:linear-gradient(90deg,#d4a574,#f0d5b0,#d4a574);
+box-shadow:2px 0 8px rgba(0,0,0,.3);
+}
+.book-icon-3d .book .cover::after{
+content:'📖';font-size:2.5rem;
+filter:drop-shadow(0 0 10px rgba(212,165,116,.8));
+animation:bookGlow 2s ease-in-out infinite;
+}
+@keyframes bookGlow{0%,100%{filter:drop-shadow(0 0 10px rgba(212,165,116,.8))}50%{filter:drop-shadow(0 0 25px rgba(212,165,116,1))}}
+.book-icon-3d .halo{
+position:absolute;width:140px;height:140px;border-radius:50%;
+background:radial-gradient(circle,rgba(212,165,116,.3),transparent 70%);
+animation:haloRotate 8s linear infinite;
+}
+@keyframes haloRotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+.book-day-card{
+background:var(--bg-card);backdrop-filter:blur(20px);
+border:1px solid var(--border-card);border-radius:var(--radius);
+padding:2rem;text-align:center;max-width:700px;margin:0 auto;
+box-shadow:0 20px 60px rgba(10,36,99,.15);
+position:relative;overflow:hidden;transition:var(--transition);
+animation:cardEnter .6s ease;
+}
+.book-day-card:hover{transform:translateY(-5px);box-shadow:0 30px 80px rgba(10,36,99,.25);border-color:var(--gold)}
+@keyframes cardEnter{from{opacity:0;transform:translateY(30px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+.book-day-card .book-category{
+display:inline-block;font-size:.55rem;font-weight:700;
+color:var(--gold);background:rgba(212,165,116,.1);
+padding:.2rem 1rem;border-radius:50px;
+border:1px solid rgba(212,165,116,.3);margin-bottom:.8rem;
+}
+.book-day-card .book-title{font-size:1.4rem;font-weight:900;color:var(--primary);margin-bottom:.3rem;line-height:1.5}
+.book-day-card .book-author{font-size:.7rem;color:var(--text-muted-color);font-weight:600;margin-bottom:.8rem}
+.book-day-card .book-desc{
+font-size:.75rem;line-height:2;color:var(--text-color);
+margin-bottom:1.2rem;padding:.8rem;
+background:rgba(10,36,99,.03);border-radius:12px;
+border-right:3px solid var(--gold);
+}
+.book-day-card .book-actions{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap}
+.book-day-card .book-actions a{
+display:inline-flex;align-items:center;gap:.3rem;
+padding:.4rem 1.4rem;border-radius:50px;
+text-decoration:none;font-size:.65rem;font-weight:700;
+transition:var(--transition);
+}
+.book-day-card .book-actions .btn-read{
+background:linear-gradient(135deg,var(--primary),var(--primary-light));
+color:#fff;box-shadow:0 4px 15px rgba(10,36,99,.3);
+}
+.book-day-card .book-actions .btn-read:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(10,36,99,.5)}
+.book-day-card .book-day-number{
+position:absolute;top:15px;left:20px;
+font-size:.5rem;font-weight:700;color:var(--text-muted-color);
+background:var(--bg-card);padding:.2rem .8rem;
+border-radius:50px;border:1px solid var(--border-card);
+}
+
+/* ===== کتابخانه ===== */
+.library-category{
+background:var(--bg-card);backdrop-filter:blur(20px);
+border:1px solid var(--border-card);border-radius:var(--radius);
+padding:1rem;margin-bottom:.8rem;transition:var(--transition);
+box-shadow:var(--shadow);
+}
+.library-category .cat-header{display:flex;align-items:center;justify-content:space-between;cursor:pointer}
+.library-category .cat-header h3{font-size:.8rem;font-weight:800;color:var(--primary);display:flex;align-items:center;gap:.5rem}
+.library-category .cat-header .toggle-icon{font-size:.8rem;color:var(--text-muted-color);transition:transform .4s}
+.library-category.open .toggle-icon{transform:rotate(180deg)}
+.library-category .book-grid{
+display:none;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+gap:.6rem;padding-top:.8rem;
+border-top:1px solid var(--border-card);margin-top:.6rem;
+}
+.library-category.open .book-grid{display:grid}
+.book-link{
+display:block;background:var(--white);
+border:1px solid var(--gray);border-radius:12px;
+padding:.4rem .6rem;text-align:center;text-decoration:none;
+color:var(--text-dark);font-size:.55rem;font-weight:600;
+transition:var(--transition);box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+.book-link:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:var(--primary);color:var(--primary)}
+.book-link .book-icon{display:block;font-size:1.4rem;margin-bottom:.1rem}
+
+/* ===== دانستنی‌ها ===== */
+.fact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.8rem}
+.fact-item{
+background:var(--bg-card);border-radius:14px;
+padding:.8rem 1rem;box-shadow:var(--shadow);
+border-right:3px solid var(--gold);
+font-size:.6rem;color:var(--text-color);line-height:1.8;
+transition:var(--transition);
+}
+.fact-item:hover{transform:translateX(-4px);box-shadow:var(--shadow-hover)}
+.fact-item::before{content:'💡 ';font-size:.8rem}
+
+/* ===== افتخارات ===== */
+.stats-bottom{
+background:var(--bg-card);padding:2rem 0;
+border-top:1px solid var(--border-card);
+border-bottom:1px solid var(--border-card);
+}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.5rem;text-align:center}
+.stats-grid .stat-item h3{font-size:1.8rem;font-weight:900;color:var(--primary);line-height:1.2}
+.stats-grid .stat-item h3 span{color:var(--gold)}
+.stats-grid .stat-item p{font-size:.6rem;color:var(--text-muted-color);font-weight:500}
+
+/* ===== فوتر ===== */
+.footer{
+background:var(--footer-bg);color:rgba(255,255,255,.8);
+padding:3rem 1.5rem 1.5rem;margin-top:2rem;
+}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:2rem;max-width:1200px;margin:0 auto}
+.footer-grid h4{color:#fff;font-size:.8rem;font-weight:700;margin-bottom:.6rem}
+.footer-grid p,.footer-grid a{
+font-size:.6rem;color:rgba(255,255,255,.7);
+text-decoration:none;display:block;margin:.2rem 0;transition:var(--transition);
+}
+.footer-grid a:hover{color:var(--gold)}
+.footer-bottom{
+border-top:1px solid rgba(255,255,255,.08);
+margin-top:2rem;padding-top:1.2rem;text-align:center;
+font-size:.5rem;color:rgba(255,255,255,.4);
+max-width:1200px;margin-left:auto;margin-right:auto;
+}
+
+/* ===== ریسپانسیو ===== */
+@media(max-width:768px){
+.top-bar{padding:.2rem .8rem;font-size:.5rem;justify-content:center}
+.header{padding:.5rem .8rem}
+.header .logo h1{font-size:.85rem}
+.header .logo .logo-icon{width:38px;height:38px;font-size:1.1rem}
+.nav-menu{display:none;width:100%;flex-direction:column;align-items:center;gap:.2rem;padding:.5rem 0;border-top:1px solid var(--border-card);margin-top:.4rem}
+.nav-menu.open{display:flex}
+.nav-menu a{width:100%;text-align:center;padding:.4rem}
+.menu-toggle{display:block}
+.settings-group{width:100%;justify-content:center;margin-top:.3rem}
+.hero{padding:2rem 1rem}
+.hero h1{font-size:1.5rem}
+.news-card{min-width:200px}
+.glass-grid{grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:.6rem}
+.library-category .book-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr))}
+.fact-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr 1fr;gap:1.2rem}
+.stats-grid{grid-template-columns:repeat(2,1fr);gap:1rem}
+.book-day-card{padding:1.2rem}
+.book-day-card .book-title{font-size:1.1rem}
+.book-icon-3d{width:90px;height:90px}
+.book-icon-3d .book{width:60px;height:75px}
+}
+
+@media(max-width:480px){
+.hero h1{font-size:1.2rem}
+.glass-grid{grid-template-columns:repeat(3,1fr)}
+.footer-grid{grid-template-columns:1fr;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== نوار بالایی ===== -->
+<div class="top-bar">
+<div class="contact-info">
+<span><i class="fas fa-map-marker-alt"></i> سنقر، خیابان آیت الله غفاری، روبروی اداره پست</span>
+<span><i class="fas fa-phone"></i> ۴۸۴۳۵۵۰۴</span>
+<span><i class="fas fa-clock"></i> شنبه تا چهارشنبه ۸ تا ۱۳</span>
+</div>
+<div class="social-links">
+<a href="https://shad.ir/songhor_p" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+<a href="https://eitaa.com/songhor_p" target="_blank"><i class="fas fa-comment"></i></a>
+<a href="https://www.aparat.com/songhor_p" target="_blank"><i class="fas fa-video"></i></a>
+</div>
+</div>
+
+<!-- ===== هدر ===== -->
+<header class="header">
+<a href="#" class="logo">
+<div class="logo-icon">ام</div>
+<h1>پژوهش سرای امام علی (ع) <small>سنقر</small></h1>
+</a>
+<button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+<nav class="nav-menu" id="navMenu">
+<a href="#news">اخبار</a>
+<a href="#book-of-day">کتاب امروز</a>
+<a href="#poles">قطب‌ها</a>
+<a href="#festival">جشنواره</a>
+<a href="#classes">کلاس‌ها</a>
+<a href="#library">کتابخانه</a>
+<a href="#science">دانستنی‌ها</a>
+<a href="#research-sites">سایت‌ها</a>
+<a href="#experiments">فیلم‌ها</a>
+<a href="#honors">افتخارات</a>
+<a href="#contact">تماس</a>
+<a href="https://shad.ir/songhor336" target="_blank" class="cta-btn">ثبت‌نام</a>
+</nav>
+<div class="settings-group">
+<button class="settings-btn" onclick="toggleTheme()" id="themeToggle"><i class="fas fa-moon"></i></button>
+<button class="settings-btn" onclick="toggleLang()"><i class="fas fa-globe"></i> <span id="langLabel">فا</span></button>
+</div>
+</header>
+
+<!-- ===== بنر ===== -->
+<section class="hero">
+<div class="hero-content">
+<span class="badge"><i class="fas fa-bolt"></i> قطب استانی انرژی‌های نوین</span>
+<h1>پژوهش سرای <span>امام علی (ع)</span> سنقر</h1>
+<p>مرکز علمی پژوهشی پیشرو در استان کرمانشاه با بیش از ۵۰۰ اثر برگزیده منطقه‌ای و استانی</p>
+<div class="hero-btns">
+<a href="#news" class="btn-primary"><i class="fas fa-newspaper"></i> مشاهده اخبار</a>
+<a href="#book-of-day" class="btn-outline"><i class="fas fa-book"></i> کتاب امروز</a>
+</div>
+</div>
+</section>
+
+<div class="container">
+
+<!-- ===== اخبار ===== -->
+<section class="section" id="news">
+<div class="news-highlight">
+<div class="section-header">
+<h2>📰 <span>آخرین</span> اخبار</h2>
+<p>رویدادها و اطلاعیه‌های پژوهش سرا</p>
+</div>
+<div class="news-slider">
+
+<div class="news-card" onclick="showNews('news1')">
+<span class="news-badge">اطلاعیه فوری</span>
+<h3>📣 فراخوان جایزه البرز ۱۴۰۵</h3>
+<p>دانش‌آموزان پایه نهم و دوازدهم با معدل بالای ۱۹</p>
+<div class="news-meta">
+<span class="date"><i class="far fa-calendar-alt"></i> شهریور ۱۴۰۵</span>
+<span class="more">مشاهده کامل →</span>
+</div>
+</div>
+
+<div class="news-card" onclick="showNews('news2')">
+<img src="IMG_20260917_122551_894.jpg" alt="تولید سوخت از جلبک" class="news-img" onerror="this.style.display='none'">
+<span class="news-badge">پوستر علمی</span>
+<h3>✅ تولید سوخت از جلبک</h3>
+<p>تهیه‌کننده: امیر حسین امجدیان</p>
+<div class="news-meta">
+<span class="date"><i class="far fa-calendar-alt"></i> مرداد ۱۴۰۵</span>
+<span class="more">مشاهده کامل →</span>
+</div>
+</div>
+
+<div class="news-card" onclick="showNews('news3')">
+<span class="news-badge">تقدیر</span>
+<h3>تقدیر از استاد اصغر شریفی</h3>
+<p>اهدای ۶۰ جلد کتاب علمی به پژوهش سرا</p>
+<div class="news-meta">
+<span class="date"><i class="far fa-calendar-alt"></i> شهریور ۱۴۰۵</span>
+<span class="more">مشاهده کامل →</span>
+</div>
+</div>
+
+<div class="news-card" onclick="showNews('news4')">
+<span class="news-badge">اطلاعیه ۲۳</span>
+<h3>مشاهده نتایج مرحله کشوری</h3>
+<p>هفتمین جشنواره علمی پژوهشی</p>
+<div class="news-meta">
+<span class="date"><i class="far fa-calendar-alt"></i> ۲۱ شهریور ۱۴۰۵</span>
+<span class="more">مشاهده کامل →</span>
+</div>
+</div>
+
+<div class="news-card" onclick="showNews('news5')">
+<span class="news-badge">مسابقه کدنویسی</span>
+<h3>داوری آنلاین مرحله کشوری</h3>
+<p>هفتمین جشنواره علمی پژوهشی - کدنویسی</p>
+<div class="news-meta">
+<span class="date"><i class="far fa-calendar-alt"></i> ۹ شهریور ۱۴۰۵</span>
+<span class="more">مشاهده کامل →</span>
+</div>
+</div>
+
+<div class="news-card" onclick="showNews('news6')">
+<span class="news-badge">همایش</span>
+<h3>همایش تقدیر از برگزیدگان استانی</h3>
+<p>ششمین جشنواره علمی پژوهشی</p>
+<div class="news-meta">
+<span class="date"><i class="far fa-calendar-alt"></i> ۴ شهریور ۱۴۰۵</span>
+<span class="more">مشاهده کامل →</span>
+</div>
+</div>
+
+<div class="news-card" onclick="showNews('news7')">
+<span class="news-badge">انرژی نوین - پویانمایی</span>
+<h3>داوری آنلاین تولید محتوا پویانمایی</h3>
+<p>هفتمین جشنواره علمی پژوهشی</p>
+<div class="news-meta">
+<span class="date"><i class="far fa-calendar-alt"></i> ۹ شهریور ۱۴۰۵</span>
+<span class="more">مشاهده کامل →</span>
+</div>
+</div>
+
+<div class="news-card" onclick="showNews('news8')">
+<span class="news-badge">انرژی نوین</span>
+<h3>ماشین خورشیدی تک سرنشین</h3>
+<p>هفتمین جشنواره علمی پژوهشی</p>
+<div class="news-meta">
+<span class="date"><i class="far fa-calendar-alt"></i> ۳ شهریور ۱۴۰۵</span>
+<span class="more">مشاهده کامل →</span>
+</div>
+</div>
+
+<div class="news-card" onclick="showNews('news9')">
+<span class="news-badge">انرژی نوین</span>
+<h3>ماشین خورشیدی آبی خاکی</h3>
+<p>هفتمین جشنواره علمی پژوهشی</p>
+<div class="news-meta">
+<span class="date"><i class="far fa-calendar-alt"></i> ۲ شهریور ۱۴۰۵</span>
+<span class="more">مشاهده کامل →</span>
+</div>
+</div>
+
+<div class="news-card" onclick="showNews('news10')">
+<span class="news-badge">علوم هسته‌ای</span>
+<h3>شبیه ساز هسته‌ای</h3>
+<p>ماکت نیروگاه هسته‌ای</p>
+<div class="news-meta">
+<span class="date"><i class="far fa-calendar-alt"></i> ۱ شهریور ۱۴۰۵</span>
+<span class="more">مشاهده کامل →</span>
+</div>
+</div>
+
+<div class="news-card" onclick="showNews('news11')">
+<span class="news-badge">حمل و نقل پیشرفته</span>
+<h3>ساخت شناور دریایی</h3>
+<p>حوزه فضایی و حمل و نقل پیشرفته</p>
+<div class="news-meta">
+<span class="date"><i class="far fa-calendar-alt"></i> ۱ شهریور ۱۴۰۵</span>
+<span class="more">مشاهده کامل →</span>
+</div>
+</div>
+
+<div class="news-card" onclick="showNews('news12')">
+<span class="news-badge">مسابقه نجوم</span>
+<h3>داوری آنلاین نجوم</h3>
+<p>انجمن علمی پژوهشی</p>
+<div class="news-meta">
+<span class="date"><i class="far fa-calendar-alt"></i> ۳ شهریور ۱۴۰۵</span>
+<span class="more">مشاهده کامل →</span>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ===== کتاب امروز ===== -->
+<section class="section" id="book-of-day">
+<div class="book-day-section">
+<div class="section-header">
+<h2>📖 <span>کتاب</span> امروز</h2>
+<p>هر روز با یک کتاب علمی و ادبی آشنا شوید</p>
+</div>
+
+<div class="book-icon-3d">
+<div class="halo"></div>
+<div class="book"><div class="cover"></div></div>
+</div>
+
+<div class="book-day-card" id="bookDayCard">
+<div class="book-day-number" id="bookDayNumber">روز ۱ از ۱۰۰</div>
+<span class="book-category" id="bookCategory">ادبیات کلاسیک جهان</span>
+<h3 class="book-title" id="bookTitle">ایلیاد</h3>
+<p class="book-author" id="bookAuthor">هومر</p>
+<p class="book-desc" id="bookDesc">حماسهٔ جنگ تروا و خشم آشیل.</p>
+<div class="book-actions">
+<a href="#" class="btn-read" id="bookReadLink" target="_blank">
+<i class="fas fa-search"></i> جستجو در گوگل
+</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== قطب‌ها ===== -->
+<section class="section" id="poles">
+<div class="section-header">
+<h2>🔬 <span>قطب‌های</span> کشوری</h2>
+<p>حوزه‌های تخصصی پژوهش سرا</p>
+</div>
+<div style="text-align:center">
+<button class="toggle-btn" onclick="toggleSection('polesContent')">
+<i class="fas fa-chevron-down"></i> نمایش قطب‌ها
+</button>
+</div>
+<div class="toggle-content" id="polesContent">
+
+<div class="pole-item">
+<div class="pole-header" onclick="togglePole(this)">
+<span class="pole-title">📚 ادبیات و علوم انسانی</span>
+<span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+</div>
+<div class="pole-links">
+<a href="https://shad.ir/ensani_src" target="_blank" class="pole-link blue">شاد</a>
+<a href="https://eitaa.com/adabiyatensani" target="_blank" class="pole-link green">ایتا</a>
+</div>
+</div>
+
+<div class="pole-item">
+<div class="pole-header" onclick="togglePole(this)">
+<span class="pole-title">💻 کدنویسی</span>
+<span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+</div>
+<div class="pole-links">
+<a href="https://shad.ir/codenevisi" target="_blank" class="pole-link blue">شاد</a>
+<a href="https://www.aparat.com/codenevisi.src" target="_blank" class="pole-link purple">آپارات</a>
+</div>
+</div>
+
+<div class="pole-item">
+<div class="pole-header" onclick="togglePole(this)">
+<span class="pole-title">🧬 زیست فناوری</span>
+<span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+</div>
+<div class="pole-links">
+<a href="https://shad.ir/bio_src" target="_blank" class="pole-link blue">شاد</a>
+<a href="https://www.aparat.com/zistfannavari" target="_blank" class="pole-link purple">آپارات</a>
+</div>
+</div>
+
+<div class="pole-item">
+<div class="pole-header" onclick="togglePole(this)">
+<span class="pole-title">🔬 نانو فناوری</span>
+<span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+</div>
+<div class="pole-links">
+<a href="https://shad.ir/nano_src" target="_blank" class="pole-link blue">شاد</a>
+<a href="https://eitaa.com/ebnesina_nano_group" target="_blank" class="pole-link green">ایتا</a>
+</div>
+</div>
+
+<div class="pole-item">
+<div class="pole-header" onclick="togglePole(this)">
+<span class="pole-title">🧫 سلول‌های بنیادی</span>
+<span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+</div>
+<div class="pole-links">
+<a href="https://shad.ir/stemcellstudent" target="_blank" class="pole-link blue">شاد</a>
+<a href="https://eitaa.com/stemcellstudent" target="_blank" class="pole-link green">ایتا</a>
+</div>
+</div>
+
+<div class="pole-item">
+<div class="pole-header" onclick="togglePole(this)">
+<span class="pole-title">🔭 نجوم</span>
+<span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+</div>
+<div class="pole-links">
+<a href="https://shad.ir/nojum_src" target="_blank" class="pole-link blue">شاد</a>
+<a href="https://www.aparat.com/astropole" target="_blank" class="pole-link purple">آپارات</a>
+</div>
+</div>
+
+<div class="pole-item">
+<div class="pole-header" onclick="togglePole(this)">
+<span class="pole-title">🌿 گیاهان دارویی</span>
+<span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+</div>
+<div class="pole-links">
+<a href="https://eitaa.com/Giahan_darui" target="_blank" class="pole-link green">ایتا</a>
+<a href="https://shad.ir/giahan_src" target="_blank" class="pole-link blue">شاد</a>
+</div>
+</div>
+
+<div class="pole-item">
+<div class="pole-header" onclick="togglePole(this)">
+<span class="pole-title">🧪 آزمایشگاه علوم تجربی</span>
+<span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+</div>
+<div class="pole-links">
+<a href="https://web.shad.ir/#im?um=pjilam97" target="_blank" class="pole-link blue">شاد</a>
+<a href="https://eitaa.com/pjilam97" target="_blank" class="pole-link green">ایتا</a>
+</div>
+</div>
+
+<div class="pole-item">
+<div class="pole-header" onclick="togglePole(this)">
+<span class="pole-title">🤖 رباتیک</span>
+<span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+</div>
+<div class="pole-links">
+<a href="https://shad.ir/robotic_src" target="_blank" class="pole-link blue">شاد</a>
+<a href="https://eitaa.com/robotic_src" target="_blank" class="pole-link green">ایتا</a>
+</div>
+</div>
+
+<div class="pole-item">
+<div class="pole-header" onclick="togglePole(this)">
+<span class="pole-title">🚀 حمل و نقل و فناوری فضایی</span>
+<span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+</div>
+<div class="pole-links">
+<a href="https://shad.ir/havafazadarya_src" target="_blank" class="pole-link blue">شاد</a>
+</div>
+</div>
+
+<div class="pole-item">
+<div class="pole-header" onclick="togglePole(this)">
+<span class="pole-title">⚡ انرژی‌های نوین</span>
+<span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+</div>
+<div class="pole-links">
+<a href="https://shad.ir/EnergyNovin_src" target="_blank" class="pole-link blue">شاد</a>
+<a href="https://eitaa.com/EnergyNovin_Src" target="_blank" class="pole-link green">ایتا</a>
+</div>
+</div>
+
+<div class="pole-item">
+<div class="pole-header" onclick="togglePole(this)">
+<span class="pole-title">⚛️ علوم و فنون هسته‌ای</span>
+<span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+</div>
+<div class="pole-links">
+<a href="https://eitaa.com/src_nuclear_s_t" target="_blank" class="pole-link green">ایتا</a>
+<a href="https://shad.ir/src_nuclear_s_t" target="_blank" class="pole-link blue">شاد</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- ===== جشنواره ===== -->
+<section class="section" id="festival">
+<div class="section-header">
+<h2>🏆 <span>جشنواره</span> علمی پژوهشی</h2>
+<p>دوره‌های برگزار شده و پیش‌رو</p>
+</div>
+<div class="glass-grid" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr))">
+<a href="https://eitaa.com/songhor_p/543" target="_blank" class="glass-card">
+<span class="card-icon">🏆</span>
+<h3>ششمین جشنواره</h3>
+</a>
+<a href="https://eitaa.com/songhor_p/502" target="_blank" class="glass-card">
+<span class="card-icon">🏆</span>
+<h3>هفتمین جشنواره</h3>
+</a>
+<div class="glass-card">
+<span class="card-icon">📋</span>
+<h3>هشتمین جشنواره</h3>
+<p style="font-size:.45rem;color:var(--gold);margin-top:.2rem">به زودی</p>
+</div>
+</div>
+</section>
+
+<!-- ===== کلاس‌ها ===== -->
+<section class="section" id="classes">
+<div class="section-header">
+<h2>📝 <span>کلاس‌های</span> آموزشی</h2>
+<p>ثبت‌نام دوره‌های تخصصی</p>
+</div>
+<div class="glass-grid">
+<div class="glass-card"><span class="card-icon">💻</span><h3>کامپیوتر</h3></div>
+<div class="glass-card"><span class="card-icon">🤖</span><h3>رباتیک</h3></div>
+<div class="glass-card"><span class="card-icon">🇬🇧</span><h3>زبان</h3></div>
+<div class="glass-card"><span class="card-icon">🎨</span><h3>نقاشی</h3></div>
+<div class="glass-card"><span class="card-icon">🔭</span><h3>نجوم</h3></div>
+<div class="glass-card"><span class="card-icon">🧪</span><h3>آزمایشگاه</h3></div>
+<div class="glass-card"><span class="card-icon">📐</span><h3>ریاضی</h3></div>
+<div class="glass-card"><span class="card-icon">⚛️</span><h3>فیزیک</h3></div>
+<div class="glass-card"><span class="card-icon">🌍</span><h3>زمین</h3></div>
+<div class="glass-card"><span class="card-icon">📚</span><h3>کتابخانه</h3></div>
+</div>
+<div style="text-align:center;margin-top:1.5rem">
+<a href="https://shad.ir/songhor336" target="_blank" style="display:inline-block;background:var(--primary);color:#fff;padding:.5rem 2.5rem;border-radius:50px;text-decoration:none;font-weight:700;font-size:.75rem;transition:var(--transition);box-shadow:0 4px 20px rgba(10,36,99,.3)">
+<i class="fas fa-pen"></i> ثبت‌نام کلاس‌ها
+</a>
+</div>
+</section>
+
+<!-- ===== کتابخانه ===== -->
+<section class="section" id="library">
+<div class="section-header">
+<h2>📖 <span>کتابخانه</span> مجازی</h2>
+<p>دسترسی به هزاران جلد کتاب علمی و ادبی</p>
+</div>
+<div style="text-align:center">
+<button class="toggle-btn" onclick="toggleSection('libraryContent')">
+<i class="fas fa-chevron-down"></i> نمایش کتابخانه
+</button>
+</div>
+<div class="toggle-content" id="libraryContent">
+
+<div class="library-category">
+<div class="cat-header" onclick="toggleCategory(this)">
+<h3>📜 تاریخ</h3>
+<span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+</div>
+<div class="book-grid">
+<a href="https://taaghche.com/book/201257" target="_blank" class="book-link"><span class="book-icon">📜</span>تاریخ ایران</a>
+<a href="https://taaghche.com/book/247" target="_blank" class="book-link"><span class="book-icon">📖</span>منم کوروش</a>
+<a href="https://taaghche.com/book/16758" target="_blank" class="book-link"><span class="book-icon">📖</span>تاریخ ۱۸ ساله آذربایجان</a>
+<a href="https://taaghche.com/book/14406" target="_blank" class="book-link"><span class="book-icon">📖</span>تاریخ مذکر</a>
+</div>
+</div>
+
+<div class="library-category">
+<div class="cat-header" onclick="toggleCategory(this)">
+<h3>📚 ادبیات</h3>
+<span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+</div>
+<div class="book-grid">
+<a href="https://www.takbook.com/35-poetry-ebook/" target="_blank" class="book-link"><span class="book-icon">🖋️</span>دیوان حافظ</a>
+<a href="https://www.yasdl.com/45200/" target="_blank" class="book-link"><span class="book-icon">📖</span>شاهنامه فردوسی</a>
+<a href="https://www.takbook.com/42-poetry-ebook/" target="_blank" class="book-link"><span class="book-icon">📖</span>گلستان سعدی</a>
+<a href="https://persianpdf.com/book/" target="_blank" class="book-link"><span class="book-icon">📖</span>مثنوی معنوی</a>
+</div>
+</div>
+
+<div class="library-category">
+<div class="cat-header" onclick="toggleCategory(this)">
+<h3>⚛️ فیزیک</h3>
+<span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+</div>
+<div class="book-grid">
+<a href="https://taaghche.com/book/199724" target="_blank" class="book-link"><span class="book-icon">⚛️</span>فیزیک</a>
+<a href="https://taaghche.com/book/65942" target="_blank" class="book-link"><span class="book-icon">🌌</span>جهان‌های موازی</a>
+<a href="https://taaghche.com/book/136672" target="_blank" class="book-link"><span class="book-icon">🌀</span>کوانتوم</a>
+</div>
+</div>
+
+<div class="library-category">
+<div class="cat-header" onclick="toggleCategory(this)">
+<h3>🧪 شیمی</h3>
+<span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+</div>
+<div class="book-grid">
+<a href="https://taaghche.com/book/133313" target="_blank" class="book-link"><span class="book-icon">🧪</span>شیمی</a>
+<a href="https://taaghche.com/book/65376" target="_blank" class="book-link"><span class="book-icon">🧪</span>شیمی آلی</a>
+</div>
+</div>
+
+<div class="library-category">
+<div class="cat-header" onclick="toggleCategory(this)">
+<h3>🧬 زیست</h3>
+<span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+</div>
+<div class="book-grid">
+<a href="https://taaghche.com/book/208639" target="_blank" class="book-link"><span class="book-icon">🧬</span>زیست‌شناسی</a>
+<a href="https://taaghche.com/book/121263" target="_blank" class="book-link"><span class="book-icon">🧬</span>ژن خودخواه</a>
+</div>
+</div>
+
+<div class="library-category">
+<div class="cat-header" onclick="toggleCategory(this)">
+<h3>📐 ریاضی</h3>
+<span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+</div>
+<div class="book-grid">
+<a href="https://taaghche.com/book/18925" target="_blank" class="book-link"><span class="book-icon">📐</span>ریاضی مقدماتی</a>
+<a href="https://taaghche.com/book/86064" target="_blank" class="book-link"><span class="book-icon">📖</span>ریاضی عمومی</a>
+</div>
+</div>
+
+<div class="library-category">
+<div class="cat-header" onclick="toggleCategory(this)">
+<h3>🔭 نجوم</h3>
+<span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+</div>
+<div class="book-grid">
+<a href="https://taaghche.com/book/6909" target="_blank" class="book-link"><span class="book-icon">🌌</span>جایگاه ما در جهان</a>
+<a href="https://taaghche.com/book/191076" target="_blank" class="book-link"><span class="book-icon">🔭</span>نجوم به زبان ساده</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- ===== دانستنی‌ها ===== -->
+<section class="section" id="science">
+<div class="section-header">
+<h2>📚 <span>دانستنی‌ها</span></h2>
+<p>حقایق علمی جالب و شگفت‌انگیز</p>
+</div>
+<div style="text-align:center">
+<button class="toggle-btn" onclick="toggleSection('scienceContent')">
+<i class="fas fa-chevron-down"></i> نمایش دانستنی‌ها
+</button>
+</div>
+<div class="toggle-content" id="scienceContent">
+<div class="fact-grid">
+<div class="fact-item">در هر ۵ ثانیه یک کامپیوتر در سطح جهان به ویروس آلوده می‌گردد.</div>
+<div class="fact-item">ظروف پلاستیکی ۵۰ هزار سال طول می‌کشد تا در طبیعت تجزیه شوند.</div>
+<div class="fact-item">اغلب مارها دارای ۶ ردیف دندان می‌باشند.</div>
+<div class="fact-item">۹۰% سم مارها از پروتئین تشکیل یافته است.</div>
+<div class="fact-item">۱۰ درصد وزن بدن انسان (بدون آب) را باکتری‌ها تشکیل می‌دهند.</div>
+<div class="fact-item">۱۱ درصد جمعیت جهان را چپ دستان تشکیل می‌دهند.</div>
+<div class="fact-item">از هر ۱۰ نفر، یک نفر در سراسر جهان در جزیره زندگی می‌کند.</div>
+<div class="fact-item">۹۸ درصد وزن آب از اکسیژن تشکیل یافته است.</div>
+<div class="fact-item">یک اسب در طول یک سال ۷ برابر وزن بدن خود غذا مصرف می‌کند.</div>
+<div class="fact-item">سوسک‌ها سریع‌ترین جانوران ۶ پا می‌باشند.</div>
+<div class="fact-item">خرگوش‌ها و طوطی‌ها بدون چرخاندن سر، پشت سر خود را می‌بینند.</div>
+<div class="fact-item">هیچ پنگوئنی در قطب شمال وجود ندارد.</div>
+<div class="fact-item">رشد دندان‌های سگ آبی هیچ‌گاه متوقف نمی‌گردد.</div>
+<div class="fact-item">قلب وال‌ها تنها ۹ بار در دقیقه می‌تپد.</div>
+<div class="fact-item">عمر سنجاقک‌ها تنها ۲۴ ساعت می‌باشد.</div>
+<div class="fact-item">فیل‌ها تنها حیواناتی هستند که قادر به پریدن نمی‌باشند.</div>
+<div class="fact-item">حلزون قادر است سه سال بخوابد.</div>
+<div class="fact-item">هر فرد عادی در سر خود ۹۰ تا ۱۲۰ هزار رشته مو دارد.</div>
+<div class="fact-item">سریع‌ترین عضله بدن انسان زبان است.</div>
+<div class="fact-item">زنبور عسل دو معده دارد: یکی برای عسل و یکی برای غذا.</div>
+</div>
+</div>
+</section>
+
+<!-- ===== سایت‌های تحقیقاتی ===== -->
+<section class="section" id="research-sites">
+<div class="section-header">
+<h2>🔍 <span>سایت‌های</span> تحقیقاتی</h2>
+<p>پایگاه‌های علمی معتبر</p>
+</div>
+<div class="glass-grid">
+<a href="https://iranpaper.ir/" target="_blank" class="glass-card"><span class="card-icon">📄</span><h3>ایران پیپر</h3></a>
+<a href="https://www.sid.ir/" target="_blank" class="glass-card"><span class="card-icon">📚</span><h3>SID</h3></a>
+<a href="https://irandoc.ac.ir/page/2685" target="_blank" class="glass-card"><span class="card-icon">🔍</span><h3>گنج</h3></a>
+<a href="https://www.noormags.ir/view/fa/default" target="_blank" class="glass-card"><span class="card-icon">📖</span><h3>نورمگز</h3></a>
+<a href="https://civilica.com/" target="_blank" class="glass-card"><span class="card-icon">📝</span><h3>سیویلیکا</h3></a>
+<a href="https://elmnet.ir/" target="_blank" class="glass-card"><span class="card-icon">🔬</span><h3>علم نت</h3></a>
+<a href="https://www.sciencedirect.com/" target="_blank" class="glass-card"><span class="card-icon">📖</span><h3>ScienceDirect</h3></a>
+<a href="https://corp.oup.com/" target="_blank" class="glass-card"><span class="card-icon">📚</span><h3>Oxford</h3></a>
+</div>
+</section>
+
+<!-- ===== فیلم‌ها ===== -->
+<section class="section" id="experiments">
+<div class="section-header">
+<h2>🎬 <span>فیلم‌های</span> آزمایشگاهی</h2>
+<p>آموزش‌های تصویری علمی</p>
+</div>
+<div class="glass-grid">
+<a href="https://www.aparat.com/v/x25b923" target="_blank" class="glass-card"><span class="card-icon">🎬</span><h3>فیلم ۱</h3></a>
+<a href="https://www.aparat.com/v/VU360" target="_blank" class="glass-card"><span class="card-icon">🎬</span><h3>فیلم ۲</h3></a>
+<a href="https://www.aparat.com/v/lkrb4nx" target="_blank" class="glass-card"><span class="card-icon">🎬</span><h3>فیلم ۳</h3></a>
+<a href="https://www.aparat.com/v/s062564" target="_blank" class="glass-card"><span class="card-icon">🎬</span><h3>فیلم ۴</h3></a>
+<a href="https://www.aparat.com/v/u198665" target="_blank" class="glass-card"><span class="card-icon">🎬</span><h3>فیلم ۵</h3></a>
+<a href="https://www.aparat.com/v/y23c33w" target="_blank" class="glass-card"><span class="card-icon">🏠</span><h3>آزمایش خانگی</h3></a>
+</div>
+</section>
+
+<!-- ===== برنامه‌ها ===== -->
+<section class="section" id="apps">
+<div class="section-header">
+<h2>📱 <span>برنامه‌ها</span></h2>
+<p>نرم‌افزارهای کاربردی علمی</p>
+</div>
+<div class="glass-grid">
+<a href="https://myket.ir/app/com.noctuasoftware.stellarium_free" target="_blank" class="glass-card"><span class="card-icon">🔭</span><h3>استلاریوم</h3></a>
+<a href="https://myket.ir/app/com.PYOPYO.StarTracker" target="_blank" class="glass-card"><span class="card-icon">🌌</span><h3>آسمان شب</h3></a>
+<a href="https://myket.ir/app/com.ciberdroix.microscope" target="_blank" class="glass-card"><span class="card-icon">🔬</span><h3>میکروسکوپ</h3></a>
+<a href="https://myket.ir/app/io.ocedu.biology" target="_blank" class="glass-card"><span class="card-icon">🧬</span><h3>زیست</h3></a>
+</div>
+</section>
+
+<!-- ===== کانال‌ها ===== -->
+<section class="section" id="channels">
+<div class="section-header">
+<h2>📢 <span>کانال‌ها</span></h2>
+<p>شبکه‌های اجتماعی پژوهش سرا</p>
+</div>
+<div class="glass-grid">
+<a href="https://shad.ir/songhor_p" target="_blank" class="glass-card"><span class="card-icon">🎓</span><h3>شاد</h3></a>
+<a href="https://eitaa.com/songhor_p" target="_blank" class="glass-card"><span class="card-icon">💬</span><h3>ایتا</h3></a>
+<a href="https://www.aparat.com/songhor_p" target="_blank" class="glass-card"><span class="card-icon">🎬</span><h3>آپارات</h3></a>
+<a href="https://eitaa.com/pajoheshsara_kedu" target="_blank" class="glass-card"><span class="card-icon">📢</span><h3>پژوهش سراهای استان</h3></a>
+<a href="https://eitaa.com/energynovin_p_k" target="_blank" class="glass-card"><span class="card-icon">⚡</span><h3>قطب انرژی‌های نوین</h3></a>
+</div>
+</section>
+
+<!-- ===== افتخارات ===== -->
+<section class="stats-bottom" id="honors">
+<div class="section-header">
+<h2>🏅 <span>افتخارات</span> پژوهش سرا</h2>
+<p>دستاوردهای علمی و پژوهشی</p>
+</div>
+<div class="stats-grid">
+<div class="stat-item"><h3>+۳۵۰</h3><p>اثر برگزیده منطقه‌ای</p></div>
+<div class="stat-item"><h3>+۱۴۵</h3><p>اثر برگزیده استانی</p></div>
+<div class="stat-item"><h3>+۱۰</h3><p>اثر برگزیده کشوری</p></div>
+<div class="stat-item"><h3>🏆</h3><p>برترین پژوهش سرای استان</p></div>
+</div>
+</section>
+
+<!-- ===== مدیر ===== -->
+<section class="section" id="manager">
+<div class="section-header">
+<h2>👨‍💼 <span>مدیر</span> پژوهش سرا</h2>
+<p>ارتباط با مدیریت</p>
+</div>
+<div style="display:flex;justify-content:center">
+<a href="https://shad.ir/songhor336" target="_blank" style="display:inline-block;background:var(--primary);color:#fff;padding:.5rem 2.5rem;border-radius:50px;text-decoration:none;font-weight:700;font-size:.75rem;transition:var(--transition);box-shadow:0 4px 20px rgba(10,36,99,.3)">
+<i class="fas fa-user-tie"></i> ارتباط با مدیر پژوهش سرا
+</a>
+</div>
+</section>
+
+<!-- ===== تماس ===== -->
+<section class="section" id="contact">
+<div class="section-header">
+<h2>📞 <span>تماس</span> با ما</h2>
+<p>راه‌های ارتباطی پژوهش سرا</p>
+</div>
+<div class="glass-grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">
+<div class="glass-card">
+<span class="card-icon">📍</span>
+<h3>نشانی</h3>
+<p style="font-size:.5rem;color:var(--text-muted-color);margin-top:.2rem">سنقر، خیابان آیت الله غفاری، روبروی اداره پست</p>
+</div>
+<div class="glass-card">
+<span class="card-icon">📞</span>
+<h3>تلفن</h3>
+<p style="font-size:.5rem;color:var(--text-muted-color);margin-top:.2rem">۴۸۴۳۵۵۰۴</p>
+</div>
+<div class="glass-card">
+<span class="card-icon">🕐</span>
+<h3>روزهای کاری</h3>
+<p style="font-size:.5rem;color:var(--text-muted-color);margin-top:.2rem">شنبه تا چهارشنبه | ۸ تا ۱۳</p>
+</div>
+</div>
+</section>
+
+</div>
+
+<!-- ===== فوتر ===== -->
+<footer class="footer">
+<div class="footer-grid">
+<div>
+<h4><i class="fas fa-flask"></i> پژوهش سرای امام علی (ع) سنقر</h4>
+<p>قطب استانی انرژی‌های نوین</p>
+<p>بیش از ۵۰۰ اثر برگزیده در جشنواره‌های علمی</p>
+</div>
+<div>
+<h4>دسترسی سریع</h4>
+<a href="#news">اخبار</a>
+<a href="#book-of-day">کتاب امروز</a>
+<a href="#classes">کلاس‌ها</a>
+<a href="#library">کتابخانه</a>
+<a href="#science">دانستنی‌ها</a>
+</div>
+<div>
+<h4>ارتباط با ما</h4>
+<p><i class="fas fa-map-marker-alt"></i> سنقر، خیابان آیت الله غفاری</p>
+<p><i class="fas fa-phone"></i> ۴۸۴۳۵۵۰۴</p>
+<p><i class="fas fa-clock"></i> شنبه تا چهارشنبه ۸ تا ۱۳</p>
+</div>
+<div>
+<h4>شبکه‌های اجتماعی</h4>
+<a href="https://shad.ir/songhor_p" target="_blank"><i class="fas fa-graduation-cap"></i> شاد</a>
+<a href="https://eitaa.com/songhor_p" target="_blank"><i class="fas fa-comment"></i> ایتا</a>
+<a href="https://www.aparat.com/songhor_p" target="_blank"><i class="fas fa-video"></i> آپارات</a>
+</div>
+</div>
+<div class="footer-bottom">
+<p style="color:var(--gold-light);font-size:.9rem;font-weight:700">پژوهش سرای امام علی (ع) سنقر</p>
+<p style="margin-top:.3rem">© ۱۴۰۵ | کلیه حقوق محفوظ است</p>
+</div>
+</footer>
+
+<script>
+// ===== منو =====
+function toggleMenu(){
+document.getElementById('navMenu').classList.toggle('open');
+}
+document.querySelectorAll('.nav-menu a').forEach(a=>{
+a.addEventListener('click',()=>{
+document.getElementById('navMenu').classList.remove('open');
+});
+});
+
+// ===== باز و بسته کردن بخش‌ها =====
+function toggleSection(id){
+const c=document.getElementById(id);
+const b=c.previousElementSibling;
+c.classList.toggle('open');
+b.classList.toggle('active');
+}
+
+function togglePole(e){
+e.closest('.pole-item').classList.toggle('open');
+}
+
+function toggleCategory(e){
+e.closest('.library-category').classList.toggle('open');
+}
+
+// ===== تغییر حالت تیره/روشن =====
+function toggleTheme(){
+const h=document.documentElement;
+const b=document.getElementById('themeToggle');
+if(h.getAttribute('data-theme')==='dark'){
+h.removeAttribute('data-theme');
+b.innerHTML='<i class="fas fa-moon"></i>';
+b.classList.remove('active');
+}else{
+h.setAttribute('data-theme','dark');
+b.innerHTML='<i class="fas fa-sun"></i>';
+b.classList.add('active');
+}
+}
+
+// ===== تغییر زبان =====
+function toggleLang(){
+const h=document.documentElement;
+const l=document.getElementById('langLabel');
+if(h.getAttribute('data-lang')==='en'){
+h.removeAttribute('data-lang');
+l.textContent='فا';
+}else{
+h.setAttribute('data-lang','en');
+l.textContent='En';
+}
+}
+
+// ===== دیتای اخبار =====
+const newsData={
+news1:{
+badge:'اطلاعیه فوری',
+title:'📣 فراخوان جایزه البرز دانش‌آموزی ۱۴۰۵',
+content:'🎯 قابل توجه مدیران محترم مدارس متوسطه\n\nمطابق با سال‌های گذشته، بنیاد فرهنگی البرز، دانش‌آموزان دارای حُسن تحصیل را مورد تقدیر قرار می‌دهد.\n\n✅ دانش‌آموزان پایه نهم با معدل بالای ۱۹\n✅ دانش‌آموزان پایه دوازدهم با معدل بالای ۱۹\n\n💰 ۳۲ جایزه ۶۵ میلیون تومانی برای متوسطه اول\n💰 ۳۲ جایزه ۸۵ میلیون تومانی برای متوسطه دوم\n\nریاضی: ۸ نفر | تجربی: ۸ نفر | انسانی: ۸ نفر | کاردانش: ۸ نفر\n\n⏳ مهلت ثبت‌نام تا پایان شهریور و غیرقابل تمدید است.\n\n⭕ دانش‌آموزان با شماره همراه "مای مدیو" وارد شده و گزینه ثبت‌نام جایزه البرز را انتخاب کنند.',
+date:'شهریور ۱۴۰۵',
+links:[
+{url:'https://nazari.medu.gov.ir/',text:'🌐 پرتال متوسطه نظری'},
+{url:'https://shad.ir/info_daftarnazari',text:'📢 کانال اطلاع‌رسانی متوسطه نظری'},
+{url:'https://shad.ir/pajouheshsara',text:'📢 کانال پژوهش سراهای کشور'}
+]
+},
+news2:{
+badge:'پوستر علمی',
+title:'✅ تولید سوخت از جلبک',
+image:'IMG_20260917_122551_894.jpg',
+content:'✅ تولید سوخت از جلبک\n\n✅ تهیه‌کننده: امیر حسین امجدیان\nعضو انجمن انرژی های نوین\nمرکز پژوهش‌سرای امام علی علیه‌السلام\nقطب استانی انرژی‌های نوین کرمانشاه\nمرداد ۱۴۰۵',
+date:'مرداد ۱۴۰۵'
+},
+news3:{
+badge:'تقدیر',
+title:'تقدیر از استاد اصغر شریفی',
+content:'استاد ارجمند جناب آقای اصغر شریفی\nاستادکار محترم حوزه تعویض روغن و خدمات خودرو\n\nخدمت صادقانه، اخلاق نیک و رعایت انصاف، سرمایه‌ای ارزشمند است که نام نیک انسان را در میان مردم ماندگار می‌سازد.\n\nبدین‌وسیله از منش ارزشمند و همراهی صمیمانه جنابعالی و همچنین از اقدام فرهنگی و ماندگارتان در اهدای ۶۰ جلد کتاب علمی به مرکز پژوهش‌سرای دانش‌آموزی امام علی(ع) شهرستان سنقروکلیایی، صمیمانه تقدیر و تشکر می‌نماییم.\n\nاین اقدام ارزشمند، جلوه‌ای از نگاه مسئولانه و فرهنگ‌دوستانه شما و گامی مؤثر در ترویج فرهنگ مطالعه، علم و پژوهش در میان دانش‌آموزان این دیار است.\n\nبا سپاس و احترام\nمرکز پژوهش‌سرای دانش‌آموزی امام علی(ع) شهرستان سنقروکلیایی\nقطب استانی انرژی‌های نوین کرمانشاه',
+date:'شهریور ۱۴۰۵'
+},
+news4:{
+badge:'اطلاعیه ۲۳',
+title:'📢 مشاهده نتایج مرحله کشوری',
+content:'اطلاعیه ۳۴: مشاهده نتایج مرحله کشوری\n\nقابل توجه کارشناسان محترم استان ها، مدیران محترم پژوهش سرا و دانش آموزان عزیز\n\nنتایج مرحله کشوری از طریق پنل دانش آموزی برای تیم هایی که نتیجه داوری (نمره یا رد اثر) ایشان مشخص و قطعی شده است قابل مشاهده می باشد.\n\nدانش آموز (سرگروه) می توانند از شنبه ۲۱ شهریور تا یکشنبه تاریخ ۲۲ شهریور به نتیجه داوری اعلام شده، از طریق مای مدیو اعتراض ثبت کنند.\n\nدفتر آموزش دوره دوم متوسطه نظری\nگروه پژوهش سراهای دانش آموزی',
+date:'۲۱ شهریور ۱۴۰۵',
+links:[
+{url:'https://shad.ir/pajouheshsara',text:'📢 کانال پژوهش سراهای کشور'}
+]
+},
+news5:{
+badge:'مسابقه کدنویسی',
+title:'داوری آنلاین مرحله کشوری',
+content:'🔵هفتمین جشنواره علمی پژوهشی وزارت آموزش و پرورش\n🔴مسابقه کدنویسی\n🟣گرایش انجمن علمی پژوهشی\n🔶کیارش کاشی\n🔶محمد طاها قاسمی\n🔶محمد طاها مظفری\n🌑مرکز پژوهش سرای امام علی علیه السلام سنقر\n🟣قطب استانی انرژی های نوین کرمانشاه\n🌑نهم شهریور ۱۴۰۵',
+date:'۹ شهریور ۱۴۰۵'
+},
+news6:{
+badge:'همایش تقدیر',
+title:'همایش تقدیر از برگزیدگان استانی',
+content:'همایش تقدیر از برگزیدگان استانی ششمین جشنواره علمی پژوهشی وزارت آموزش و پرورش، با حضور جمعی از پژوهشگران، نویسندگان، شاعران، هنرمندان، اعضای هیئت امنای مرکز پژوهش‌سرای امام علی(ع) سنقر، والدین گرامی و دانش‌آموزان پژوهشگر و خلاق، روز چهارشنبه ۴ شهریور ۱۴۰۵ در محل کانون امام خمینی(ره) سنقر برگزار شد.\n\nدر ادامه، از ۸۲ دانش‌آموز خلاق و پژوهشگر که با ارائه ۱۴۴ اثر برگزیده استانی موفق به کسب رتبه و افتخار شده بودند، تقدیر به عمل آمد.',
+date:'۴ شهریور ۱۴۰۵'
+},
+news7:{
+badge:'انرژی‌های نوین - پویانمایی',
+title:'داوری آنلاین مرحله کشوری',
+content:'🟣داوری آنلاین مرحله کشوری\n🔵هفتمین جشنواره علمی پژوهشی وزارت آموزش و پرورش\nمسابقه انرژی های نوین\n🌑گرایش تولید محتوا پویانمایی\n☀️امیر حسین امجدیان\n🟦مرکز پژوهش سرای امام علی علیه السلام سنقر\n🔷قطب استانی انرژی های نوین کرمانشاه\n🔶نهم شهریور ۱۴۰۵',
+date:'۹ شهریور ۱۴۰۵'
+},
+news8:{
+badge:'انرژی نوین - ماشین خورشیدی تک سرنشین',
+title:'داوری آنلاین مرحله کشوری',
+content:'✅داوری آنلاین مرحله کشوری\n🟢هفتمین جشنواره علمی پژوهشی وزارت آموزش\n🔴مسابقه انرژی های نوین\nگرایش ماشین خورشیدی تک سرنشین\n🔶پیمان خزایی\nمرکز پژوهش سرای امام علی علیه السلام سنقر استان کرمانشاه\n📅 سوم شهریور ۱۴۰۵',
+date:'۳ شهریور ۱۴۰۵'
+},
+news9:{
+badge:'انرژی نوین - ماشین خورشیدی آبی خاکی',
+title:'داوری آنلاین مرحله کشوری',
+content:'✅داوری آنلاین مرحله کشوری\n🟢هفتمین جشنواره علمی پژوهشی وزارت آموزش\n🔴مسابقه انرژی های نوین\nگرایش ماشین خورشیدی آبی خاکی\n🔶شایلین آفتابی\nمرکز پژوهش سرای امام علی علیه السلام سنقر استان کرمانشاه\n📅 دوم شهریور ۱۴۰۵',
+date:'۲ شهریور ۱۴۰۵'
+},
+news10:{
+badge:'علوم و فنون هسته ای',
+title:'داوری آنلاین مرحله کشوری - شبیه ساز هسته ای',
+content:'✅داوری آنلاین مرحله کشوری\nهفتمین جشنواره علمی پژوهشی وزارت آموزش\n🔴مسابقه علوم و فنون هسته ای\nگرایش شبیه ساز هسته ای\n(ماکت نیروگاه هسته ای)\n🔶آرنیکا رضایی\n🔶آروشا غنی زاده\nپایه پنجم دبستان سما\nمرکز پژوهش سرای امام علی علیه السلام سنقر استان کرمانشاه\n📅 یکم شهریور ۱۴۰۵',
+date:'۱ شهریور ۱۴۰۵'
+},
+news11:{
+badge:'حمل و نقل پیشرفته',
+title:'داوری آنلاین مرحله کشوری - ساخت شناور دریایی',
+content:'✅داوری آنلاین مرحله کشوری\n🟢هفتمین جشنواره علمی پژوهشی وزارت آموزش\n🔴مسابقه حوزه فضایی، حمل و نقل پیشرفته\nگرایش ساخت شناور دریایی\n🔶محمد رهام جهانگیری\nمرکز پژوهش سرای امام علی علیه السلام سنقر استان کرمانشاه\n📅 یکم شهریور ۱۴۰۵',
+date:'۱ شهریور ۱۴۰۵'
+},
+news12:{
+badge:'مسابقه نجوم',
+title:'داوری آنلاین مرحله کشوری',
+content:'✅داوری آنلاین مرحله کشوری\n🟢هفتمین جشنواره علمی پژوهشی وزارت آموزش\n🔴مسابقه نجوم\nگرایش انجمن علمی پژوهشی\n🔶نرگس حشمتی\n🔶آیدا محبی\n🔶کیانا حاجی مرادی\nمرکز پژوهش سرای امام علی علیه السلام سنقر استان کرمانشاه\n📅 سوم شهریور ۱۴۰۵',
+date:'۳ شهریور ۱۴۰۵'
+}
+};
+
+// ===== نمایش خبر =====
+function showNews(id){
+const data=newsData[id];
+if(!data)return;
+const ov=document.createElement('div');
+ov.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);backdrop-filter:blur(12px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1.5rem';
+const m=document.createElement('div');
+m.style.cssText='max-width:600px;width:100%;background:var(--bg-card);border-radius:28px;padding:2rem;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.4);border:1px solid var(--border-card);color:var(--text-color);max-height:85vh;overflow-y:auto';
+
+let imgHTML=data.image?`<img src="${data.image}" style="width:100%;border-radius:16px;margin-bottom:1rem" onerror="this.style.display='none'">`:'';
+let linksHTML='';
+if(data.links){
+data.links.forEach(l=>{
+linksHTML+=`<a href="${l.url}" target="_blank" style="display:inline-block;margin:0.3rem;padding:0.4rem 1rem;background:var(--primary);color:#fff;border-radius:50px;text-decoration:none;font-size:0.6rem;font-weight:700">${l.text}</a>`;
+});
+}
+
+m.innerHTML=`
+<button onclick="this.closest('div[style]').remove()" style="position:absolute;top:12px;left:16px;background:#f1f5f9;border:none;width:36px;height:36px;border-radius:50%;font-size:1.2rem;cursor:pointer;color:#0f172a;z-index:10">✕</button>
+<span style="display:inline-block;font-size:0.6rem;font-weight:700;color:var(--primary);background:rgba(10,36,99,0.08);padding:0.1rem 0.8rem;border-radius:50px;margin-bottom:0.5rem">${data.badge}</span>
+<h2 style="font-size:1.1rem;font-weight:800;color:var(--primary);margin:0.3rem 0 0.6rem;line-height:1.5">${data.title}</h2>
+${imgHTML}
+<div style="font-size:0.75rem;line-height:2;color:var(--text-color);white-space:pre-wrap;word-wrap:break-word;max-height:45vh;overflow-y:auto">${data.content}</div>
+<div style="font-size:0.5rem;color:var(--text-muted-color);margin-top:0.8rem;padding-top:0.8rem;border-top:1px solid var(--border-card)">📅 ${data.date}</div>
+<div style="margin-top:0.5rem">${linksHTML}</div>
+`;
+ov.appendChild(m);
+document.body.appendChild(ov);
+ov.addEventListener('click',e=>{if(e.target===ov)ov.remove()});
+}
+
+// ===== کتاب امروز =====
+const books=[
+{cat:'ادبیات کلاسیک جهان',title:'ایلیاد',author:'هومر',desc:'حماسهٔ جنگ تروا و خشم آشیل.'},
+{cat:'ادبیات کلاسیک جهان',title:'اودیسه',author:'هومر',desc:'سفر ده‌سالهٔ اولیس به خانه.'},
+{cat:'ادبیات کلاسیک جهان',title:'هملت',author:'شکسپیر',desc:'تراژدی تردید و انتقام.'},
+{cat:'ادبیات کلاسیک جهان',title:'دن کیشوت',author:'سروانتس',desc:'نخستین رمان مدرن؛ طنز آرمان‌گرایی.'},
+{cat:'ادبیات کلاسیک جهان',title:'بلندی‌های بادگیر',author:'امیلی برونته',desc:'عشق ویرانگر و انتقام.'},
+{cat:'ادبیات کلاسیک جهان',title:'جنگ و صلح',author:'لئو تولستوی',desc:'حماسهٔ روسیه در زمان ناپلئون.'},
+{cat:'ادبیات کلاسیک جهان',title:'جنایت و مکافات',author:'داستایوفسکی',desc:'قتل، گناه و رستگاری.'},
+{cat:'ادبیات کلاسیک جهان',title:'مادام بوواری',author:'فلوبر',desc:'ناکامی رمانتیک در زندگی بورژوایی.'},
+{cat:'ادبیات کلاسیک جهان',title:'صد سال تنهایی',author:'مارکز',desc:'خانوادهٔ بوئندیا و رئالیسم جادویی.'},
+{cat:'ادبیات کلاسیک جهان',title:'زوال و سقوط روم',author:'گیبون',desc:'تاریخ فروپاشی امپراتوری روم.'},
+{cat:'ادبیات مدرن و معاصر',title:'مسخ',author:'کافکا',desc:'مردی که به حشره تبدیل می‌شود.'},
+{cat:'ادبیات مدرن و معاصر',title:'۱۹۸۴',author:'اورول',desc:'تمامیت‌خواهی و کنترل ذهن.'},
+{cat:'ادبیات مدرن و معاصر',title:'قلعهٔ حیوانات',author:'اورول',desc:'تمثیل انقلاب و فساد قدرت.'},
+{cat:'ادبیات مدرن و معاصر',title:'دنیای قشنگ نو',author:'هاکسلی',desc:'آرمان‌شهر مصرف‌گرا و بی‌احساس.'},
+{cat:'ادبیات مدرن و معاصر',title:'خشم و هیاهو',author:'فاکنر',desc:'فروپاشی خانوادهٔ جنوبی.'},
+{cat:'ادبیات مدرن و معاصر',title:'خانم دالووی',author:'ویرجینیا وولف',desc:'یک روز در ذهن لندن پس از جنگ.'},
+{cat:'ادبیات مدرن و معاصر',title:'جاده',author:'مک‌کارتی',desc:'پدر و پسر در جهان پساآخرالزمانی.'},
+{cat:'ادبیات مدرن و معاصر',title:'کوری',author:'ساراماگو',desc:'جامعه‌ای که ناگهان کور می‌شود.'},
+{cat:'ادبیات مدرن و معاصر',title:'پیرمرد و دریا',author:'همینگوی',desc:'مبارزهٔ پیرمرد با ماهی بزرگ.'},
+{cat:'ادبیات مدرن و معاصر',title:'نام گل',author:'اومبرتو اکو',desc:'رمان تاریخی–فلسفی در صومعه.'},
+{cat:'ادبیات ایران و فارسی',title:'شاهنامه',author:'فردوسی',desc:'حماسهٔ ملی ایران.'},
+{cat:'ادبیات ایران و فارسی',title:'مثنوی معنوی',author:'مولوی',desc:'شعر عرفانی و حکمت.'},
+{cat:'ادبیات ایران و فارسی',title:'گلستان',author:'سعدی',desc:'حکایت‌های اخلاقی با نثر آهنگین.'},
+{cat:'ادبیات ایران و فارسی',title:'بوستان',author:'سعدی',desc:'مثنوی اخلاقی دربارهٔ عدل و احسان.'},
+{cat:'ادبیات ایران و فارسی',title:'دیوان حافظ',author:'حافظ',desc:'غزل عاشقانه–عرفانی.'},
+{cat:'ادبیات ایران و فارسی',title:'بوف کور',author:'صادق هدایت',desc:'شاهکار مدرن فارسی؛ پوچی و روان‌پریشی.'},
+{cat:'ادبیات ایران و فارسی',title:'سووشون',author:'سیمین دانشور',desc:'شیراز در اشغال؛ زن و مقاومت.'},
+{cat:'ادبیات ایران و فارسی',title:'کلیدر',author:'محمود دولت‌آبادی',desc:'حماسهٔ روستایی خراسان.'},
+{cat:'ادبیات ایران و فارسی',title:'چشم‌هایش',author:'بزرگ علوی',desc:'عشق و مبارزهٔ سیاسی.'},
+{cat:'ادبیات ایران و فارسی',title:'دایی جان ناپلئون',author:'ایرج پزشکزاد',desc:'طنز اجتماعی دربارهٔ توهم.'},
+{cat:'فلسفه',title:'جمهور',author:'افلاطون',desc:'عدالت و مدینهٔ فاضله.'},
+{cat:'فلسفه',title:'اخلاق نیکوماخوس',author:'ارسطو',desc:'فضیلت و سعادت.'},
+{cat:'فلسفه',title:'اعترافات',author:'آگوستین',desc:'سفر روح به سوی خدا.'},
+{cat:'فلسفه',title:'تأملات',author:'دکارت',desc:'شک روش‌مند و بنیاد معرفت.'},
+{cat:'فلسفه',title:'نقد عقل محض',author:'کانت',desc:'مرزهای شناخت.'},
+{cat:'فلسفه',title:'چنین گفت زرتشت',author:'نیچه',desc:'ابرانسان و مرگ خدا.'},
+{cat:'فلسفه',title:'هستی و زمان',author:'هایدگر',desc:'وجود و زمان‌مندی.'},
+{cat:'فلسفه',title:'تراکتاتوس',author:'ویتگنشتاین',desc:'زبان، منطق و مرزهای جهان.'},
+{cat:'فلسفه',title:'نظریهٔ عدالت',author:'رالز',desc:'عدالت به‌عنوان انصاف.'},
+{cat:'فلسفه',title:'چرا ملت‌ها شکست می‌خورند',author:'آجم‌اوغلو',desc:'نهادها و توسعه.'},
+{cat:'روان‌شناسی',title:'تفسیر خواب',author:'فروید',desc:'ناخودآگاه و روان‌کاوی.'},
+{cat:'روان‌شناسی',title:'انسان در جستجوی معنا',author:'فرانکل',desc:'معنا در اردوگاه مرگ.'},
+{cat:'روان‌شناسی',title:'روان‌شناسی توده‌ها',author:'لو بون',desc:'رفتار جمعی.'},
+{cat:'روان‌شناسی',title:'قدرت اکنون',author:'اکهارت تول',desc:'ذهن‌آگاهی.'},
+{cat:'روان‌شناسی',title:'عادات اتمی',author:'جیمز کلیر',desc:'تغییر با عادت‌های کوچک.'},
+{cat:'روان‌شناسی',title:'تفکر، سریع و کند',author:'کانمن',desc:'دو سیستم ذهن.'},
+{cat:'روان‌شناسی',title:'هوش هیجانی',author:'گولمن',desc:'خودآگاهی و همدلی.'},
+{cat:'روان‌شناسی',title:'بازی',author:'استوارت براون',desc:'چرا بازی خلاقیت می‌سازد.'},
+{cat:'روان‌شناسی',title:'روان‌شناسی مثبت',author:'سلیگمن',desc:'شکوفایی و خوشبختی.'},
+{cat:'روان‌شناسی',title:'موهبت شرم',author:'برنه براون',desc:'آسیب‌پذیری و شجاعت.'},
+{cat:'تاریخ',title:'تاریخ هرودوت',author:'هرودوت',desc:'جنگ‌های یونان و پارس.'},
+{cat:'تاریخ',title:'تاریخ جنگ پلوپونزی',author:'توکودیدس',desc:'قدرت و ترس.'},
+{cat:'تاریخ',title:'سقوط روم',author:'گیبون',desc:'علل فروپاشی روم.'},
+{cat:'تاریخ',title:'تاریخ تمدن',author:'ویل دورانت',desc:'مرور تمدن‌های بشری.'},
+{cat:'تاریخ',title:'گاندی: زندگانی',author:'راماشاندران',desc:'استقلال هند.'},
+{cat:'تاریخ',title:'پول و تمدن',author:'نیل فرگوسن',desc:'تاریخ مالی جهان.'},
+{cat:'تاریخ',title:'اسلحه، میکروب و فولاد',author:'جرد دایموند',desc:'جغرافیا و سرنوشت.'},
+{cat:'تاریخ',title:'تاریخ ایران باستان',author:'پیرنیا',desc:'از ماد تا ساسانی.'},
+{cat:'تاریخ',title:'انقلاب مشروطه ایران',author:'آبراهامیان',desc:'زمینه‌ها و پیامدها.'},
+{cat:'تاریخ',title:'تاریخ طبری',author:'طبری',desc:'تاریخ جامع اسلام و ایران.'},
+{cat:'علم و فناوری',title:'تاریخچهٔ زمان',author:'هاوکینگ',desc:'کیهان‌شناسی برای همه.'},
+{cat:'علم و فناوری',title:'جهان زیبا',author:'پنروز',desc:'فیزیک، ذهن و ریاضیات.'},
+{cat:'علم و فناوری',title:'ژن خودخواه',author:'داوکینز',desc:'تکامل از دید ژن.'},
+{cat:'علم و فناوری',title:'سیر تکامل',author:'داروین',desc:'انتخاب طبیعی.'},
+{cat:'علم و فناوری',title:'فیزیک ناممکن‌ها',author:'کاکو',desc:'فناوری‌های آینده.'},
+{cat:'علم و فناوری',title:'ذهن نو',author:'پینکر',desc:'زبان، تفکر و طبیعت انسان.'},
+{cat:'علم و فناوری',title:'کوانتوم',author:'مانجیت کومار',desc:'درآمدی بر مکانیک کوانتومی.'},
+{cat:'علم و فناوری',title:'زندگی ۳٫۰',author:'تگمارک',desc:'هوش مصنوعی و آینده.'},
+{cat:'علم و فناوری',title:'سیارهٔ ویروسی',author:'زیمر',desc:'ویروس‌ها و تکامل.'},
+{cat:'علم و فناوری',title:'جهان‌های موازی',author:'برایان گرین',desc:'نظریهٔ ریسمان.'},
+{cat:'اقتصاد و مدیریت',title:'ثروت ملل',author:'آدام اسمیت',desc:'بنیان اقتصاد مدرن.'},
+{cat:'اقتصاد و مدیریت',title:'سرمایه',author:'مارکس',desc:'نقد اقتصاد سیاسی.'},
+{cat:'اقتصاد و مدیریت',title:'راه بندگی',author:'هایک',desc:'آزادی و بازار.'},
+{cat:'اقتصاد و مدیریت',title:'سرمایه‌داری و آزادی',author:'فریدمن',desc:'بازار آزاد.'},
+{cat:'اقتصاد و مدیریت',title:'از صفر به یک',author:'پیتر تیل',desc:'نوآوری انحصاری.'},
+{cat:'اقتصاد و مدیریت',title:'استارتاپ ناب',author:'اریک ریز',desc:'یادگیری معتبر.'},
+{cat:'اقتصاد و مدیریت',title:'پدر پولدار، پدر فقیر',author:'کیوساکی',desc:'سواد مالی.'},
+{cat:'اقتصاد و مدیریت',title:'مدیریت زمان',author:'برایان تریسی',desc:'اولویت‌ها و بهره‌وری.'},
+{cat:'اقتصاد و مدیریت',title:'رهبری',author:'جان مکسول',desc:'اصول نفوذ و خدمت.'},
+{cat:'اقتصاد و مدیریت',title:'اقتصاد برای همه',author:'جفری هاروی',desc:'درآمدی بر اقتصاد.'},
+{cat:'داستان و فانتزی',title:'ارباب حلقه‌ها',author:'تالکین',desc:'حماسهٔ فانتزی.'},
+{cat:'داستان و فانتزی',title:'هری پاتر',author:'جی.کی. رولینگ',desc:'جادو، مدرسه و بلوغ.'},
+{cat:'داستان و فانتزی',title:'بنیاد',author:'آسیموف',desc:'علمیتخیلی و سقوط تمدن.'},
+{cat:'داستان و فانتزی',title:'تلاقی',author:'استیون کینگ',desc:'ترس و رستگاری.'},
+{cat:'داستان و فانتزی',title:'دختری با خالکوبی اژدها',author:'لارسون',desc:'جنایی–معمایی.'},
+{cat:'داستان و فانتزی',title:'قتل در قطار سریع‌السیر',author:'آگاتا کریستی',desc:'معمای اتاق بسته.'},
+{cat:'داستان و فانتزی',title:'شرلوک هلمز',author:'آرتور کانن دویل',desc:'کارآگاه منطقی.'},
+{cat:'داستان و فانتزی',title:'غرور و تعصب',author:'جین آستن',desc:'عشق و طبقه.'},
+{cat:'داستان و فانتزی',title:'جین ایر',author:'شارلوت برونته',desc:'استقلال زن و عشق.'},
+{cat:'داستان و فانتزی',title:'کیمیاگر',author:'پائولو کوئیلو',desc:'سفر به سوی رؤیا.'},
+{cat:'شعر و نمایشنامه',title:'اشعار فروغ فرخزاد',author:'فروغ فرخزاد',desc:'صدای زنانهٔ مدرن ایران.'},
+{cat:'شعر و نمایشنامه',title:'زمستان',author:'اخوان ثالث',desc:'شعر نو و یأس تاریخی.'},
+{cat:'شعر و نمایشنامه',title:'صدای پای آب',author:'سهراب سپهری',desc:'عرفان و طبیعت.'},
+{cat:'شعر و نمایشنامه',title:'اشعار نزار قبانی',author:'نزار قبانی',desc:'عشق و سیاست عربی.'},
+{cat:'شعر و نمایشنامه',title:'مرگ فروشنده',author:'آرتور میلر',desc:'تراژدی آمریکایی.'},
+{cat:'شعر و نمایشنامه',title:'اتوبوسی به نام هوس',author:'تنسی ویلیامز',desc:'توهم و فروپاشی.'},
+{cat:'شعر و نمایشنامه',title:'کرگدن',author:'یونسکو',desc:'تئاتر ابسورد.'},
+{cat:'شعر و نمایشنامه',title:'کالیگولا',author:'کامو',desc:'قدرت و پوچی.'},
+{cat:'شعر و نمایشنامه',title:'تئاتر و همزادش',author:'آنتونن آرتو',desc:'نظریهٔ تئاتر خشونت.'},
+{cat:'شعر و نمایشنامه',title:'تاریخ هنر',author:'گامبریچ',desc:'راهنمای جامع هنر جهان.'}
+];
+
+// ===== لود کتاب امروز =====
+function loadBookOfDay(){
+const today=new Date();
+const dayOfYear=Math.floor((today-new Date(today.getFullYear(),0,0))/86400000);
+const bookIndex=dayOfYear%books.length;
+const book=books[bookIndex];
+
+document.getElementById('bookDayNumber').textContent=`روز ${bookIndex+1} از ${books.length}`;
+document.getElementById('bookCategory').textContent=book.cat;
+document.getElementById('bookTitle').textContent=book.title;
+document.getElementById('bookAuthor').textContent=book.author;
+document.getElementById('bookDesc').textContent=book.desc;
+
+// جستجو در گوگل
+const searchQuery=encodeURIComponent(book.title+' '+book.author+' دانلود کتاب');
+document.getElementById('bookReadLink').href=`https://www.google.com/search?q=${searchQuery}`;
+}
+
+loadBookOfDay();
+</script>
+
+</body>
+</html>
