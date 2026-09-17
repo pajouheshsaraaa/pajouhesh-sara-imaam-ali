@@ -2,6 +2,8 @@ backend:
   name: github
   repo: pajouheshsaraaa/pajouhesh-sara-imaam-ali
   branch: main
+  base_url: https://deploy-preview-1--netlify-cms-oauth-provider.netlify.app
+  auth_endpoint: auth
 
 media_folder: "images"
 public_folder: "/images"
