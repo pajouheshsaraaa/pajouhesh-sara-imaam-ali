@@ -1,0 +1,3004 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173b72">
+
+  <title>پژوهش‌سرای امام علی (ع) سنقر</title>
+
+  <meta
+    name="description"
+    content="وب‌سایت رسمی پژوهش‌سرای امام علی (ع) سنقر؛ بستری برای پژوهش، خلاقیت، نوآوری و پرورش استعدادهای دانش‌آموزان."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    /* =========================================================
+       DESIGN SYSTEM
+       پژوهش‌سرای امام علی (ع) سنقر
+       ========================================================= */
+
+    :root {
+      --navy-950: #0b1f3a;
+      --navy-900: #102d54;
+      --navy-800: #173b72;
+      --navy-700: #1d4b8f;
+      --blue-600: #2864b2;
+
+      --blue-050: #f2f6fb;
+      --blue-100: #e8f0fa;
+      --blue-200: #d6e3f3;
+
+      --white: #ffffff;
+      --gray-025: #fcfdff;
+      --gray-050: #f7f9fc;
+      --gray-100: #eef2f6;
+      --gray-200: #dfe5ec;
+      --gray-400: #8a96a6;
+      --gray-500: #687587;
+      --gray-700: #394657;
+      --gray-900: #182231;
+
+      --success: #237a57;
+      --warning: #b7791f;
+
+      --container: 1180px;
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+
+      --shadow-sm: 0 2px 12px rgba(15, 42, 74, 0.05);
+      --shadow-md: 0 8px 28px rgba(15, 42, 74, 0.08);
+
+      --transition: 180ms ease;
+    }
+
+    /* =========================================================
+       RESET
+       ========================================================= */
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: "Vazirmatn", Tahoma, Arial, sans-serif;
+      background: var(--white);
+      color: var(--gray-900);
+      line-height: 1.9;
+      font-size: 15px;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ::selection {
+      background: var(--navy-800);
+      color: white;
+    }
+
+    /* =========================================================
+       GLOBAL
+       ========================================================= */
+
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .section--gray {
+      background: var(--gray-050);
+    }
+
+    .section--blue {
+      background: var(--blue-050);
+    }
+
+    .section-header {
+      max-width: 720px;
+      margin-bottom: 42px;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--navy-700);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .section-kicker::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      background: var(--navy-700);
+      border-radius: 99px;
+    }
+
+    .section-title {
+      color: var(--navy-950);
+      font-size: clamp(25px, 3vw, 34px);
+      line-height: 1.5;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .section-description {
+      color: var(--gray-500);
+      font-size: 15px;
+      max-width: 650px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 0 21px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      transition:
+        background var(--transition),
+        border-color var(--transition),
+        color var(--transition),
+        transform var(--transition);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--navy-800);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--navy-900);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--navy-800);
+      border-color: var(--blue-200);
+    }
+
+    .btn-secondary:hover {
+      background: var(--blue-050);
+    }
+
+    .btn-link {
+      color: var(--navy-700);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-link:hover {
+      color: var(--navy-950);
+    }
+
+    /* =========================================================
+       TOP BAR
+       ========================================================= */
+
+    .topbar {
+      background: var(--navy-950);
+      color: rgba(255,255,255,.85);
+      font-size: 12px;
+    }
+
+    .topbar-inner {
+      min-height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .topbar-right,
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .topbar-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .topbar-item span:first-child {
+      opacity: .8;
+    }
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid var(--gray-200);
+      backdrop-filter: blur(10px);
+    }
+
+    .header-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-width: 260px;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: var(--navy-800);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .brand-text strong {
+      display: block;
+      color: var(--navy-950);
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    .brand-text small {
+      display: block;
+      color: var(--gray-500);
+      font-size: 11px;
+      margin-top: 2px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .nav a {
+      color: var(--gray-700);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 9px 11px;
+      border-radius: 7px;
+      transition: var(--transition);
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      background: var(--blue-050);
+      color: var(--navy-800);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mobile-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      background: white;
+      color: var(--navy-800);
+      font-size: 21px;
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+      background:
+        linear-gradient(
+          90deg,
+          rgba(10, 31, 58, .97),
+          rgba(20, 59, 113, .93)
+        );
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: -140px;
+      bottom: -180px;
+      width: 500px;
+      height: 500px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      min-height: 520px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 70px;
+      padding: 70px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #d8e7fa;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 17px;
+    }
+
+    .hero-label::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      background: #8bb4e8;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.45;
+      font-weight: 800;
+      letter-spacing: -.5px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: #a9c9ef;
+    }
+
+    .hero-description {
+      color: #dce6f3;
+      font-size: 16px;
+      line-height: 2.1;
+      max-width: 650px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero .btn-primary {
+      background: white;
+      color: var(--navy-900);
+    }
+
+    .hero .btn-primary:hover {
+      background: #edf4fc;
+    }
+
+    .hero .btn-secondary {
+      background: transparent;
+      color: white;
+      border-color: rgba(255,255,255,.25);
+    }
+
+    .hero .btn-secondary:hover {
+      background: rgba(255,255,255,.08);
+    }
+
+    .hero-panel {
+      background: rgba(255,255,255,.075);
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 16px;
+      padding: 26px;
+    }
+
+    .hero-panel-title {
+      font-size: 14px;
+      font-weight: 700;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      margin-bottom: 17px;
+    }
+
+    .hero-list {
+      display: grid;
+      gap: 13px;
+    }
+
+    .hero-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      color: #e4edf8;
+      font-size: 13px;
+    }
+
+    .hero-list-icon {
+      width: 25px;
+      height: 25px;
+      border-radius: 6px;
+      background: rgba(255,255,255,.1);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      font-size: 12px;
+    }
+
+    /* =========================================================
+       STATS
+       ========================================================= */
+
+    .stats {
+      border-bottom: 1px solid var(--gray-200);
+      background: white;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat {
+      padding: 32px 25px;
+      text-align: center;
+      border-left: 1px solid var(--gray-200);
+    }
+
+    .stat:last-child {
+      border-left: 0;
+    }
+
+    .stat-number {
+      color: var(--navy-800);
+      font-size: 30px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      color: var(--gray-500);
+      font-size: 12px;
+    }
+
+    /* =========================================================
+       ABOUT
+       ========================================================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-content p {
+      color: var(--gray-500);
+      margin-bottom: 15px;
+      line-height: 2.15;
+    }
+
+    .about-points {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .about-point {
+      border: 1px solid var(--gray-200);
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .point-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      background: var(--blue-050);
+      color: var(--navy-800);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .about-point strong {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+
+    .about-point span {
+      color: var(--gray-500);
+      font-size: 11px;
+    }
+
+    .about-card {
+      background: var(--blue-050);
+      border: 1px solid var(--blue-200);
+      border-radius: 16px;
+      padding: 34px;
+      position: relative;
+    }
+
+    .about-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--navy-800);
+      border-radius: 0 16px 16px 0;
+    }
+
+    .about-card-title {
+      color: var(--navy-900);
+      font-size: 19px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .about-card p {
+      color: var(--gray-500);
+      line-height: 2;
+      font-size: 13px;
+    }
+
+    /* =========================================================
+       RESEARCH AREAS
+       ========================================================= */
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .research-card {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 24px;
+      transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+    }
+
+    .research-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--blue-200);
+      box-shadow: var(--shadow-md);
+    }
+
+    .research-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 9px;
+      background: var(--blue-050);
+      color: var(--navy-800);
+      display: grid;
+      place-items: center;
+      font-size: 19px;
+      margin-bottom: 17px;
+    }
+
+    .research-card h3 {
+      color: var(--navy-900);
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .research-card p {
+      color: var(--gray-500);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    /* =========================================================
+       COURSES
+       ========================================================= */
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .course-card {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 13px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .course-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .course-top {
+      height: 8px;
+      background: var(--navy-800);
+    }
+
+    .course-body {
+      padding: 24px;
+    }
+
+    .course-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--gray-400);
+      font-size: 11px;
+      margin-bottom: 13px;
+    }
+
+    .course-body h3 {
+      color: var(--navy-900);
+      font-size: 15px;
+      margin-bottom: 9px;
+    }
+
+    .course-body p {
+      color: var(--gray-500);
+      font-size: 12px;
+      line-height: 1.9;
+      margin-bottom: 18px;
+    }
+
+    /* =========================================================
+       ROADMAP
+       ========================================================= */
+
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .roadmap::before {
+      content: "";
+      position: absolute;
+      top: 23px;
+      right: 11%;
+      left: 11%;
+      height: 1px;
+      background: var(--blue-200);
+    }
+
+    .roadmap-step {
+      position: relative;
+      text-align: center;
+      padding: 0 15px;
+    }
+
+    .roadmap-number {
+      width: 46px;
+      height: 46px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: white;
+      border: 2px solid var(--navy-800);
+      color: var(--navy-800);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      position: relative;
+      z-index: 2;
+    }
+
+    .roadmap-step h3 {
+      color: var(--navy-900);
+      font-size: 14px;
+      margin-bottom: 7px;
+    }
+
+    .roadmap-step p {
+      color: var(--gray-500);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    /* =========================================================
+       NEWS
+       ========================================================= */
+
+    .news-layout {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 20px;
+    }
+
+    .featured-news,
+    .news-list {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 13px;
+    }
+
+    .featured-news {
+      padding: 30px;
+    }
+
+    .news-date {
+      color: var(--navy-700);
+      font-size: 11px;
+      margin-bottom: 11px;
+    }
+
+    .featured-news h3 {
+      color: var(--navy-900);
+      font-size: 21px;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .featured-news p {
+      color: var(--gray-500);
+      font-size: 13px;
+      line-height: 2;
+      margin-bottom: 22px;
+    }
+
+    .news-list {
+      padding: 8px;
+    }
+
+    .news-item {
+      padding: 17px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .news-item:last-child {
+      border-bottom: 0;
+    }
+
+    .news-item h4 {
+      color: var(--gray-900);
+      font-size: 13px;
+      line-height: 1.8;
+      margin-bottom: 5px;
+    }
+
+    .news-item span {
+      color: var(--gray-400);
+      font-size: 10px;
+    }
+
+    /* =========================================================
+       LIBRARY
+       ========================================================= */
+
+    .library-box {
+      background: var(--navy-900);
+      border-radius: 16px;
+      padding: 38px;
+      color: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .library-box h3 {
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .library-box p {
+      color: #cbd8e8;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .library-search {
+      display: flex;
+      background: white;
+      border-radius: 9px;
+      padding: 5px;
+    }
+
+    .library-search input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      padding: 10px 13px;
+      color: var(--gray-900);
+      background: transparent;
+    }
+
+    .library-search button {
+      border: 0;
+      background: var(--navy-800);
+      color: white;
+      border-radius: 7px;
+      padding: 0 18px;
+      font-weight: 600;
+    }
+
+    /* =========================================================
+       GALLERY
+       ========================================================= */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 190px 190px;
+      gap: 10px;
+    }
+
+    .gallery-item {
+      background: var(--blue-100);
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy-700);
+      border: 1px solid var(--blue-200);
+    }
+
+    .gallery-item:first-child {
+      grid-row: 1 / 3;
+    }
+
+    .gallery-placeholder {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .gallery-placeholder strong {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .gallery-placeholder span {
+      color: var(--gray-500);
+      font-size: 10px;
+    }
+
+    /* =========================================================
+       FAQ
+       ========================================================= */
+
+    .faq {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .faq-item {
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      background: white;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      border: 0;
+      background: white;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: right;
+      color: var(--navy-900);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .faq-question span {
+      color: var(--navy-700);
+      font-size: 18px;
+      transition: transform var(--transition);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 250ms ease;
+    }
+
+    .faq-answer p {
+      padding: 0 20px 19px;
+      color: var(--gray-500);
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .faq-item.open .faq-question span {
+      transform: rotate(45deg);
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+
+    /* =========================================================
+       CONTACT
+       ========================================================= */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 20px;
+    }
+
+    .contact-info,
+    .contact-form {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 13px;
+      padding: 28px;
+    }
+
+    .contact-info h3,
+    .contact-form h3 {
+      color: var(--navy-900);
+      font-size: 17px;
+      margin-bottom: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .contact-item:last-child {
+      border-bottom: 0;
+    }
+
+    .contact-icon {
+      width: 34px;
+      height: 34px;
+      background: var(--blue-050);
+      color: var(--navy-800);
+      border-radius: 7px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .contact-item strong {
+      display: block;
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+
+    .contact-item span {
+      color: var(--gray-500);
+      font-size: 11px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px;
+    }
+
+    .form-group {
+      margin-bottom: 13px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      display: block;
+      color: var(--gray-700);
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .form-control {
+      width: 100%;
+      border: 1px solid var(--gray-200);
+      background: var(--gray-025);
+      border-radius: 7px;
+      padding: 11px 12px;
+      outline: none;
+      color: var(--gray-900);
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      border-color: var(--navy-700);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(29,75,143,.07);
+    }
+
+    textarea.form-control {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    .footer {
+      background: var(--navy-950);
+      color: white;
+    }
+
+    .footer-main {
+      padding: 55px 0 40px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer-brand h3 {
+      font-size: 16px;
+      margin-bottom: 11px;
+    }
+
+    .footer-brand p {
+      color: #aebed2;
+      font-size: 12px;
+      line-height: 2;
+      max-width: 330px;
+    }
+
+    .footer-column h4 {
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: #aebed2;
+      font-size: 11px;
+      margin-bottom: 9px;
+      transition: var(--transition);
+    }
+
+    .footer-column a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.1);
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: #91a4bb;
+      font-size: 10px;
+    }
+
+    /* =========================================================
+       BACK TO TOP
+       ========================================================= */
+
+    .back-top {
+      position: fixed;
+      left: 22px;
+      bottom: 22px;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      background: white;
+      color: var(--navy-800);
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: var(--transition);
+      z-index: 900;
+    }
+
+    .back-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    /* =========================================================
+       TOAST
+       ========================================================= */
+
+    .toast {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: var(--navy-950);
+      color: white;
+      padding: 12px 17px;
+      border-radius: 8px;
+      font-size: 12px;
+      box-shadow: var(--shadow-md);
+      transform: translateY(20px);
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 2000;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 1050px) {
+      .nav {
+        gap: 0;
+      }
+
+      .nav a {
+        padding-inline: 8px;
+      }
+
+      .research-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-main {
+        grid-template-columns: 1.5fr 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .topbar-left {
+        display: none;
+      }
+
+      .header-inner {
+        min-height: 70px;
+      }
+
+      .brand {
+        min-width: auto;
+      }
+
+      .mobile-toggle {
+        display: block;
+      }
+
+      .nav {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        left: 20px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        background: white;
+        border: 1px solid var(--gray-200);
+        border-radius: 10px;
+        padding: 8px;
+        box-shadow: var(--shadow-md);
+      }
+
+      .nav.open {
+        display: flex;
+      }
+
+      .nav a {
+        padding: 11px 13px;
+      }
+
+      .header-actions .btn {
+        display: none;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        min-height: auto;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .courses-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .roadmap {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+
+      .roadmap::before {
+        display: none;
+      }
+
+      .news-layout,
+      .library-box,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 180px 180px 180px;
+      }
+
+      .gallery-item:first-child {
+        grid-row: auto;
+        grid-column: 1 / -1;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(var(--container), calc(100% - 28px));
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .topbar {
+        display: none;
+      }
+
+      .brand-text small {
+        display: none;
+      }
+
+      .brand-mark {
+        width: 43px;
+        height: 43px;
+      }
+
+      .brand-text strong {
+        font-size: 13px;
+      }
+
+      .hero-inner {
+        padding: 55px 0;
+      }
+
+      .hero h1 {
+        font-size: 31px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stat {
+        border-bottom: 1px solid var(--gray-200);
+      }
+
+      .stat:nth-child(2) {
+        border-left: 0;
+      }
+
+      .about-points {
+        grid-template-columns: 1fr;
+      }
+
+      .research-grid,
+      .courses-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .roadmap {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 150px 150px 150px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full {
+        grid-column: auto;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 18px 0;
+      }
+
+      .library-box {
+        padding: 27px 22px;
+      }
+
+      .contact-info,
+      .contact-form {
+        padding: 21px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =======================================================
+       TOP BAR
+       ======================================================== -->
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+
+      <div class="topbar-right">
+        <div class="topbar-item">
+          <span>مرکز آموزشی و پژوهشی</span>
+        </div>
+
+        <div class="topbar-item">
+          <span>شهرستان سنقر</span>
+        </div>
+      </div>
+
+      <div class="topbar-left">
+        <div class="topbar-item">
+          <span>سامانه رسمی پژوهش‌سرا</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- =======================================================
+       HEADER
+       ======================================================== -->
+
+  <header class="header">
+
+    <div class="container header-inner">
+
+      <a href="#home" class="brand">
+
+        <div class="brand-mark">
+          ع
+        </div>
+
+        <div class="brand-text">
+          <strong>پژوهش‌سرای امام علی (ع) سنقر</strong>
+          <small>مرکز پژوهش، خلاقیت و نوآوری دانش‌آموزی</small>
+        </div>
+
+      </a>
+
+
+      <nav class="nav" id="mainNav">
+
+        <a href="#home" class="active">خانه</a>
+
+        <a href="#about">درباره پژوهش‌سرا</a>
+
+        <a href="#research">فعالیت‌ها</a>
+
+        <a href="#courses">دوره‌ها</a>
+
+        <a href="#news">اخبار</a>
+
+        <a href="#library">کتابخانه</a>
+
+        <a href="#gallery">گالری</a>
+
+        <a href="#contact">ارتباط با ما</a>
+
+      </nav>
+
+
+      <div class="header-actions">
+
+        <a href="#contact" class="btn btn-primary">
+          تماس با پژوهش‌سرا
+        </a>
+
+        <button
+          class="mobile-toggle"
+          id="mobileToggle"
+          aria-label="باز کردن منو"
+        >
+          ☰
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <main id="home">
+
+
+    <!-- =====================================================
+         HERO
+         ====================================================== -->
+
+    <section class="hero">
+
+      <div class="container hero-inner">
+
+        <div>
+
+          <div class="hero-label">
+            پژوهش، آموزش و نوآوری
+          </div>
+
+          <h1>
+            پرورش اندیشه‌های
+            <span>آینده‌ساز</span>
+          </h1>
+
+          <p class="hero-description">
+            پژوهش‌سرای امام علی (ع) سنقر بستری برای شناسایی و پرورش
+            استعدادهای دانش‌آموزی، توسعه فعالیت‌های پژوهشی و حمایت از
+            ایده‌های خلاقانه است.
+          </p>
+
+          <div class="hero-actions">
+
+            <a href="#about" class="btn btn-primary">
+              آشنایی با پژوهش‌سرا
+            </a>
+
+            <a href="#courses" class="btn btn-secondary">
+              مشاهده دوره‌ها
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-panel">
+
+          <div class="hero-panel-title">
+            مأموریت‌های اصلی پژوهش‌سرا
+          </div>
+
+          <ul class="hero-list">
+
+            <li>
+              <div class="hero-list-icon">۱</div>
+              <span>
+                شناسایی و هدایت استعدادهای علمی و پژوهشی دانش‌آموزان
+              </span>
+            </li>
+
+            <li>
+              <div class="hero-list-icon">۲</div>
+              <span>
+                ایجاد فرصت برای تجربه عملی پژوهش و یادگیری
+              </span>
+            </li>
+
+            <li>
+              <div class="hero-list-icon">۳</div>
+              <span>
+                حمایت از ایده‌های خلاقانه و طرح‌های دانش‌آموزی
+              </span>
+            </li>
+
+            <li>
+              <div class="hero-list-icon">۴</div>
+              <span>
+                برگزاری دوره‌ها، کارگاه‌ها و برنامه‌های علمی
+              </span>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STATS
+         ====================================================== -->
+
+    <section class="stats">
+
+      <div class="container stats-grid">
+
+        <div class="stat">
+          <div class="stat-number">+</div>
+          <div class="stat-label">دانش‌آموزان پژوهشگر</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-number">+</div>
+          <div class="stat-label">طرح و فعالیت پژوهشی</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-number">+</div>
+          <div class="stat-label">دوره و کارگاه آموزشی</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-number">۱</div>
+          <div class="stat-label">مرکز پژوهشی شهرستان سنقر</div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT
+         ====================================================== -->
+
+    <section class="section" id="about">
+
+      <div class="container about-grid">
+
+        <div class="about-content">
+
+          <div class="section-kicker">
+            درباره ما
+          </div>
+
+          <h2 class="section-title">
+            پژوهش‌سرای امام علی (ع) سنقر
+          </h2>
+
+          <p>
+            پژوهش‌سرای دانش‌آموزی محیطی علمی و آموزشی برای تقویت روحیه
+            پژوهشگری، خلاقیت و نوآوری در میان دانش‌آموزان است.
+          </p>
+
+          <p>
+            این مجموعه با فراهم کردن زمینه مناسب برای فعالیت‌های علمی،
+            آزمایشگاهی و پژوهشی تلاش می‌کند دانش‌آموزان را در مسیر
+            یادگیری عمیق‌تر و تجربه عملی علم همراهی کند.
+          </p>
+
+          <div class="about-points">
+
+            <div class="about-point">
+              <div class="point-icon">✓</div>
+              <div>
+                <strong>یادگیری پژوهش‌محور</strong>
+                <span>تبدیل دانش نظری به تجربه عملی</span>
+              </div>
+            </div>
+
+            <div class="about-point">
+              <div class="point-icon">✓</div>
+              <div>
+                <strong>پرورش خلاقیت</strong>
+                <span>حمایت از ایده‌های نو و خلاقانه</span>
+              </div>
+            </div>
+
+            <div class="about-point">
+              <div class="point-icon">✓</div>
+              <div>
+                <strong>استعداد‌یابی</strong>
+                <span>شناسایی توانمندی‌های دانش‌آموزان</span>
+              </div>
+            </div>
+
+            <div class="about-point">
+              <div class="point-icon">✓</div>
+              <div>
+                <strong>توسعه مهارت</strong>
+                <span>تقویت مهارت‌های علمی و عملی</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="about-card">
+
+          <div class="about-card-title">
+            چشم‌انداز پژوهش‌سرا
+          </div>
+
+          <p>
+            ایجاد محیطی پویا، علمی و خلاق برای رشد استعدادهای دانش‌آموزی
+            و فراهم کردن فرصت مشارکت آنان در فعالیت‌های پژوهشی، علمی و
+            فناورانه.
+          </p>
+
+          <br>
+
+          <p>
+            هدف اصلی، ایجاد ارتباط میان آموزش، تجربه، پژوهش و خلاقیت و
+            فراهم کردن بستری مناسب برای شکل‌گیری ایده‌های آینده‌ساز است.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         RESEARCH
+         ====================================================== -->
+
+    <section class="section section--gray" id="research">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-kicker">
+            فعالیت‌های علمی
+          </div>
+
+          <h2 class="section-title">
+            حوزه‌های فعالیت پژوهش‌سرا
+          </h2>
+
+          <p class="section-description">
+            فعالیت‌های پژوهش‌سرا در حوزه‌های متنوع علمی، فناوری،
+            خلاقیت و مهارت‌های پژوهشی دنبال می‌شود.
+          </p>
+
+        </div>
+
+
+        <div class="research-grid">
+
+          <article class="research-card">
+
+            <div class="research-icon">⌬</div>
+
+            <h3>علوم پایه</h3>
+
+            <p>
+              فعالیت‌ها و پروژه‌های پژوهشی در زمینه علوم پایه،
+              آزمایش و مشاهده علمی.
+            </p>
+
+          </article>
+
+
+          <article class="research-card">
+
+            <div class="research-icon">⚙</div>
+
+            <h3>فناوری و مهندسی</h3>
+
+            <p>
+              آشنایی با فناوری، ساخت، طراحی و حل مسئله به شیوه
+              مهندسی.
+            </p>
+
+          </article>
+
+
+          <article class="research-card">
+
+            <div class="research-icon">✦</div>
+
+            <h3>خلاقیت و ایده‌پردازی</h3>
+
+            <p>
+              پرورش تفکر خلاق و تبدیل ایده‌های دانش‌آموزی به
+              طرح‌های قابل اجرا.
+            </p>
+
+          </article>
+
+
+          <article class="research-card">
+
+            <div class="research-icon">⌁</div>
+
+            <h3>پژوهش و تحقیق</h3>
+
+            <p>
+              آموزش روش تحقیق، انتخاب موضوع، گردآوری اطلاعات و
+              ارائه نتایج پژوهش.
+            </p>
+
+          </article>
+
+
+          <article class="research-card">
+
+            <div class="research-icon">◇</div>
+
+            <h3>علوم انسانی</h3>
+
+            <p>
+              زمینه‌سازی برای پژوهش در حوزه‌های فرهنگی، اجتماعی
+              و علوم انسانی.
+            </p>
+
+          </article>
+
+
+          <article class="research-card">
+
+            <div class="research-icon">◎</div>
+
+            <h3>محیط زیست</h3>
+
+            <p>
+              توجه به مسائل محیط زیستی و ایجاد نگرش پژوهشی نسبت
+              به طبیعت و منابع.
+            </p>
+
+          </article>
+
+
+          <article class="research-card">
+
+            <div class="research-icon">▣</div>
+
+            <h3>آزمایشگاه</h3>
+
+            <p>
+              فراهم کردن فرصت تجربه، آزمایش و مشاهده مفاهیم
+              علمی در محیط عملی.
+            </p>
+
+          </article>
+
+
+          <article class="research-card">
+
+            <div class="research-icon">↗</div>
+
+            <h3>مهارت‌های علمی</h3>
+
+            <p>
+              تقویت ارائه، مستندسازی، تحلیل داده و مهارت‌های
+              مورد نیاز پژوهشگران جوان.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         COURSES
+         ====================================================== -->
+
+    <section class="section" id="courses">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-kicker">
+            آموزش
+          </div>
+
+          <h2 class="section-title">
+            دوره‌ها و کارگاه‌ها
+          </h2>
+
+          <p class="section-description">
+            دوره‌های آموزشی و کارگاه‌های مهارتی با هدف تقویت
+            توانایی‌های علمی و پژوهشی دانش‌آموزان.
+          </p>
+
+        </div>
+
+
+        <div class="courses-grid">
+
+          <article class="course-card">
+
+            <div class="course-top"></div>
+
+            <div class="course-body">
+
+              <div class="course-meta">
+                <span>آموزشی</span>
+                <span>پژوهشی</span>
+              </div>
+
+              <h3>
+                روش تحقیق و پژوهش
+              </h3>
+
+              <p>
+                آشنایی با مراحل انجام یک پژوهش از انتخاب موضوع تا
+                نگارش و ارائه نتایج.
+              </p>
+
+              <a href="#contact" class="btn-link">
+                اطلاعات بیشتر ←
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="course-card">
+
+            <div class="course-top"></div>
+
+            <div class="course-body">
+
+              <div class="course-meta">
+                <span>مهارتی</span>
+                <span>خلاقیت</span>
+              </div>
+
+              <h3>
+                ایده‌پردازی و خلاقیت
+              </h3>
+
+              <p>
+                آموزش تکنیک‌های خلاقیت، حل مسئله و تبدیل ایده به
+                یک طرح عملی.
+              </p>
+
+              <a href="#contact" class="btn-link">
+                اطلاعات بیشتر ←
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="course-card">
+
+            <div class="course-top"></div>
+
+            <div class="course-body">
+
+              <div class="course-meta">
+                <span>فناوری</span>
+                <span>عملی</span>
+              </div>
+
+              <h3>
+                کارگاه فناوری و ساخت
+              </h3>
+
+              <p>
+                آشنایی عملی با فرآیند طراحی، ساخت و آزمون ایده‌ها
+                و محصولات دانش‌آموزی.
+              </p>
+
+              <a href="#contact" class="btn-link">
+                اطلاعات بیشتر ←
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ROADMAP
+         ====================================================== -->
+
+    <section class="section section--blue">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-kicker">
+            مسیر پژوهش
+          </div>
+
+          <h2 class="section-title">
+            از ایده تا دستاورد
+          </h2>
+
+          <p class="section-description">
+            یک مسیر ساده و هدفمند برای تبدیل پرسش و ایده به
+            تجربه و نتیجه پژوهشی.
+          </p>
+
+        </div>
+
+
+        <div class="roadmap">
+
+          <div class="roadmap-step">
+
+            <div class="roadmap-number">۱</div>
+
+            <h3>ایده و پرسش</h3>
+
+            <p>
+              شناسایی مسئله و شکل‌گیری ایده پژوهشی
+            </p>
+
+          </div>
+
+
+          <div class="roadmap-step">
+
+            <div class="roadmap-number">۲</div>
+
+            <h3>تحقیق</h3>
+
+            <p>
+              بررسی منابع و انتخاب روش مناسب پژوهش
+            </p>
+
+          </div>
+
+
+          <div class="roadmap-step">
+
+            <div class="roadmap-number">۳</div>
+
+            <h3>اجرا</h3>
+
+            <p>
+              انجام آزمایش، ساخت و گردآوری داده‌ها
+            </p>
+
+          </div>
+
+
+          <div class="roadmap-step">
+
+            <div class="roadmap-number">۴</div>
+
+            <h3>ارائه</h3>
+
+            <p>
+              تحلیل نتایج، مستندسازی و ارائه دستاورد
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         NEWS
+         ====================================================== -->
+
+    <section class="section" id="news">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-kicker">
+            اطلاع‌رسانی
+          </div>
+
+          <h2 class="section-title">
+            اخبار و اطلاعیه‌ها
+          </h2>
+
+          <p class="section-description">
+            آخرین اخبار، رویدادها و اطلاعیه‌های پژوهش‌سرای امام علی
+            (ع) سنقر.
+          </p>
+
+        </div>
+
+
+        <div class="news-layout">
+
+          <article class="featured-news">
+
+            <div class="news-date">
+              اطلاعیه پژوهش‌سرا
+            </div>
+
+            <h3>
+              آغاز برنامه‌های علمی و پژوهشی پژوهش‌سرای امام علی (ع)
+              سنقر
+            </h3>
+
+            <p>
+              اخبار مربوط به برنامه‌ها، دوره‌ها، مسابقات، کارگاه‌ها
+              و فعالیت‌های علمی پژوهش‌سرا در این بخش منتشر خواهد شد.
+            </p>
+
+            <a href="#contact" class="btn-link">
+              مشاهده جزئیات ←
+            </a>
+
+          </article>
+
+
+          <div class="news-list">
+
+            <article class="news-item">
+
+              <h4>
+                اطلاعیه ثبت‌نام دوره‌ها و کارگاه‌های پژوهشی
+              </h4>
+
+              <span>
+                اطلاعیه
+              </span>
+
+            </article>
+
+
+            <article class="news-item">
+
+              <h4>
+                برنامه فعالیت‌های علمی و پژوهشی دانش‌آموزان
+              </h4>
+
+              <span>
+                فعالیت علمی
+              </span>
+
+            </article>
+
+
+            <article class="news-item">
+
+              <h4>
+                فراخوان ارائه طرح‌ها و ایده‌های دانش‌آموزی
+              </h4>
+
+              <span>
+                فراخوان
+              </span>
+
+            </article>
+
+
+            <article class="news-item">
+
+              <h4>
+                برگزاری کارگاه‌های آموزشی پژوهش و خلاقیت
+              </h4>
+
+              <span>
+                کارگاه آموزشی
+              </span>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LIBRARY
+         ====================================================== -->
+
+    <section class="section section--gray" id="library">
+
+      <div class="container">
+
+        <div class="library-box">
+
+          <div>
+
+            <div class="section-kicker" style="color:#a9c9ef;">
+              منابع علمی
+            </div>
+
+            <h3>
+              کتابخانه و منابع پژوهشی
+            </h3>
+
+            <p>
+              دسترسی به منابع، مطالب آموزشی و محتوای علمی مورد
+              نیاز دانش‌آموزان و پژوهشگران.
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <div class="library-search">
+
+              <input
+                type="search"
+                id="librarySearch"
+                placeholder="جست‌وجو در منابع علمی..."
+                aria-label="جست‌وجو در منابع علمی"
+              >
+
+              <button id="librarySearchBtn">
+                جست‌وجو
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         GALLERY
+         ====================================================== -->
+
+    <section class="section" id="gallery">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-kicker">
+            تصاویر
+          </div>
+
+          <h2 class="section-title">
+            گالری پژوهش‌سرا
+          </h2>
+
+          <p class="section-description">
+            تصاویر فعالیت‌ها، برنامه‌ها، کارگاه‌ها و رویدادهای
+            پژوهش‌سرای امام علی (ع) سنقر.
+          </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+          <div class="gallery-item">
+
+            <div class="gallery-placeholder">
+              <strong>تصویر فعالیت‌های پژوهشی</strong>
+              <span>محل قرارگیری تصویر</span>
+            </div>
+
+          </div>
+
+
+          <div class="gallery-item">
+
+            <div class="gallery-placeholder">
+              <strong>کارگاه آموزشی</strong>
+              <span>محل قرارگیری تصویر</span>
+            </div>
+
+          </div>
+
+
+          <div class="gallery-item">
+
+            <div class="gallery-placeholder">
+              <strong>فعالیت دانش‌آموزان</strong>
+              <span>محل قرارگیری تصویر</span>
+            </div>
+
+          </div>
+
+
+          <div class="gallery-item">
+
+            <div class="gallery-placeholder">
+              <strong>رویداد علمی</strong>
+              <span>محل قرارگیری تصویر</span>
+            </div>
+
+          </div>
+
+
+          <div class="gallery-item">
+
+            <div class="gallery-placeholder">
+              <strong>نمای پژوهش‌سرا</strong>
+              <span>محل قرارگیری تصویر</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FAQ
+         ====================================================== -->
+
+    <section class="section section--gray">
+
+      <div class="container">
+
+        <div class="section-header" style="margin-inline:auto;text-align:center;">
+
+          <div class="section-kicker" style="justify-content:center;">
+            پرسش‌های متداول
+          </div>
+
+          <h2 class="section-title">
+            سوالات متداول
+          </h2>
+
+          <p class="section-description" style="margin-inline:auto;">
+            پاسخ برخی از پرسش‌های متداول درباره فعالیت‌های پژوهش‌سرا.
+          </p>
+
+        </div>
+
+
+        <div class="faq">
+
+          <div class="faq-item">
+
+            <button class="faq-question">
+
+              پژوهش‌سرا چه خدماتی ارائه می‌دهد؟
+
+              <span>+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <p>
+                پژوهش‌سرا زمینه انجام فعالیت‌های پژوهشی، برگزاری
+                دوره‌ها و کارگاه‌های علمی، فعالیت‌های خلاقانه و
+                حمایت از ایده‌های دانش‌آموزی را فراهم می‌کند.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <button class="faq-question">
+
+              چه دانش‌آموزانی می‌توانند در فعالیت‌ها شرکت کنند؟
+
+              <span>+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <p>
+                دانش‌آموزان علاقه‌مند به فعالیت‌های علمی، پژوهشی،
+                خلاقانه و فناورانه می‌توانند مطابق برنامه‌های اعلام‌شده
+                در فعالیت‌های پژوهش‌سرا شرکت کنند.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <button class="faq-question">
+
+              چگونه می‌توان با پژوهش‌سرا ارتباط برقرار کرد؟
+
+              <span>+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <p>
+                برای ارتباط با پژوهش‌سرا می‌توانید از اطلاعات تماس
+                درج‌شده در بخش ارتباط با ما استفاده کنید.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <button class="faq-question">
+
+              آیا امکان ارائه طرح پژوهشی وجود دارد؟
+
+              <span>+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <p>
+                بله. دانش‌آموزان می‌توانند ایده‌ها و طرح‌های پژوهشی
+                خود را با پژوهش‌سرا مطرح کنند و از راهنمایی‌های لازم
+                بهره‌مند شوند.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT
+         ====================================================== -->
+
+    <section class="section" id="contact">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-kicker">
+            ارتباط با ما
+          </div>
+
+          <h2 class="section-title">
+            با پژوهش‌سرا در ارتباط باشید
+          </h2>
+
+          <p class="section-description">
+            برای دریافت اطلاعات بیشتر درباره برنامه‌ها، دوره‌ها و
+            فعالیت‌های پژوهش‌سرا با ما در ارتباط باشید.
+          </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+          <div class="contact-info">
+
+            <h3>
+              اطلاعات تماس
+            </h3>
+
+
+            <div class="contact-item">
+
+              <div class="contact-icon">⌂</div>
+
+              <div>
+
+                <strong>نشانی</strong>
+
+                <span>
+                  شهرستان سنقر و کلیایی، پژوهش‌سرای امام علی (ع)
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+              <div class="contact-icon">☎</div>
+
+              <div>
+
+                <strong>تلفن</strong>
+
+                <span>
+                  شماره تماس پژوهش‌سرا
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+              <div class="contact-icon">@</div>
+
+              <div>
+
+                <strong>رایانامه</strong>
+
+                <span>
+                  ایمیل رسمی پژوهش‌سرا
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+              <div class="contact-icon">◷</div>
+
+              <div>
+
+                <strong>ساعات فعالیت</strong>
+
+                <span>
+                  مطابق برنامه کاری پژوهش‌سرا
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="contact-form">
+
+            <h3>
+              ارسال پیام
+            </h3>
+
+            <form id="contactForm">
+
+              <div class="form-grid">
+
+                <div class="form-group">
+
+                  <label for="name">
+                    نام و نام خانوادگی
+                  </label>
+
+                  <input
+                    class="form-control"
+                    type="text"
+                    id="name"
+                    required
+                    placeholder="نام شما"
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="email">
+                    رایانامه
+                  </label>
+
+                  <input
+                    class="form-control"
+                    type="email"
+                    id="email"
+                    placeholder="example@email.com"
+                  >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                  <label for="subject">
+                    موضوع پیام
+                  </label>
+
+                  <input
+                    class="form-control"
+                    type="text"
+                    id="subject"
+                    required
+                    placeholder="موضوع پیام"
+                  >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                  <label for="message">
+                    متن پیام
+                  </label>
+
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    required
+                    placeholder="پیام خود را بنویسید..."
+                  ></textarea>
+
+                </div>
+
+              </div>
+
+
+              <button
+                type="submit"
+                class="btn btn-primary"
+              >
+                ارسال پیام
+              </button>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================== -->
+
+  <footer class="footer">
+
+    <div class="container footer-main">
+
+      <div class="footer-brand">
+
+        <h3>
+          پژوهش‌سرای امام علی (ع) سنقر
+        </h3>
+
+        <p>
+          بستری برای پژوهش، یادگیری، خلاقیت و پرورش استعدادهای
+          دانش‌آموزی در شهرستان سنقر.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>دسترسی سریع</h4>
+
+        <a href="#about">درباره پژوهش‌سرا</a>
+
+        <a href="#research">فعالیت‌ها</a>
+
+        <a href="#courses">دوره‌ها</a>
+
+        <a href="#news">اخبار</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>منابع</h4>
+
+        <a href="#library">کتابخانه</a>
+
+        <a href="#gallery">گالری</a>
+
+        <a href="#contact">ارتباط با ما</a>
+
+        <a href="#">راهنمای سایت</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>اطلاعات</h4>
+
+        <a href="#contact">نشانی پژوهش‌سرا</a>
+
+        <a href="#contact">تلفن تماس</a>
+
+        <a href="#contact">رایانامه</a>
+
+      </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+      <span>
+        © ۱۴۰۵ پژوهش‌سرای امام علی (ع) سنقر — تمامی حقوق محفوظ است.
+      </span>
+
+      <span>
+        طراحی و توسعه با رویکرد علمی و حرفه‌ای
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =======================================================
+       BACK TO TOP
+       ======================================================== -->
+
+  <button
+    class="back-top"
+    id="backTop"
+    aria-label="بازگشت به بالا"
+  >
+    ↑
+  </button>
+
+
+  <!-- =======================================================
+       TOAST
+       ======================================================== -->
+
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+       ======================================================== -->
+
+  <script>
+
+    "use strict";
+
+
+    /* -------------------------------------------------------
+       Mobile Navigation
+       ------------------------------------------------------- */
+
+    const mobileToggle = document.getElementById("mobileToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    mobileToggle.addEventListener("click", () => {
+
+      mainNav.classList.toggle("open");
+
+    });
+
+
+    document.querySelectorAll("#mainNav a").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        mainNav.classList.remove("open");
+
+      });
+
+    });
+
+
+    /* -------------------------------------------------------
+       Active Navigation
+       ------------------------------------------------------- */
+
+    const sections = document.querySelectorAll("main section[id]");
+    const navLinks = document.querySelectorAll("#mainNav a");
+
+    const updateActiveNavigation = () => {
+
+      let current = "home";
+
+      sections.forEach(section => {
+
+        const top = section.offsetTop - 120;
+
+        if (window.scrollY >= top) {
+          current = section.id;
+        }
+
+      });
+
+      navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        const href = link.getAttribute("href");
+
+        if (href === `#${current}`) {
+          link.classList.add("active");
+        }
+
+      });
+
+    };
+
+    window.addEventListener(
+      "scroll",
+      updateActiveNavigation,
+      { passive: true }
+    );
+
+
+    /* -------------------------------------------------------
+       Back To Top
+       ------------------------------------------------------- */
+
+    const backTop = document.getElementById("backTop");
+
+    window.addEventListener(
+      "scroll",
+      () => {
+
+        if (window.scrollY > 500) {
+
+          backTop.classList.add("visible");
+
+        } else {
+
+          backTop.classList.remove("visible");
+
+        }
+
+      },
+      { passive: true }
+    );
+
+
+    backTop.addEventListener("click", () => {
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    });
+
+
+    /* -------------------------------------------------------
+       FAQ Accordion
+       ------------------------------------------------------- */
+
+    document.querySelectorAll(".faq-question").forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        const item = button.closest(".faq-item");
+
+        document.querySelectorAll(".faq-item").forEach(other => {
+
+          if (other !== item) {
+            other.classList.remove("open");
+          }
+
+        });
+
+        item.classList.toggle("open");
+
+      });
+
+    });
+
+
+    /* -------------------------------------------------------
+       Toast
+       ------------------------------------------------------- */
+
+    const toast = document.getElementById("toast");
+
+    let toastTimer;
+
+    function showToast(message) {
+
+      toast.textContent = message;
+
+      toast.classList.add("show");
+
+      clearTimeout(toastTimer);
+
+      toastTimer = setTimeout(() => {
+
+        toast.classList.remove("show");
+
+      }, 3000);
+
+    }
+
+
+    /* -------------------------------------------------------
+       Contact Form
+       ------------------------------------------------------- */
+
+    const contactForm = document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", event => {
+
+      event.preventDefault();
+
+      showToast(
+        "پیام شما ثبت شد. برای ارسال واقعی فرم، اتصال به سامانه پیام‌رسان مورد نیاز است."
+      );
+
+      contactForm.reset();
+
+    });
+
+
+    /* -------------------------------------------------------
+       Library Search
+       ------------------------------------------------------- */
+
+    const librarySearch = document.getElementById("librarySearch");
+    const librarySearchBtn = document.getElementById("librarySearchBtn");
+
+    librarySearchBtn.addEventListener("click", () => {
+
+      const value = librarySearch.value.trim();
+
+      if (!value) {
+
+        showToast("لطفاً عبارت مورد نظر را وارد کنید.");
+
+        librarySearch.focus();
+
+        return;
+
+      }
+
+      showToast(
+        `جست‌وجوی «${value}» در کتابخانه به‌زودی فعال می‌شود.`
+      );
+
+    });
+
+
+    librarySearch.addEventListener("keydown", event => {
+
+      if (event.key === "Enter") {
+
+        event.preventDefault();
+
+        librarySearchBtn.click();
+
+      }
+
+    });
+
+
+    /* -------------------------------------------------------
+       Initial State
+       ------------------------------------------------------- */
+
+    updateActiveNavigation();
+
+  </script>
+
+</body>
+</html>
